@@ -1,0 +1,229 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Windows Setup</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/handouts-sphinx.css"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic|Inconsolata:400,700'
+          rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="page-wrapper">
+    <div id="page-sidebar">
+        <header>
+            <p class="project">Hackbright Fellowship</p>
+
+            <p class="title">Windows Setup</p>
+
+            <p class="backlink"><a href="/"> &laquo; Back to Homepage</a></p>
+
+        </header>
+        <div id="toc">
+            <ul>
+<li><a class="reference internal" href="#">Windows Setup</a><ul>
+<li><a class="reference internal" href="#what-version-of-windows-are-you-on">What Version of Windows Are You On?</a></li>
+<li><a class="reference internal" href="#install-git-bash">Install Git Bash</a></li>
+<li><a class="reference internal" href="#setup-vagrant">Setup Vagrant</a></li>
+<li><a class="reference internal" href="#sublime-text-2">Sublime Text 2</a><ul>
+<li><a class="reference internal" href="#installing-and-configuring-sublime">Installing and Configuring Sublime</a></li>
+<li><a class="reference internal" href="#additional-sublime-package-sublimelinter">Additional Sublime Package: SublimeLinter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="page-content">
+        
+  <div class="section" id="windows-setup">
+<h1>Windows Setup</h1>
+<p><strong>NOTE</strong>: These set up steps are all <strong>REQUIRED</strong>. If you run into trouble, please let us know ASAP, at <a class="reference external" href="mailto:ontrack&#37;&#52;&#48;hackbrightacademy&#46;com">ontrack<span>&#64;</span>hackbrightacademy<span>&#46;</span>com</a>.</p>
+<div class="section" id="what-version-of-windows-are-you-on">
+<h2>What Version of Windows Are You On?</h2>
+<p>You can figure out what version of Windows you&#8217;re on by clicking the Start button, entering Computer in the search box, right-clicking Computer, and then clicking Properties. Look under &#8216;Windows Edition&#8217; for the version and edition of Windows that your PC is running.</p>
+<p>If you have Windows 7 or earlier, you&#8217;ll need to upgrade, either your system or your entire computer. If you&#8217;re using a laptop which doesn&#8217;t support a more recent version of Windows, consider upgrading to a new computer &#8211; a more modern machine will not only run everything more smoothly, it will also mean less troubleshooting in the future.</p>
+</div>
+<div class="section" id="install-git-bash">
+<h2>Install Git Bash</h2>
+<p>First, let&#8217;s install the command-line program from Github, Git Bash. This should only take a few minutes, and mostly involves accepting all of the default options the installer provides (so you&#8217;ll mostly just be clicking &#8220;Next&#8221; to step through the process).</p>
+<p>Download Git for Windows from <a class="reference external" href="https://git-for-windows.github.io/">https://git-for-windows.github.io/</a> to your <cite>Downloads</cite> directory.</p>
+<p>Find the downloaded .exe file and double-click to run it.</p>
+<p>You may get a box asking for permission to run this downloaded file; if so, approve it.</p>
+<blockquote>
+<div><img alt="_images/permission-git.png" src="_images/permission-git.png" style="width: 50%;" />
+</div></blockquote>
+<p>At the splash screen for Git containing the GNU General Public License, click &#8220;Next&#8221; to start the installation wizard.  If Git asks you where to install, keep the default directory setting and click &#8220;Next&#8221;.</p>
+<blockquote>
+<div><img alt="_images/git-start.png" src="_images/git-start.png" style="width: 65%;" />
+</div></blockquote>
+<p>Select Components: Make sure to select Additional icons, which will automatically select QuickLaunch and Desktop locations. Click &#8220;Next&#8221; to approve installation of these Git components.</p>
+<blockquote>
+<div><img alt="_images/select-components.png" src="_images/select-components.png" style="width: 65%;" />
+</div></blockquote>
+<p>Click &#8220;Next&#8221; to approve using Git from the Windows Command Prompt.</p>
+<blockquote>
+<div><img alt="_images/command-prompt.png" src="_images/command-prompt.png" style="width: 65%;" />
+</div></blockquote>
+<p>Click &#8220;Next&#8221; to approve configuring line ending conversions to checkout Windows-style, and commit Unix-style line endings (the recommended setting on Windows).</p>
+<blockquote>
+<div><img alt="_images/line-endings.png" src="_images/line-endings.png" style="width: 65%;" />
+</div></blockquote>
+<p>Click &#8220;Next&#8221; to approve configuring the MinTTY terminal emulator to use with Git Bash. MinTTY is preferable to Windows&#8217; default console window.</p>
+<blockquote>
+<div><img alt="_images/mintty.png" src="_images/mintty.png" style="width: 65%;" />
+</div></blockquote>
+<p>Click &#8220;Install&#8221; to approve enablement of file system caching, open the Git Bash prompt, and begin the installation process.</p>
+<blockquote>
+<div><img alt="_images/install.png" src="_images/install.png" style="width: 65%;" />
+</div></blockquote>
+<p>Wait while Git for Windows is installed.</p>
+<blockquote>
+<div><img alt="_images/progress-bar.png" src="_images/progress-bar.png" style="width: 65%;" />
+</div></blockquote>
+<p>When it&#8217;s done, click &#8216;Finish.&#8217; There should now be a Git Bash icon on your desktop. Right-click this icon and choose &#8216;Properties.&#8217; In the &#8216;Shortcut&#8217; tab, choose &#8216;Advanced...,&#8217; and make sure &#8216;Run as administrator&#8217; is checked. Say &#8216;OK&#8217; twice to cement this change.</p>
+<blockquote>
+<div><img alt="_images/run-as-admin.png" src="_images/run-as-admin.png" style="width: 55%;" />
+</div></blockquote>
+<p>From now on, each time you run Git Bash, it will ask you if you want to &#8216;allow this app from an unknown publisher to make changes to your PC.&#8217; This is expected, and nothing to worry about. Say &#8216;Yes&#8217; when it asks.</p>
+</div>
+<div class="section" id="setup-vagrant">
+<h2>Setup Vagrant</h2>
+<p>Vagrant is a program which allows you to run a virtual Linux machine on your laptop. This virtual machine is where we&#8217;ll do much of our work.</p>
+<p>Go to <a class="reference external" href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a> and download the Windows version of Vagrant. Run the Vagrant installer. Accept the licensing agreement and keep the default designated folder settings in the Vagrant Setup Wizard.</p>
+<p>The Vagrant Wizard will warn that it&#8217;s about to restart your computer. Once it&#8217;s restarted, open the Git Bash terminal, and run the command <code class="docutils literal"><span class="pre">pwd</span></code> to make sure that you&#8217;re in your home directory.</p>
+<pre class="console literal-block">
+$ <span class="cmd">pwd</span>
+/c/Users/YourUserName
+</pre>
+<p>(If it outputs <code class="docutils literal"><span class="pre">/c/Users/YourUserName</span></code>, then you are. If not, type <code class="docutils literal"><span class="pre">cd</span> <span class="pre">~</span></code>, hit enter, and run <code class="docutils literal"><span class="pre">pwd</span></code> again.)</p>
+<p>Create a directory called <cite>vagrant</cite> (<code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">vagrant</span></code>) and a directory called <cite>src</cite> (<code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">src</span></code>). (You can run <code class="docutils literal"><span class="pre">ls</span></code> to list the files in your home directory, and you should see these two new directories in the list.) Now <code class="docutils literal"><span class="pre">cd</span></code> into your new <cite>vagrant</cite> directory (<code class="docutils literal"><span class="pre">cd</span> <span class="pre">vagrant</span></code>).</p>
+<pre class="console literal-block">
+$ <span class="cmd">mkdir vagrant</span>
+$ <span class="cmd">mkdir src</span>
+$ <span class="cmd">ls</span>
+[lots of other files and directories]
+src/
+vagrant/
+$ <span class="cmd">cd vagrant</span>
+</pre>
+<p>Download <a class="reference external" href="../install-windows.zip">this zip file</a>. Back in the terminal, run <code class="docutils literal"><span class="pre">unzip</span> <span class="pre">~/Downloads/install-windows.zip</span></code> (to unzip it) and <code class="docutils literal"><span class="pre">mv</span> <span class="pre">install-windows/*</span> <span class="pre">.</span></code> (to move the resulting files). <strong>Important</strong>: Note the trailing period in that second command! If you don&#8217;t include it, you&#8217;ll have to redo this step, starting with downloading the zip file.</p>
+<pre class="console literal-block">
+$ <span class="cmd">unzip ~/Downloads/install-windows.zip</span>
+inflating: install-windows/hb-linux-setup.sh
+inflating: install-windows/hb-vagrant-setup.sh
+inflating: install-windows/Vagrantfile
+$ <span class="cmd">mv install-windows/* .</span>
+</pre>
+<p>Run <code class="docutils literal"><span class="pre">ls</span></code> one more time to see the three files you just moved.</p>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+hb-linux-setup.sh    hb-vagrant-setup.sh    install-windows/    Vagrantfile
+</pre>
+<p>Now run the command <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code>. If you don&#8217;t already have VirtualBox installed, Vagrant <strong>should</strong> offer to install it for you: <code class="docutils literal"><span class="pre">Provider</span> <span class="pre">‘virtual</span> <span class="pre">box’</span> <span class="pre">not</span> <span class="pre">found.</span> <span class="pre">We’ll</span> <span class="pre">automatically</span> <span class="pre">install</span> <span class="pre">it</span> <span class="pre">for</span> <span class="pre">you...</span> <span class="pre">Downloading</span> <span class="pre">VirtualBox</span> <span class="pre">5.0.10</span></code>. A series of pop-ups should appear, and it should download and install. You&#8217;ll know it&#8217;s been successful if you see the following message in the terminal: <code class="docutils literal"><span class="pre">VirtualBox</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">successfully</span> <span class="pre">installed!</span></code></p>
+<p>Running <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> will also download and install a copy of Ubuntu Linux, and then start up the virtual Linux machine (though not yet give you a way to interact with said virtual machine). (Note that this process will probably take a few minutes. If it looks like it&#8217;s hung up, don&#8217;t panic. Get a cup of coffee and it should be done when you get back.)</p>
+<pre class="console literal-block">
+$ <span class="cmd">vagrant up</span>
+[Possible install messages about VirtualBox]
+Bringing machine 'default' up with 'virtualbox' provider...
+[many more lines of output, ending with 'default: Cleaning up...']
+$
+</pre>
+<div class="admonition note">
+<p>Errors during <cite>vagrant up</cite>?</p>
+<p class="last">If you run into errors during the <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> process, check out the &#8220;Vagrant Has Never Run Successfully on Your Machine&#8221; section of our Vagrant troubleshooting doc here: <a class="reference external" href="http://fellowship.hackbrightacademy.com/materials/resources/vagrant-troubleshooting/#vagrant-has-never-run-successfully-on-your-machine">http://fellowship.hackbrightacademy.com/materials/resources/vagrant-troubleshooting/#vagrant-has-never-run-successfully-on-your-machine</a>.</p>
+</div>
+<div class="admonition note">
+<p><cite>mesg: ttyname failed: Inappropriate ioctl for device</cite> Error?</p>
+<p class="last">You may see the above error twice during the <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> process, once at the beginning, and once at the end. The details are somewhat complicated, but the short version is that it&#8217;s not something to worry about.</p>
+</div>
+<p>Once you&#8217;ve successfully run <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code>, to use the virtual machine, run <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">ssh</span></code>. You&#8217;ll notice that your prompt will change. Run the command <code class="docutils literal"><span class="pre">ls</span></code>, and you should see the <cite>src</cite> directory. Files in this directory will be mirrored to the <cite>src</cite> folder you created earlier on your PC. Now <code class="docutils literal"><span class="pre">cd</span></code> into it (<code class="docutils literal"><span class="pre">cd</span> <span class="pre">src</span></code>).</p>
+<pre class="console literal-block">
+$ <span class="cmd">vagrant ssh</span>
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+  * Documentation:  <a class="reference external" href="https://help.ubuntu.com">https://help.ubuntu.com</a>
+  * Management:     <a class="reference external" href="https://landscape.canonical.com">https://landscape.canonical.com</a>
+  * Support:        <a class="reference external" href="https://ubuntu.com/advantage">https://ubuntu.com/advantage</a>
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~$ <span class="cmd">ls</span>
+src
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~$ <span class="cmd">cd src</span>
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~/src$
+</pre>
+<p>To prove to yourself that these folders are actually linked, run the command <code class="docutils literal"><span class="pre">touch</span> <span class="pre">testfile</span></code>. If you run <code class="docutils literal"><span class="pre">ls</span></code>, you should now see <cite>testfile</cite> in your directory.</p>
+<pre class="console literal-block">
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~/src$ <span class="cmd">touch testfile</span>
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~/src$ <span class="cmd">ls</span>
+testfile
+</pre>
+<p>Switch into Windows Explorer, open up the <cite>src</cite> folder, and <cite>testfile</cite> should be there as well. (Once you&#8217;ve seen that it is, you can trash it.)</p>
+<p>Back in the terminal, run the command <code class="docutils literal"><span class="pre">psql</span></code>. Your prompt should change again, to <code class="docutils literal"><span class="pre">vagrant=#</span></code>.</p>
+<pre class="console literal-block">
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~/src$ <span class="cmd">psql</span>
+psql (9.5.4)
+Type &quot;help&quot; for help.
+
+vagrant=#
+</pre>
+<p>Once you&#8217;ve verified that this works, <strong>take a screenshot</strong> (instructions here: <a class="reference external" href="http://windows.microsoft.com/en-us/windows/take-screen-capture-print-screen">http://windows.microsoft.com/en-us/windows/take-screen-capture-print-screen</a>), and then use <code class="docutils literal"><span class="pre">ctrl-D</span></code> to get back to your virtual machine prompt.  You will send in the screenshot later with your other homework from this assignment.</p>
+<pre class="console literal-block">
+vagrant=# \q
+<a class="reference external" href="mailto:vagrant&#37;&#52;&#48;vagrant">vagrant<span>&#64;</span>vagrant</a>:~/src$
+</pre>
+<p>Congrats! Your virtual machine is now set up! To get back to your regular Git Bash terminal, hit <code class="docutils literal"><span class="pre">ctrl-D</span></code> again, and then run <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">halt</span></code> to turn off the virtual machine. The next time you want to start up the virtual machine, use <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> and <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">ssh</span></code>. (On a day-to-day basis once Hackbright starts, you&#8217;ll use <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">ssh</span></code> and <code class="docutils literal"><span class="pre">ctrl-D</span></code> to get into and out of the virtual machine, and only <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code> and <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">halt</span></code> after you&#8217;ve restarted and before you shut down your computer. The machine will continue to run in the background, but it uses exceedingly little memory to do so.)</p>
+</div>
+<div class="section" id="sublime-text-2">
+<h2>Sublime Text 2</h2>
+<div class="section" id="installing-and-configuring-sublime">
+<h3>Installing and Configuring Sublime</h3>
+<p>We&#8217;ll install Sublime Text, the editor we&#8217;ll use to edit code.</p>
+<p>Download this from <a class="reference external" href="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64%20Setup.exe">http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64%20Setup.exe</a></p>
+<p>Run the downloaded installer. You may be prompted for permission to run the installer. If so, approve the installation.</p>
+<p>Click &#8220;Next&#8221; to approve all the steps of the installation process and, at the end, click &#8220;Finish.&#8221;</p>
+<p>In your Start Menu or application launcher, you should now have &#8220;Sublime Text 2.&#8221;</p>
+<p>Open Sublime Text 2.</p>
+<p>Under the &#8220;Preferences&#8221; menu, choose &#8220;Settings - User.&#8221;</p>
+<p>Copy/paste so that your preference file contains this:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;default_line_ending&quot;</span><span class="p">:</span> <span class="s2">&quot;unix&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;translate_tabs_to_spaces&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;tab_size&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="nt">&quot;rulers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><cite>default_line_ending</cite> will force Sublime to use the same line-end markers as those used by both Macs and Linux machines</li>
+<li><cite>translate_tabs_to_spaces</cite> will automatically convert tab characters to spaces (this is required; without this, you won&#8217;t be successful at working with the code we give you)</li>
+<li><cite>tab_size</cite> will tell Sublime that every tab should equal 4 spaces</li>
+<li><cite>rulers</cite> takes a list of integers at which to draw end-of-line markers</li>
+</ul>
+<p>Now save and close the settings file.</p>
+</div>
+<div class="section" id="additional-sublime-package-sublimelinter">
+<h3>Additional Sublime Package: SublimeLinter</h3>
+<p>Sublime has a &#8216;linting&#8217; plugin which provides unobtrusive hints as you type your code about syntax errors, style mistakes, and the like. In order to install it, you&#8217;ll first need to install a package manager plugin. Follow the instructions at the link below to install it (make sure you select Sublime 2):</p>
+<p><a class="reference external" href="https://sublime.wbond.net/installation#st2">https://sublime.wbond.net/installation#st2</a></p>
+<p>Use the Package Manager you installed above to install the SublimeLinter plugin
+(go to Preferences → Package Control, then choose &#8220;Install Package&#8221; and enter &#8220;SublimeLinter&#8221;).</p>
+</div>
+</div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script> 
+</body>
+</html>

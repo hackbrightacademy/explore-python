@@ -1,0 +1,476 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Module 1: Python Basics</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/handouts-sphinx.css"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic|Inconsolata:400,700'
+          rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="page-wrapper">
+    <div id="page-sidebar">
+        <header>
+            <p class="project">Hackbright Fellowship</p>
+
+            <p class="title">Module 1: Python Basics</p>
+
+            <p class="backlink"><a href="/"> &laquo; Back to Homepage</a></p>
+
+        </header>
+        <div id="toc">
+            <ul>
+<li><a class="reference internal" href="#">Module 1: Python Basics</a><ul>
+<li><a class="reference internal" href="#welcome">Welcome</a><ul>
+<li><a class="reference internal" href="#go-slow-to-go-fast">Go Slow To Go Fast</a></li>
+<li><a class="reference internal" href="#topics-we-ll-cover">Topics We&#8217;ll Cover</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lesson">Lesson</a><ul>
+<li><a class="reference internal" href="#what-is-syntax">What is syntax?</a></li>
+<li><a class="reference internal" href="#keywords-and-strings">Keywords and strings</a></li>
+<li><a class="reference internal" href="#other-datatypes">Other Datatypes</a></li>
+<li><a class="reference internal" href="#calling-functions">Calling functions</a></li>
+<li><a class="reference internal" href="#another-function">Another function</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#practice-section">Practice Section</a><ul>
+<li><a class="reference internal" href="#directions">Directions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debugging-section">Debugging Section</a><ul>
+<li><a class="reference internal" href="#id1">Directions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#further-study">Further Study</a><ul>
+<li><a class="reference internal" href="#videos">Videos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#final-assignment">Final Assignment</a><ul>
+<li><a class="reference internal" href="#explore">Explore</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="page-content">
+        
+  <div class="section" id="module-1-python-basics">
+<h1>Module 1: Python Basics</h1>
+<div class="section" id="welcome">
+<h2>Welcome</h2>
+<p>In this module, you&#8217;ll learn about Python basics such as variables, types,
+printing, expressions, and debugging. These are some of the
+most fundamental principles of programming in Python. Some of the things you&#8217;ll
+learn here are common to many languages, whereas some are specific to Python.
+Regardless, the things you&#8217;ll learn in this module are going to enable you to
+craft more complex, multistep programs later on.</p>
+<div class="section" id="go-slow-to-go-fast">
+<h3>Go Slow To Go Fast</h3>
+<p>Take time to allow yourself to master these basic concepts, as they will show
+up again and again as you dive into more intermediate and advanced Python
+concepts later.</p>
+<p>Being a new programmer is hard &#8212; there&#8217;s <strong>so</strong> much to learn, <strong>so</strong> many
+different languages and countless resources to get started.  As a new coder,
+it can be difficult to stay focused. Sometimes, all it takes is an
+unfamiliar error message to prevent a new coder from sticking with it. Be
+persistent!</p>
+</div>
+<div class="section" id="topics-we-ll-cover">
+<h3>Topics We&#8217;ll Cover</h3>
+<ul class="simple">
+<li>Introduction to syntax</li>
+<li>Data types</li>
+<li>Printing</li>
+<li>Calling built-in functions</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lesson">
+<h2>Lesson</h2>
+<div class="section" id="what-is-syntax">
+<h3>What is syntax?</h3>
+<p>Programming languages provide a vocabulary for instructing computers to do
+something. As with any language, computer programming languages have a certain
+syntax, or a correct ordering of words in order to convey meaning.</p>
+<p>As a programming language, Python syntax is particularly succinct and
+human-readable. In order to print a message from Python, the syntax is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;Hello, world&quot;</span>
+<span class="go">Hello, world</span>
+</pre></div>
+</div>
+<p>If you&#8217;d like to print two things using Python, each separated by a space,
+execute the following code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;Thing 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Thing 2&quot;</span>
+<span class="go">Thing 1 Thing 2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p>Try it out!</p>
+<p>As a programmer, it&#8217;s important to be curious. Open a new <a class="reference external" href="https://repl.it/languages/python">Python repl session</a> and navigate to the console on the right.
+Next, find out what happens when you use the print keyword without anything to print.
+So, once you&#8217;re in the console simply type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span>
+</pre></div>
+</div>
+<p>And then press enter. What happens?</p>
+<p class="last">It might look like nothing, but note that Python actually did print
+<em>something</em>. It was a blank line! Python prints out a something called a
+<strong>newline character</strong> after every statement it prints. Without anything
+to print, Python just prints a newline character, all by itself.</p>
+</div>
+</div>
+<div class="section" id="keywords-and-strings">
+<h3>Keywords and strings</h3>
+<p>Let&#8217;s break those print statements down a bit. First, we&#8217;ll start with the
+word <strong>print</strong>.</p>
+<p>Python allocates special meaning to certain words in its syntax, such as
+<strong>print</strong>. The special words  are called <strong>keywords</strong> in Python&#8211; words that,
+when evaluated as part of the syntax, will cause something to happen. In this
+case, what ever comes after the <strong>print</strong> keyword will appear as output in the
+terminal. The print keyword can be a useful tool for interacting with users
+of a Python program, but it&#8217;s also a useful debugging tool, as we&#8217;ll see later.</p>
+<p>The second part of the print statement is called a <strong>string</strong>. This is one of
+many data types in Python. A string is a group of characters, usually composing
+phrases, sentences, or even paragraphs of human-readable language.</p>
+<div class="admonition warning">
+<p>Strings aren&#8217;t strings unless they&#8217;re wrapped in quotes.</p>
+<p>In order for Python to recognize a string, you <em>must</em> wrap it in quotation
+marks. Otherwise, Python will try to evaluate your word, sentence, paragraph,
+etc. like something else.</p>
+<p class="last">This is very easy to forget. While we can simply type words on our computer
+and know that these represent human language, Python won&#8217;t assume something is
+a string unless you make it clear.</p>
+</div>
+<p>Strings must be wrapped in quotation marks, but these can be either double
+quotes, or single quotes. For example, the following two print statements
+result in the same string being printed as output.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Hello, world&quot;</span>
+
+<span class="k">print</span> <span class="s1">&#39;Hello, world&#39;</span>
+</pre></div>
+</div>
+<p>Even though the first has double quotation marks, and the second has single
+quotes, in both cases, Python will print the string <strong>Hello, world</strong> as output.</p>
+<p>Strings have some interesting and useful behaviors that can help us use them.
+These behaviors are called string methods. There are many string methods that
+you&#8217;ll learn as you write more Python. As a first example, you can replace any
+letter in a string with another letter, using the following syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Howdy!&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="go">&#39;Bowdy!&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-datatypes">
+<h3>Other Datatypes</h3>
+<p>Besides strings, Python has many other datatypes. The next most common datatype
+is an integer, or, as it&#8217;s more often referred to, int. Integers in Python are
+essentially just whole numbers. They don&#8217;t require any special notation, like
+strings. If you type a number, Python will simply evaluate it as an integer.
+For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="mi">5</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>The last datatype we&#8217;ll cover in this module is a Boolean. The Boolean datatype
+has only two possible values&#8211; <code class="docutils literal"><span class="pre">True</span></code> and <code class="docutils literal"><span class="pre">False</span></code>. We&#8217;ll see lots of uses of
+boolean types later, but for now, you should understand how to print them:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="kc">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="kc">False</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p>Booleans are not strings.</p>
+<p>It&#8217;s important to note that while Boolean values <em>look</em> like strings, since
+they&#8217;re composed of many characters to form a human readable word, they are
+not the same datatype as strings. We could make a string that, when printed,
+looks very similar to a Boolean:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;True&quot;</span>
+</pre></div>
+</div>
+<p>True</p>
+<p class="last">Even though the word True was printed as output, the string <code class="docutils literal"><span class="pre">&quot;True&quot;</span></code> and the
+Boolean value <code class="docutils literal"><span class="pre">True</span></code> are two <em>completely</em> different values in Python. Read
+on to learn about a way to prove this difference in between datatypes.</p>
+</div>
+</div>
+<div class="section" id="calling-functions">
+<h3>Calling functions</h3>
+<p>Aside from keywords, Python has many other things that it knows how to evaluate
+in a meaningful way. One such thing is the built-in function called <strong>type</strong>.
+Similar to a keyword, a function is something that can produce output. However,
+unlike keywords, functions require parentheses in order to be evaluated
+correctly. Functions can also have parameters&#8211; variable values that change the
+function&#8217;s output in some way.</p>
+<p>The <strong>type</strong> function will give you information about the datatype of some value
+in Python. If you pass a string into the <strong>type</strong> function, the output is the
+datatype of the value&#8211; a string! If you pass an integer into the <strong>type</strong>
+function, the output is the datatype of integer. I bet you can guess the output
+of the <strong>type</strong> function when you pass in a Boolean value.</p>
+<p>The <strong>type</strong> function is nice when you&#8217;re not sure when type of thing you have.
+Knowing a value&#8217;s type can be incredibly important, as we&#8217;ll see later. Here
+are some examples of using the <strong>type</strong> function:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world&quot;</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">&lt;type &#39;int&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">53</span><span class="p">)</span>
+<span class="go">&lt;type &#39;int&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">&lt;type &#39;bool&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">&lt;type &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="another-function">
+<h3>Another function</h3>
+<p>There&#8217;s one more function you should be familiar with- the <strong>len</strong> function.
+This function can tell you how long a string is. Check it out:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hello, world&quot;</span><span class="p">)</span>
+<span class="go">12</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Time to learn Python!&quot;</span><span class="p">)</span>
+<span class="go">21</span>
+</pre></div>
+</div>
+<p>Interestingly, you can&#8217;t just pass any value into the <strong>len</strong> function. For
+example, if you pass a Booelan value in, here&#8217;s what happens:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">object of type &#39;bool&#39; has no len()</span>
+</pre></div>
+</div>
+<p>A similar thing happens if you pass in an integer:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="mi">54</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">object of type &#39;int&#39; has no len()</span>
+</pre></div>
+</div>
+<p>Check out the debugging section for more information on Python error messages.</p>
+</div>
+</div>
+<div class="section" id="practice-section">
+<h2>Practice Section</h2>
+<div class="section" id="directions">
+<h3>Directions</h3>
+<p>Create an account on <a class="reference external" href="https://repl.it/">repl.it</a> and start a new coding
+session <a class="reference external" href="https://repl.it/languages/python">here</a>.</p>
+<p>Complete the practice problems below in this repl console. If you&#8217;d like to
+work through the practice in several sittings and save your work in between,
+make sure you are logged in and saving your work into the repl editor on the
+left.</p>
+<ol class="arabic simple">
+<li>Print each of the following strings:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">'hi</span> <span class="pre">there</span> <span class="pre">world'</span></code></li>
+<li><code class="docutils literal"><span class="pre">&quot;Greetings,</span> <span class="pre">world!&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&quot;World??</span> <span class="pre">Is</span> <span class="pre">it</span> <span class="pre">really</span> <span class="pre">you?</span> <span class="pre">Hi!!!!!!&quot;</span></code></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Print each of the following integers:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">5000</span></code></li>
+<li><code class="docutils literal"><span class="pre">5</span></code></li>
+<li><code class="docutils literal"><span class="pre">7</span></code></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Print a sentence that says what you had for breakfast this morning.</li>
+<li>Print a sentence that about something that you plan to do tomorrow.</li>
+<li>Call the type function, passing the string <code class="docutils literal"><span class="pre">&quot;Howdy,</span> <span class="pre">partner&quot;</span></code> as an
+argument.</li>
+<li>Call the type function, passing the boolean <code class="docutils literal"><span class="pre">True</span></code> as an argument.</li>
+<li>Call the type function, passing the boolean <code class="docutils literal"><span class="pre">False</span></code> as an argument.</li>
+<li>Call the type function, passing the integer <code class="docutils literal"><span class="pre">88</span></code> as an argument.</li>
+<li>Call the type function, passing the string <code class="docutils literal"><span class="pre">&quot;775&quot;</span></code> as an argument.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Notice something interesting about the result?</li>
+</ul>
+</div></blockquote>
+<div class="hover-reveal topic">
+<p class="topic-title first"><strong>Types in Python</strong></p>
+<p>Even if a string <em>contains</em> or is solely composed of a numeric value,
+it&#8217;s still a string!</p>
+</div>
+<ol class="arabic simple" start="10">
+<li>Print the each of the following strings on the same line, separated by
+spaces: <code class="docutils literal"><span class="pre">&quot;apple&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;berry&quot;</span></code>, and <code class="docutils literal"><span class="pre">'cherry'</span></code>.</li>
+<li>Print the string <code class="docutils literal"><span class="pre">&quot;Hi,</span> <span class="pre">I</span> <span class="pre">have&quot;</span></code>, the integer <code class="docutils literal"><span class="pre">8</span></code>, and the string
+<code class="docutils literal"><span class="pre">&quot;cats&quot;</span></code>, separated by spaces.</li>
+<li>Use the <strong>len</strong> function in Python to print the length of the following
+string: <code class="docutils literal"><span class="pre">&quot;supercalifragilisticexpealidocious&quot;</span></code>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="debugging-section">
+<h2>Debugging Section</h2>
+<div class="section" id="id1">
+<h3>Directions</h3>
+<p>As a programmer, debugging is a fact of life. There are times you write code
+that Python doesn&#8217;t understand. In these cases, Python will display an error
+message. The more familiar you are with Python&#8217;s many error messages, the faster
+you&#8217;ll be at debugging code. But there&#8217;s good news: Python&#8217;s error messages are
+incredibly descriptive and helpful in figuring out what the problem is.</p>
+<p>In the following problems, you&#8217;ll find code that is invalid or not allowed in
+some way. Read the code, and see if you can predict what is wrong. When you&#8217;re
+ready, hover over the solution area to reveal the error message that Python
+shows, along with an explanation of what is going wrong.</p>
+<p>1) What&#8217;s wrong with this code?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title first"><strong>Not everything has a length.</strong></p>
+<p>While it&#8217;s completely valid to use a string as an argument for the <strong>len</strong>
+function, as in:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>it&#8217;s not valid to pass a Boolean type into the <strong>len</strong> function.</p>
+<p>Since there&#8217;s no obvious answer for Python to give you for the length of
+a Boolean, it gives you a helpful message essentially stating that the
+Boolean thing you passed to <strong>len</strong> as no length associated with it.</p>
+<p>It&#8217;s important to note that even though there are 4 characters that make
+up the value <code class="docutils literal"><span class="pre">True</span></code>, <strong>len</strong> doesn&#8217;t return the integer <code class="docutils literal"><span class="pre">4</span></code> here. The
+Boolean type represents <code class="docutils literal"><span class="pre">True</span></code> in Python&#8211; it&#8217;s not simply the string
+containing the letters <code class="docutils literal"><span class="pre">&quot;True&quot;</span></code>. It&#8217;s a magical, built-in value that has
+meaning <em>without</em> quotation marks around it.</p>
+<p>So, without further ado, here&#8217;s the error message:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">  Traceback (most recent call last):</span>
+<span class="go">    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">TypeError: object of type &#39;bool&#39; has no len()</span>
+</pre></div>
+</div>
+<p>This is one example of a TypeError&#8211; an error that&#8217;s raised as a result of
+data type you&#8217;re trying to manipulate in an incorrect way (in this case,
+you&#8217;re trying to treat a Boolean like a string).</p>
+<p>Next time you see a TypeError, make sure you know what kind of thing you&#8217;re
+manipulating in your code. Are you trying to treat an integer like a string?
+A string like a integer? A boolean like a string? The <strong>type</strong> function is
+always there to help if you&#8217;re not sure what type of thing you&#8217;re working
+with.</p>
+</div>
+<p>2) What&#8217;s wrong with this code?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hello</span> <span class="n">world</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title first"><strong>Strings need quotes around them.</strong></p>
+<p>In order to print a string, there must be quotes around the string.
+When you don&#8217;t wrap words in quotation marks, Python tries to evaluate the
+word like it&#8217;s a variable, keyword, or a built-in function. In this case,
+Python is trying to figure out what <code class="docutils literal"><span class="pre">hello</span></code> and <code class="docutils literal"><span class="pre">world</span></code> mean.</p>
+<p>Here is the error message:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hello</span> <span class="n">world</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="nb">print</span> <span class="n">hello</span> <span class="n">world</span>
+                    <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+</div>
+<p>3) What&#8217;s wrong with this code?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;hi&quot;</span> <span class="nb">print</span> <span class="s2">&quot;whats up&quot;</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title first"><strong>One print statement per line</strong></p>
+<p>You can&#8217;t put two print statements on the same line. In Python, whitespace (or
+the space around the actual words that make up your code) is <em>meaningful</em>.
+Python needs only the right amount of code to be on each line. Similarly,
+indentation is also meaningful in Python. You&#8217;ll see this in action in the
+next module. For now, note that too much code on the same line results
+in a <strong>SyntaxError</strong>, since the syntax that Python is trying to parse is
+not able to be understood.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;hi&quot;</span> <span class="nb">print</span> <span class="s2">&quot;whats up&quot;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="nb">print</span> <span class="s2">&quot;hi&quot;</span> <span class="nb">print</span> <span class="s2">&quot;whats up&quot;</span>
+                 <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="further-study">
+<h2>Further Study</h2>
+<div class="section" id="videos">
+<h3>Videos</h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=c59Qzq_03CY">Numbers in Python V2</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=rEHd-ziRzNM&amp;index=6&amp;list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-">Arithmetic in Python V2</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=9OK32jb_TdI&amp;list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-&amp;index=9">Python Booleans</a></p>
+</div>
+</div>
+<div class="section" id="final-assignment">
+<h2>Final Assignment</h2>
+<p>Create a new <a class="reference external" href="https://repl.it/languages/python">repl session</a> called <strong>module_1_printing.py</strong>.
+In it, print a sentence of your choosing. Then, print the length of that
+sentence. Do this 3 more times. Next, print the only two boolean values that
+exist. Lastly, print the integer <code class="docutils literal"><span class="pre">54321</span></code>, and then print its Python type.</p>
+<p>See below for an example of the desired output for the code that you will write.</p>
+<div class="console highlight-default"><div class="highlight"><pre><span></span>Balloonicorn is going to a party this weekend!
+46
+It&#39;s a birthday party.
+22
+Balloonicorn needs to make a cake for her friend.
+49
+It will be red velvet.
+22
+True
+False
+54321
+&lt;type &#39;int&#39;&gt;
+</pre></div>
+</div>
+<div class="section" id="explore">
+<h3>Explore</h3>
+<p>Do some research about one additional Python string method. Then, create a
+new <a class="reference external" href="https://repl.it/languages/python">repl session</a> called
+<strong>module_1_string_method.py</strong>. In it, use a new string method of your choosing.
+Refer to the <strong>.replace()</strong> string method if you need to review before
+conducting your research.</p>
+<p>Check out
+<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#string-methods">this section</a>
+of the Python documentation to get started.</p>
+</div>
+</div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script> 
+</body>
+</html>
