@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-Type" />
+    {%- if meta is mapping %}
+      {%- for key in meta %}
+        <meta name="{{ key }}" content="{{ meta['key'] }}" />
+      {%- endfor %}
+    {%- endif %}
+
+    <!--
+    <link rel="stylesheet" href="{{ pathto('_static/variables.css', 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/general.css', 1) }}">
+    -->
+    <link rel="stylesheet" href="{{ pathto('_static/chrome.css', 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/print.css', 1) }}" media="print">
+    <link rel="stylesheet" href="{{ pathto('_static/FontAwesome/css/fontawesome.min.css', 1) }}">
+
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
+    <style>
+    </style>
+    <script src="{{ pathto('_static/brython.js', 1) }}"></script>
+    <script src="{{ pathto('_static/brython_modules.js', 1) }}"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
+    ></script>
+    <link rel="stylesheet" href="{{ pathto('_static/override.css', 1) }}">
+  </head>
+  <body onload="brython(1)">
+
+    <script type="text/javascript">
+      var path_to_root = "{{ theme_path_to_root }}";
+      var default_theme = "{{ theme_default_theme }}";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+          var sidebar = localStorage.getItem('mdbook-sidebar');
+          if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+            localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+          }
+        } catch (e) { }
+    </script>
+
+    <script type="text/javascript">
+      var html = document.querySelector('html');
+      var sidebar = 'hidden';
+      if (document.body.clientWidth >= 1080) {
+        try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+        sidebar = sidebar || 'visible';
+      }
+      html.classList.remove('sidebar-visible');
+      html.classList.add("sidebar-" + sidebar);
+    </script>
+
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-scrollbox">
+        {{ toctree(includehidden=True, maxdepth=2, collapse=True) }}
+      </div>
+      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+      <div class="page">
+        <div id="menu-bar-hover-placeholder"></div>
+
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+
+          <h1 class="menu-title">{{ project }}</h1>
+
+          <div class="right-buttons">
+            {%- if theme_git_repository_url %}}
+              <a href="{{ theme_git_repository_url }}" title="Git repository" aria-label="Git repository">
+                <i id="git-repository-button" class="fa github-square"></i>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+        <script type="text/javascript">
+            document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+            document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+            Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+            });
+        </script>
+
+        <div id="content" class="content">
+          <main>
+            {{ body }}
+          </main>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+            <a rel="prev" href="{{ prev.link|e }}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a rel="next" href="{{ next.link|e }}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+              <i class="fa fa-angle-right"></i>
+            </a>
+
+            <div style="clear: both"></div>
+          </nav>
+        </div>
+
+      <nav class="nav-wide-wrapper" aria-label="Page navigation">
+        <a rel="prev" href="{{ prev.link|e }}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a rel="next" href="{{ next.link|e }}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </nav>
+    </div>
+    <script src="{{ pathto('_static/clipboard.min.js', 1) }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ pathto('_static/book.js', 1) }}" type="text/javascript" charset="utf-8"></script>
+    <script>
+      if (window.ace) {
+        window.editors = Array.from(document.querySelectorAll('.playground'))
+          .filter(el => el.querySelector('.editable') !== null)
+          .map(el => {
+            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
+            const editorEl = el.querySelector('.editable');
+
+            const aceEditor = window.ace.edit(editorEl);
+            aceEditor.setTheme('ace/theme/github');
+            aceEditor.session.setMode('ace/mode/python');
+            aceEditor.setValue(contents);
+            aceEditor.clearSelection();
+
+            const button = el.querySelector('.run');
+            button.addEventListener('click', e => {
+              const icon = button.querySelector('i');
+              if (icon.classList.contains('fa-play')) {
+                icon.classList.replace('fa-play', 'fa-repeat');
+                button.querySelector('.btn-label').innerText = 'Run this again!';
+              }
+            });
+
+            return [el, aceEditor];
+          });
+        }
+    </script>
+    <script type="text/python">
+      from browser import window
+      from output import create_playground_runner
+      for el, editor in window.editors:
+          create_playground_runner(
+              el.querySelector('.run'),
+              editor,
+              el.querySelector('.console')
+          )
+          if el.classList.contains('show_output'):
+              el.querySelector('.run').click()
+    </script>
+  </body>
+</html>
