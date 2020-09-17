@@ -53,3 +53,7 @@
   --titleColor: white;
   --titlePrefix: 'Terms to Know';
 }
+
+a.previous[href=""], a.next[href=""] {
+  color: #ffc3cb;
+}
