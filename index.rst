@@ -13,4 +13,3 @@ This is the introduction. It's a work in progress. I'd continue reading if I wer
   contents/conditionals
   contents/lists
   contents/control-flow
-  contents/dictionaries
