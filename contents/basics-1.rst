@@ -212,7 +212,7 @@ above. To Python, ``print(529,600)`` looks a lot like printing two numbers, ``52
 
 The moral of the story: remember not to put commas in your integers!
 
-.. didyouknow::
+.. note:: Underscore syntax
 
   You can't use commas in integers and floats, but as of Python version 3.6, you can use
   underscores to break up large numbers.
