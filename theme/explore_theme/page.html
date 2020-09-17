@@ -149,7 +149,7 @@
               const icon = button.querySelector('i');
               if (icon.classList.contains('fa-play')) {
                 icon.classList.replace('fa-play', 'fa-repeat');
-                button.querySelector('.btn-label').innerText = 'Run this again!';
+                button.querySelector('.btn-label').innerText = 'Run this again';
               }
             });
 
@@ -166,8 +166,6 @@
               editor,
               el.querySelector('.console')
           )
-          if el.classList.contains('show_output'):
-              el.querySelector('.run').click()
     </script>
   </body>
 </html>
