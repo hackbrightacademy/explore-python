@@ -55,7 +55,7 @@ a > .hljs {
     position: relative;
     padding: 0 8px;
     z-index: 10;
-    line-height: var(--menu-bar-height);
+    line-height: 1.2em;
     cursor: pointer;
     transition: color 0.5s;
 }
@@ -449,7 +449,7 @@ ul#searchresults span.teaser em {
 .section {
     list-style: none outside none;
     padding-left: 20px;
-    line-height: 1.9em;
+    line-height: 1.5em;
 }
 
 /* Theme Menu Popup */
