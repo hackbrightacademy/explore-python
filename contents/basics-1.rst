@@ -375,7 +375,7 @@ Again, we won't see the result of calling `len` unless we print it out though:
 .. playground::
   :show_output:
 
-  print(len(50))
+  print(len("Hi!"))
 
 Practice Section
 ================
