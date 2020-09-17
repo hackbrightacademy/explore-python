@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Module 3: Python Conditionals</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-Type" />
+
+    <!--
+    <link rel="stylesheet" href="../_static/variables.css">
+    <link rel="stylesheet" href="../_static/general.css">
+    -->
+    <link rel="stylesheet" href="../_static/chrome.css">
+    <link rel="stylesheet" href="../_static/print.css" media="print">
+    <link rel="stylesheet" href="../_static/FontAwesome/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../_static/main.css">
+    <link rel="stylesheet" href="../_static/pygments.css">
+    <style>
+    </style>
+    <script src="../_static/brython.js"></script>
+    <script src="../_static/brython_modules.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
+    ></script>
+    <link rel="stylesheet" href="../_static/override.css">
+  </head>
+  <body onload="brython(1)">
+
+    <script type="text/javascript">
+      var path_to_root = "file:///Users/ashley/hackbright/explore-python/_build/";
+      var default_theme = "light";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+          var sidebar = localStorage.getItem('mdbook-sidebar');
+          if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+            localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+          }
+        } catch (e) { }
+    </script>
+
+    <script type="text/javascript">
+      var html = document.querySelector('html');
+      var sidebar = 'hidden';
+      if (document.body.clientWidth >= 1080) {
+        try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+        sidebar = sidebar || 'visible';
+      }
+      html.classList.remove('sidebar-visible');
+      html.classList.add("sidebar-" + sidebar);
+    </script>
+
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-scrollbox">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-1.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-2.html">Module 2: More Python Basics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 3: Python Conditionals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#practice-section">Practice Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-resources">External Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-assignment">Final Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Module 4: Python Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-flow.html">Module 5: Logic and Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Module 6: Python Dictionaries</a></li>
+</ul>
+
+      </div>
+      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+      <div class="page">
+        <div id="menu-bar-hover-placeholder"></div>
+
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+
+          <h1 class="menu-title">Hackbright Academy's Explore Python</h1>
+
+          <div class="right-buttons">
+          </div>
+        </div>
+
+        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+        <script type="text/javascript">
+            document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+            document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+            Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+            });
+        </script>
+
+        <div id="content" class="content">
+          <main>
+            <section class="section" id="module-3-python-conditionals">
+<h1>Module 3: Python Conditionals</h1>
+<section class="section" id="welcome">
+<h2>Welcome</h2>
+<p>In the last module, you learned about variables and expressions, which will be
+extremely important in this module. If you’re still a little iffy on these
+concepts (especially expressions), you’ll probably want to go back and review.
+We’re about to talk about conditionals, and conditionals are all about boolean
+expressions.</p>
+<p>We also introduced debugging in the last module. Once you get past the intial
+annoyance of an error message, debugging can be like puzzle; it’s the game of
+figuring out what’s going wrong, why, and how to fix it. Debugging in Python
+is especially pleasant because Python provides clear, helpful error messages.
+There’s more debugging to come for you, both in this and future modules —
+and in your future life as a coder.</p>
+<p>These concepts — data types, printing, variables, expressions and
+conditionals — aren’t just stepping stones that you’ll never see again. As
+a programmer, you’ll use each of these every day (print statements are especially
+useful for debugging). As you develop a solid understanding of these concepts,
+you’re building a strong foundation for yourself as a coder.</p>
+</section>
+<section class="section" id="lesson">
+<h2>Lesson</h2>
+<section class="section" id="topics">
+<h3>Topics</h3>
+<ul class="simple">
+<li><p>Review of boolean expressions</p></li>
+<li><p>If-statements</p></li>
+</ul>
+</section>
+<section class="section" id="a-review-of-boolean-expressions">
+<h3>A Review of Boolean Expressions</h3>
+<p>In order to fully understand conditional logic, it’s important to have a solid
+grasp of boolean expressions in python. Remember, a boolean expression is a
+statement or a part of a statement that results in a Boolean value, such as
+<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Comparisons are the most obvious and helpful example
+of boolean expressions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;rainbow rockstar&quot;</span> <span class="o">==</span> <span class="s2">&quot;mermaid unicorn&quot;</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>This <em>expression</em>, which is the comparison of two strings, results in the
+Boolean value <strong>False</strong>. We can also compare two numbers. Read the following
+boolean expressions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">99</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Also, remember that <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are values in their own right. If
+we wanted to simply make a variable whose value is <code class="docutils literal notranslate"><span class="pre">True</span></code>, we could:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_var</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">my_var</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Also, reaching way back to the first module, the string <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code> is <strong>not</strong>
+the same as the Boolean value <code class="docutils literal notranslate"><span class="pre">True</span></code>. They are two values that look the same,
+but are different <strong>types</strong>.</p>
+<p>As a fun aside, we could prove this using a Boolean expression:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;True&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;True&quot;</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;True&quot;</span> <span class="o">!=</span> <span class="kc">True</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="conditional-logic">
+<h3>Conditional Logic</h3>
+<p>We’re about to add a very useful tool to our toolkit. Conditional logic lets us
+set conditions, or prerequisites, in our code, such that only certain lines of
+code are run if certain conditions are met. This is similar to allowing yourself
+to go to the movies if you finish this module of work. Some “psedocode”, or
+“fake” computer code, for you day might look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>work on module
+if module is finished:
+    go to the movies, have lots of fun!
+otherwise:
+    stay home and keep working.
+</pre></div>
+</div>
+<p>In our pseudocode, the line that says <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">module</span> <span class="pre">is</span> <span class="pre">finished</span></code> is called an
+<strong>if-statement</strong>. Python if-statements look pretty similar to our pseudocode.
+Here is some valid Python code that does a similar thing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="o">=</span> <span class="s2">&quot;incomplete&quot;</span>
+<span class="k">if</span> <span class="n">module</span> <span class="o">==</span> <span class="s2">&quot;complete&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Time to go to the movies&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Stay home and keep working.&quot;</span>
+</pre></div>
+</div>
+<p>Try typing this out in your Python <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">repl console</a> on your own. What is the output
+of this code?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Here is the output</strong></p>
+<p>The output is that the string <code class="docutils literal notranslate"><span class="pre">&quot;Stay</span> <span class="pre">home</span> <span class="pre">and</span> <span class="pre">keep</span> <span class="pre">working.&quot;</span></code> has been
+printed.</p>
+<pre class="console literal-block">&gt;&gt;&gt; module = &quot;incomplete&quot;
+&gt;&gt;&gt; if module == &quot;complete&quot;:
+...     print &quot;Time to go to the movies&quot;
+... else:
+...     print &quot;Stay home and keep working.&quot;
+...
+<span class="cmd">Stay home and keep working.</span></pre>
+</div>
+</section>
+<section class="section" id="if-statement-syntax">
+<h3>If-Statement Syntax</h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">family_member1</span> <span class="o">==</span> <span class="n">family_member2</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;You have two family members with the same name.&quot;</span>
+</pre></div>
+</div>
+<p>There are a couple important things to note about the correct way to craft an if-statement.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> is another Python keyword. It must be lower-cased.</p></li>
+<li><p>After the <code class="docutils literal notranslate"><span class="pre">if</span></code> is a <strong>Boolean expression</strong> followed by a colon– <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>Next comes the “body” of the if-statement– the thing to do if the Boolean
+expression evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title"><strong>The if-statement body must be indented</strong></p>
+<div class="admonition-body docutils container">
+<p>In order for the if-statement to be considered to be valid Python syntax,
+it must be indented! That means, include 4 blank spaces, and <em>then</em> the
+actual code that should get run</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><strong>The if-statement body can be multiple lines</strong></p>
+<div class="admonition-body docutils container">
+<p>You can include more than one line of code in an if-statement’s
+body. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">family_member1</span> <span class="o">==</span> <span class="n">family_member2</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;You have two family members with the same name.&quot;</span>
+    <span class="nb">print</span> <span class="s2">&quot;Here is family member 1: &quot;</span><span class="p">,</span> <span class="n">family_member1</span>
+    <span class="nb">print</span> <span class="s2">&quot;Here is family member 2: &quot;</span><span class="p">,</span> <span class="n">family_member2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Optionally, an if-statement can have an <strong>else</strong> block– what to do if the
+Boolean expression does not evaluate to <strong>True</strong>. Here’s another example of
+an else-block. The “body” of the else-block should also be indented.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">message_recipient</span> <span class="o">==</span> <span class="s2">&quot;Balloonicorn&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Balloonicorn, you have a message.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;No messages for you, Balloonicorn!&quot;</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="using-elif">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">elif</span></code></h3>
+<p>If there are multiple successive conditions you’d like to check, you can utilize
+the <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">message_recipient</span> <span class="o">==</span> <span class="s2">&quot;Balloonicorn&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Balloonicorn, you have a message.&quot;</span>
+<span class="k">elif</span> <span class="n">message_recipient</span> <span class="o">==</span> <span class="s2">&quot;Hackbright&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Ballonicorn, can you take a message for Hackbright?&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;No messages for you, Balloonicorn!&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword is a way to evaluate an <em>additional</em> condition, after the first
+has been checked.</p>
+<p>It’s important to note that if the first if-statement evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>,
+neither the <code class="docutils literal notranslate"><span class="pre">elif</span></code>, nor the <code class="docutils literal notranslate"><span class="pre">else</span></code>, will ever occur. With just an <code class="docutils literal notranslate"><span class="pre">if</span></code>
+and an <code class="docutils literal notranslate"><span class="pre">else</span></code>, it’s either one or the other. With an <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <em>and</em>
+and <code class="docutils literal notranslate"><span class="pre">else</span></code>, it’s only one of the 3 conditions that can occur.</p>
+<p>The conditions are checked in the order that they appear: first the <code class="docutils literal notranslate"><span class="pre">if</span></code>, then
+the <code class="docutils literal notranslate"><span class="pre">elif</span></code>, then, if neither the <code class="docutils literal notranslate"><span class="pre">if</span></code> nor the <code class="docutils literal notranslate"><span class="pre">elif</span></code> worked out, the else
+handles it.</p>
+</section>
+<section class="section" id="nested-if-statements">
+<h3>Nested If-Statements</h3>
+<p>If-statements can be nested. That is, another if-statement can be included in
+the body of an if-statement. Here is an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_pets</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fav_animal</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+
+<span class="k">if</span> <span class="n">num_pets</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Wow, that&#39;s a lot of pets!&quot;</span>
+<span class="hll">    <span class="k">if</span> <span class="n">fav_animal</span> <span class="o">==</span> <span class="s2">&quot;cat&quot;</span><span class="p">:</span>
+</span>        <span class="nb">print</span> <span class="s2">&quot;I like cats too!&quot;</span>
+</pre></div>
+</div>
+<p>Nested if-statements can also have <code class="docutils literal notranslate"><span class="pre">elif</span></code> blocks and <code class="docutils literal notranslate"><span class="pre">else</span></code> blocks. To complicate the
+example above a bit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_pets</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fav_animal</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+
+<span class="k">if</span> <span class="n">num_pets</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Wow, that&#39;s a lot of pets!&quot;</span>
+    <span class="k">if</span> <span class="n">fav_animal</span> <span class="o">==</span> <span class="s2">&quot;cat&quot;</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s2">&quot;I like cats too!&quot;</span>
+<span class="hll">    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">        <span class="nb">print</span> <span class="s2">&quot;Why don&#39;t you like cats??&quot;</span>
+</span><span class="hll"><span class="k">elif</span> <span class="n">num_pets</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span class="hll">    <span class="nb">print</span> <span class="s2">&quot;I hope your two pets are friends.&quot;</span>
+</span><span class="hll"><span class="k">elif</span> <span class="n">num_pets</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span>    <span class="nb">print</span> <span class="s2">&quot;Time to get a pet.&quot;</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="using-raw-input-with-if-statements">
+<h3>Using <strong>raw_input</strong> with if-statements</h3>
+<p>So far, our if-statements have been a little bit contrived. What’s the point of
+checking to see if a variable is equal to another thing if you made the variable
+yourself, right? If statements are typically used when the result of that Boolean
+expression is unknown, or varying over time or depending on some input that
+was provided to a program.</p>
+<p>As luck would have it, we do have a function that can take in input into our
+programs– <strong>raw_input</strong>!</p>
+<p>Using these two concepts, we can make a little advice machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;Would you like some advice?&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;If yes, type Y.&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">the_answer</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your answer? &quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">the_answer</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="s2">&quot;A wise person knows when to ask for help.&quot;</span>
+<span class="gp">... </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="s2">&quot;Ok, I won&#39;t give you any advice then.&quot;</span>
+</pre></div>
+</div>
+<p>Open a <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">repl Python console</a> and type this out. Remember when this line runs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">the_answer</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your answer? &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You’ll have to provide the answer yourself. Try it out with two different inputs.
+So, the first time, type <strong>Y</strong> in response to <code class="docutils literal notranslate"><span class="pre">What's</span> <span class="pre">your</span> <span class="pre">answer?</span></code>, and then
+type something other than <strong>Y</strong>.</p>
+</section>
+</section>
+<section class="section" id="practice-section">
+<h2>Practice Section</h2>
+<section class="section" id="directions">
+<h3>Directions</h3>
+<p>Login to your account and start a new repl <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">here</a>. Title your new session
+<strong>module_3_practice.py</strong>.</p>
+<p>Complete the practice problems below in this repl console. If you’d like to
+work through the practice in several sittings be sure to log in to Repl.it
+and save your work in between.</p>
+<ol class="arabic simple">
+<li><p>Setup: Type the following into your repl Python console.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adjective</span> <span class="o">=</span> <span class="s2">&quot;absolutely fabulous&quot;</span>
+<span class="n">adjective2</span> <span class="o">=</span> <span class="s2">&quot;supercalifragilisticexpialidocious&quot;</span>
+<span class="n">noun</span> <span class="o">=</span> <span class="s2">&quot;aardvarks&quot;</span>
+<span class="n">noun2</span> <span class="o">=</span> <span class="s2">&quot;billy goats&quot;</span>
+<span class="n">verb</span> <span class="o">=</span> <span class="s2">&quot;lollygagging&quot;</span>
+<span class="n">verb2</span> <span class="o">=</span> <span class="s2">&quot;jogging&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Write an if-statement for each of the above variables. The if-statement
+should check whether the length of the variable’s value is greater than 9
+characters. If it is, your code should print “long string”. If it’s
+not, print “not a long string”.</p>
+<p>Here’s a hint:</p>
+<p>Here’s the first part. It accomplishes <em>half</em> of the problem.
+However, it doesn’t accomplish printing “not a long string” when the length
+is not greater than 9 characters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">adjective</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+   <span class="nb">print</span> <span class="s2">&quot;long string&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Using the <strong>raw_input</strong> function, prompt yourself to type something. Be sure
+to capture what you type into a variable. Once you have the variable, print
+the length of whatever you typed.</p></li>
+<li><p>Type the following into the repl Python console:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">answer</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;What is 2 + 2 ?&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">answer_as_integer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, write some code that follows these specifications:</p>
+<ul class="simple">
+<li><p>If the user is correct, tell them they are correct.</p></li>
+<li><p>If the user is incorrect, tell them whether their answer is too high or too
+low.</p></li>
+</ul>
+<p>Do this a couple of times, making sure that if you type 1) the wrong answer
+2) a “too high” answer and 3) a “too low” answer all show the correct output.</p>
+</li>
+<li><p>Write a conditional statement that checks if the variables <strong>verb</strong> and
+<strong>verb2</strong> are equal to one another. If they are, print “They are equal!”. If
+they aren’t, print 3 things: the value of verb, the value of verb2, and the
+message “These are not the same”</p></li>
+<li><p>Type the following code to prompt the user to rate the movie <em>Wizard of Oz</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rating</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;On a 1-10 scale, how would you rate Wizard of Oz?&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rating_as_integer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rating</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, write an if/elif/else statement that follows these specifications:</p>
+<ul class="simple">
+<li><p>If they rate less than 5, tell the user “Wow, you hated it!”</p></li>
+<li><p>If they rate less than 7, tell the user “You are meh about this movie.”</p></li>
+<li><p>If they rate more than 7, tell the user “You loved it. There’s no place like home.”</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section class="section" id="debugging">
+<h2>Debugging</h2>
+<section class="section" id="id1">
+<h3>Directions</h3>
+<p>As a programmer, debugging is a fact of life. There are times you write code
+that Python doesn’t understand. In these cases, Python will display an error
+message. The more familiar you are with Python’s many error messages, the faster
+you’ll be at debugging code. But there’s good news: Python’s error messages are
+incredibly descriptive and helpful in figuring out what the problem is.</p>
+<p>In the following problems, you’ll find code that is invalid or not allowed in
+some way. Read the code, and see if you can predict what is wrong. When you’re
+ready, hover over the solution area to reveal the error message that Python
+shows, along with an explanation of what is going wrong.</p>
+<p>1) What’s wrong with this code?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rating</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">rating</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="s2">&quot;Right in the middle.&quot;</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Must use double-equals sign in if-statement</strong></p>
+<p>Since the condition for an if-statement is a boolean expression, you <em>must</em>
+include 2 equals signs to compare equality in an if-statement.</p>
+<p>This code would throw a <strong>SyntaxError</strong>. Python even points out the single
+equals sign as the origin of the problem for us!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">rating</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="k">if</span> <span class="n">rating</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span>
+              <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>What’s wrong with this code?</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rating</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">rating</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+<span class="nb">print</span> <span class="s2">&quot;You rated a 5!&quot;</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Missing indentation for if-statement body</strong></p>
+<p>The if-statement body must be indented.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">rating</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+<span class="gp">... </span><span class="nb">print</span> <span class="s2">&quot;You rated a 5!&quot;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">2</span>
+    <span class="nb">print</span> <span class="s2">&quot;You rated a 5!&quot;</span>
+        <span class="o">^</span>
+<span class="gr">IndentationError</span>: <span class="n">expected an indented block</span>
+</pre></div>
+</div>
+<p>Thankfully, Python is very good at showing us the problem. The next block of
+code was expected to be indented.</p>
+</div>
+</section>
+</section>
+<section class="section" id="external-resources">
+<h2>External Resources</h2>
+<section class="section" id="videos">
+<h3>Videos</h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=mQrci1kAwh4" rel="noreferrer noopener" target="_blank">Let’s Learn Python: Conditionals</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=f4KOjWS_KZs&amp;t=220s" rel="noreferrer noopener" target="_blank">Socratica: Python If, Then, Else</a></p>
+</section>
+<section class="section" id="articles">
+<h3>Articles</h3>
+<p><a class="reference external" href="https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements" rel="noreferrer noopener" target="_blank">Wikibooks on Conditionals in Python</a></p>
+<p><a class="reference external" href="http://www.python-course.eu/conditional_statements.php" rel="noreferrer noopener" target="_blank">Python 2 Conditionals Tutorial</a></p>
+</section>
+</section>
+<section class="section" id="final-assignment">
+<h2>Final Assignment</h2>
+<p>Create a new <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">repl</a> called <strong>module_3_user_questions.py</strong>.</p>
+<p>Ask the user as series of questions using <strong>raw_input</strong>, capturing their input
+into appropriately-named variables. The questions should be</p>
+<ul class="simple">
+<li><p>Do you like cats? Answer Y or N</p>
+<ul>
+<li><p>If they do not like cats, ask them for their favorite animal.</p></li>
+</ul>
+</li>
+<li><p>Do you like chocolate? Answer Y or N</p>
+<ul>
+<li><p>If they do not like chocolate, ask them for their favorite dessert.</p></li>
+</ul>
+</li>
+<li><p>Do you drink coffee? Answer Y or N</p>
+<ul>
+<li><p>If they do drink coffee, ask them if they put sugar in it.</p></li>
+<li><p>If they do not drink coffee, ask them what their favorite morning drink is.</p></li>
+</ul>
+</li>
+<li><p>Do you live in California? Answer Y or N</p>
+<ul>
+<li><p>If they do, ask them what city they live in.</p></li>
+<li><p>If they do not, ask them what state they live in.</p></li>
+</ul>
+</li>
+<li><p>Do you enjoy jokes? Answer Y or N</p>
+<ul>
+<li><p>If they do enjoy jokes, ask them: What kinds of melons can’t marry?</p></li>
+<li><p>Regardless of their answer, print “Cantelopes”</p></li>
+<li><p>If they do not enjoy jokes, ask them why, and capture that into a variable.</p></li>
+</ul>
+</li>
+</ul>
+<p>At the end of your program, print a summary of all of the answers to their
+questions.</p>
+</section>
+</section>
+
+          </main>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+            <a rel="prev" href="basics-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a rel="next" href="lists.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+              <i class="fa fa-angle-right"></i>
+            </a>
+
+            <div style="clear: both"></div>
+          </nav>
+        </div>
+
+      <nav class="nav-wide-wrapper" aria-label="Page navigation">
+        <a rel="prev" href="basics-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a rel="next" href="lists.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </nav>
+    </div>
+    <script src="../_static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../_static/book.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      if (window.ace) {
+        window.editors = Array.from(document.querySelectorAll('.playground'))
+          .filter(el => el.querySelector('.editable') !== null)
+          .map(el => {
+            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
+            const editorEl = el.querySelector('.editable');
+
+            const aceEditor = window.ace.edit(editorEl);
+            aceEditor.setTheme('ace/theme/github');
+            aceEditor.session.setMode('ace/mode/python');
+            aceEditor.setValue(contents);
+            aceEditor.clearSelection();
+
+            const button = el.querySelector('.run');
+            button.addEventListener('click', e => {
+              const icon = button.querySelector('i');
+              if (icon.classList.contains('fa-play')) {
+                icon.classList.replace('fa-play', 'fa-repeat');
+                button.querySelector('.btn-label').innerText = 'Run this again';
+              }
+            });
+
+            return [el, aceEditor];
+          });
+        }
+    </script>
+    <script type="text/python">
+      from browser import window
+      from output import create_playground_runner
+      for el, editor in window.editors:
+          create_playground_runner(
+              el.querySelector('.run'),
+              editor,
+              el.querySelector('.console')
+          )
+    </script>
+  </body>
+</html>

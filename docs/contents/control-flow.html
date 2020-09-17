@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Module 5: Logic and Control Flow</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-Type" />
+
+    <!--
+    <link rel="stylesheet" href="../_static/variables.css">
+    <link rel="stylesheet" href="../_static/general.css">
+    -->
+    <link rel="stylesheet" href="../_static/chrome.css">
+    <link rel="stylesheet" href="../_static/print.css" media="print">
+    <link rel="stylesheet" href="../_static/FontAwesome/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../_static/main.css">
+    <link rel="stylesheet" href="../_static/pygments.css">
+    <style>
+    </style>
+    <script src="../_static/brython.js"></script>
+    <script src="../_static/brython_modules.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
+    ></script>
+    <link rel="stylesheet" href="../_static/override.css">
+  </head>
+  <body onload="brython(1)">
+
+    <script type="text/javascript">
+      var path_to_root = "file:///Users/ashley/hackbright/explore-python/_build/";
+      var default_theme = "light";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+          var sidebar = localStorage.getItem('mdbook-sidebar');
+          if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+            localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+          }
+        } catch (e) { }
+    </script>
+
+    <script type="text/javascript">
+      var html = document.querySelector('html');
+      var sidebar = 'hidden';
+      if (document.body.clientWidth >= 1080) {
+        try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+        sidebar = sidebar || 'visible';
+      }
+      html.classList.remove('sidebar-visible');
+      html.classList.add("sidebar-" + sidebar);
+    </script>
+
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-scrollbox">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-1.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-2.html">Module 2: More Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">Module 3: Python Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Module 4: Python Lists</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 5: Logic and Control Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loops">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#practice">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-resources">External Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-assignment">Final Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Module 6: Python Dictionaries</a></li>
+</ul>
+
+      </div>
+      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+      <div class="page">
+        <div id="menu-bar-hover-placeholder"></div>
+
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+
+          <h1 class="menu-title">Hackbright Academy's Explore Python</h1>
+
+          <div class="right-buttons">
+          </div>
+        </div>
+
+        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+        <script type="text/javascript">
+            document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+            document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+            Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+            });
+        </script>
+
+        <div id="content" class="content">
+          <main>
+            <section class="section" id="module-5-logic-and-control-flow">
+<h1>Module 5: Logic and Control Flow</h1>
+<section class="section" id="welcome">
+<h2>Welcome</h2>
+<p>Now that you’ve got basic data types conditional logic, and lists down, it’s
+time to add another element to the equation. Control flow opens many doors for
+crafting interesting, usefully repetitive programs. We’ll add a lot of new
+syntax in this module, and it’s more important than ever to practice and
+explore on your own.</p>
+<section class="section" id="programming-is-an-art-form">
+<h3>Programming is an Art Form</h3>
+<p>This is where creativity can really come in handy– with control flow and
+loops, the world is your oyster! Want to print each letter of a word, one
+at a time? You can! Want to ask the user for input until they type “quit”? You
+can! And <em>so</em> much more.</p>
+</section>
+</section>
+<section class="section" id="lesson">
+<h2>Lesson</h2>
+<section class="section" id="topics">
+<h3>Topics</h3>
+<ul class="simple">
+<li><p>The Why of loops</p></li>
+<li><p>While-loops</p></li>
+<li><p>Boolean expressions</p></li>
+<li><p>For-loops</p></li>
+</ul>
+</section>
+<section class="section" id="introduction-to-control-flow">
+<h3>Introduction to Control Flow</h3>
+<p>So far, we’ve been writing code that tells a computer what to do and in what
+order. For example, a calculator takes user input in the form of numbers and
+operations, and the precise sequence of operations it performs to arrive at the
+answer <em>depends</em> on the input. This conditional nature of the calculator code
+is very powerful.</p>
+<p>Often, it’s also necessary to evaluate some conditional logic more than once.
+In the case of the calculator, we’d want to continue to evaluate the user’s
+input until they “quit” the calculator, or turn it off.</p>
+<p>The code responsible for determining how many times to do something, when to
+stop doing something, or when to keep doing something is called
+<strong>control flow</strong>. Let’s look at some common ways to specify control flow
+operations and decisions in Python.</p>
+</section>
+</section>
+<section class="section" id="loops">
+<h2>Loops</h2>
+<section class="section" id="a-simple-example">
+<h3>A Simple Example</h3>
+<p>How could you print ‘hello world’ 100 times? You could write
+<code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'hello</span> <span class="pre">world'</span></code> 100 times (copy/paste would be helpful), but that is
+absurdly inefficient. Imagine if you realized you made a typo after finishing
+those 100 lines of code.</p>
+<p>It’s much better to use a loop.</p>
+</section>
+<section class="section" id="while-loops">
+<h3>While-loops</h3>
+<p>Here’s how we could print ‘hello world’ 100 times using only 4 lines of Python
+code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">my_counter</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;hello world&quot;</span>
+    <span class="n">my_counter</span> <span class="o">=</span> <span class="n">my_counter</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>A <strong>while-loop</strong> is the simplest way to execute code repeatedly, as long as some
+condition is <cite>True</cite> - in the above example, that the <cite>my_counter</cite> variable is less
+than 100.</p>
+<p>Just like in an if-statement, a while-loop needs a <strong>boolean expression</strong> to
+evaluate. Where’s the boolean expression in the code above?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>It’s right after</strong> <code class="docutils literal notranslate"><span class="pre">while</span></code></p>
+<p>The boolean expression is <code class="docutils literal notranslate"><span class="pre">my_counter</span> <span class="pre">&lt;</span> <span class="pre">100</span></code>. Initially, this expression
+evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, because <code class="docutils literal notranslate"><span class="pre">my_counter</span></code> is 0. Definitely less than 100.
+That’s why the while-loop starts!</p>
+</div>
+<p>Also just like an if-statement, a while-loop has a <strong>body</strong>. What is the body of
+the above while-loop?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>The body of a while loop is the indented block</strong></p>
+<p>The body of the while loop is composed of the highlighted lines below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">my_counter</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="hll">    <span class="nb">print</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class="hll">    <span class="n">my_counter</span> <span class="o">=</span> <span class="n">my_counter</span> <span class="o">+</span> <span class="mi">1</span>
+</span></pre></div>
+</div>
+<p>Anything indented underneath the first line of the while-loop is said to be
+the body of the while-loop.</p>
+</div>
+<p>The main difference between an if-statement and a while-loop is that once the
+body of the if-statement happens, it doesn’t happen again. The if-statement
+checks the boolean expression, and either executes the code in the if-statement
+body, or does not.</p>
+<p>However, with a while-loop, the body is executed again and again, and again as
+long as while-loop’s boolean expression evaluates to <cite>True</cite>.</p>
+<p>So, for the above example, the execution of the code goes something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set the my_counter variable to 0
+
+start while loop
+print &quot;hello world&quot;
+increase the my_counter variable by 1
+check if my_counter still less than 100- it is!
+print &quot;hello world&quot;
+increase the my_counter variable by 1
+check if my_counter still less than 100- it is!
+print &quot;hello world&quot;
+...
+... 98 more times!
+check if my_counter still less than 100- it&#39;s not!
+stop while loop
+</pre></div>
+</div>
+<section class="section" id="making-while-loops-end-natural-breaks">
+<h4>Making While-Loops End: Natural Breaks</h4>
+<p>It’s important to have a plan for when a while-loop should finish. Otherwise,
+the while-loop will just keep going forever (or until you stop the program
+from running). This is called an <strong>infinite loop</strong>.</p>
+<p>As stated above, the main way to make a while-loop end is for it’s boolean
+expression to evaluate to <cite>False</cite>. So, it’s common for part of a while-loop
+body to handle making progress towards the expression eventually evaluating
+to <cite>False</cite>.</p>
+<p>Here are some examples:</p>
+<p><strong>Counting down until</strong> <cite>some_number</cite> <strong>is not greater than 5 any more</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">some_number</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">while</span> <span class="n">some_number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">some_number</span> <span class="o">=</span> <span class="n">some_number</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Take a look at this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">keep_going</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">keep_going</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;I&#39;m in the while loop&quot;</span>
+    <span class="n">keep_going</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>How many times does this while-loop’s body run?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Just one time!</strong></p>
+<p>As soon as the while-loop starts, on the second and last line of the body,
+the boolean condition (in this case, it’s just the variable <cite>keep_going</cite>)
+becomes <cite>False</cite>.</p>
+<p>It’s important to note that a boolean type, as in <cite>True</cite> and <cite>False</cite>, are also
+valid conditions for a while-loop. We’ll use this in the next section on
+Explicit Breaks as well.</p>
+</div>
+<p><strong>Counting up until `n` is equal to 100</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">n</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="making-while-loops-end-explicit-breaks">
+<h4>Making While-Loops End: Explicit Breaks</h4>
+<p>Another way to end a loop is with the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement. The following example
+does the same thing as the last example in the previous section.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">n</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<p>Read both while-loops carefully, comparing the syntax of each.</p>
+<p>Here, the boolean expression to set up the while-loop is always <cite>True</cite> - in fact,
+it is just the value <cite>True</cite> itself. So, we need to explicitly end the loop by
+checking for when the <cite>n</cite> is equal to 100, and execute <code class="docutils literal notranslate"><span class="pre">break</span></code> to end the
+loop.</p>
+</section>
+</section>
+<section class="section" id="for-loops">
+<h3>For-loops</h3>
+<p>Just like while-loops, <strong>for-loops</strong> provide a vocabulary and framework for
+executing the same block of code over an over. However, instead of checking
+the some condition in order to decide whether to <em>keep looping</em>, as in a
+while-loop, for-loops <strong>iterate over something</strong> – most commonly, a list!</p>
+<p>Here’s simple first example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cupcake&quot;</span><span class="p">,</span> <span class="s2">&quot;ice cream&quot;</span><span class="p">,</span> <span class="s2">&quot;cookie&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">dessert</span> <span class="ow">in</span> <span class="n">desserts</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">dessert</span>
+</pre></div>
+</div>
+<p>If we run this in our Python repl console, we see each dessert string get printed out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cupcake&quot;</span><span class="p">,</span> <span class="s2">&quot;ice cream&quot;</span><span class="p">,</span> <span class="s2">&quot;cookie&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">dessert</span> <span class="ow">in</span> <span class="n">desserts</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="n">dessert</span>
+<span class="gp">...</span>
+<span class="go">cupcake</span>
+<span class="go">ice cream</span>
+<span class="go">cookie</span>
+</pre></div>
+</div>
+<p>Here’s another example.</p>
+<p>Suppose we had a list of numbers <cite>0</cite> through <cite>99</cite>. We can print out
+each item in this list from start to end. Consider this example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>As you should recall, the <cite>range</cite> function returns a list of numbers,
+starting at 0 and up to but not including 100. The for-loop assigns the
+variable <cite>n</cite> to each number in <cite>nums</cite>, in order, and then prints out its value
+every time.</p>
+<p>Try this out yourself.</p>
+<section class="section" id="each-item-one-by-one">
+<h4>Each Item, One-by-One</h4>
+<p>As in the 2 above examples, when you <strong>iterate over a list</strong> using a for-loop,
+you get each item in the list, one-by-one. This is a wonderful thing!</p>
+<p>Here are a few more examples to try on your own.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">color</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_cool_shapes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;triange&#39;</span><span class="p">,</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">my_cool_shapes</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">shape</span>
+</pre></div>
+</div>
+<p>Lastly, check out this code. It’s similar to the above example, with one
+important difference.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_cool_shapes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;triange&#39;</span><span class="p">,</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">anything_i_want</span> <span class="ow">in</span> <span class="n">my_cool_shapes</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">anything_i_want</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="syntax-of-for-loops">
+<h4>Syntax of For-loops</h4>
+<p>Let’s call out the specific syntax of a for-loop.</p>
+<ol class="arabic simple">
+<li><p>Structure the first line of the for-loop like so:</p></li>
+</ol>
+<blockquote>
+<div><p>for [could be any word here] in [some list]</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Indent the <strong>body</strong> of the for-loop, or the code to be executed again and
+again.</p></li>
+<li><p>The for-loop body can be multiple lines, or just one.</p></li>
+</ol>
+</section>
+<section class="section" id="for-loops-with-conditionals">
+<h4>For-loops with Conditionals</h4>
+<p>We’ve already seen an example of using an <code class="docutils literal notranslate"><span class="pre">if</span></code> conditional in a while-loop.
+We can also use conditionals inside of a for-loop.</p>
+<p>For example, we want to print out the numbers 1 through 100, but in addition
+whether the number is even or odd:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;is even&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;is odd&#39;</span>
+</pre></div>
+</div>
+<p>If we want to use a conditional to break out of a for-loop, we can use the
+<cite>break</cite> statement, as we’ve done with while-loops.</p>
+</section>
+</section>
+</section>
+<section class="section" id="practice">
+<h2>Practice</h2>
+<section class="section" id="directions">
+<h3>Directions</h3>
+<p>Login to your account and start a new repl <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">here</a>. Title it <strong>module_5_practice.py</strong>.</p>
+<p>Complete the practice problems below on Repl.it.</p>
+<ol class="arabic">
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that prints out the numbers from <cite>1</cite> to <cite>7</cite>, including
+<cite>7</cite>. Use a similar technique as the below while-loop. Type this out– don’t
+copy/paste the below while-loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+
+    <span class="nb">print</span> <span class="n">counter</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a for-loop that prints out the numbers from 1 to 20. Use a similar
+technique as the below for-loop. Again- don’t copy/paste this.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="n">num</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a for-loop that prints every number between 1 and 10 <em>except</em> the
+numbers 3 and 5. Use a similar technique as below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">num</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Hint:</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Use a nested if-statement</strong></p>
+<p>If you nest two if statements, you can do something <em>only if</em> both
+conditions are <cite>True</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s2">&quot;It&#39;s not 3 or 5!&quot;</span>
+
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">num2</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num2</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s2">&quot;It&#39;s not 3 or 5!&quot;</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that prints out the numbers 100 to 1 in <strong>descending</strong>
+order. First, it’s helpful to figure out the condition your while-loop will
+use to know whether to keep looping or not. What’s the condition?</p></li>
+</ol>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>When some counter variable is &lt; 1</strong></p>
+<p>You’ll need to set a counter variable to be equal to <cite>100</cite> first. Then, the
+while-loop’s condition to check after each iteration of the loop will be
+whether that counter variable has dropped below 1.</p>
+</div>
+<p>What’s the body of your while loop?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Print and make progress</strong></p>
+<p>The main thing happening in the body of this while-loop is printing out
+a number.</p>
+<p>Then, you’ll need to subtract <cite>1</cite> from the counter variable, so that
+eventually, the while loop will naturally break.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Modify the loop so that only multiples of 11 are printed.</p></li>
+</ol>
+<p>How can you find out if some number is a multiple of of another?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Use the modulus operator</strong></p>
+<p>In Python, there is a mathematical operator <cite>%</cite> that tells you the
+<strong>remainder</strong> if one number we to be divided by another number. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>When 4 is divided by 2, there is no remainder– they divide perfectly into
+each other. So, 4 is a multiple of 2.</p>
+<p>When 3 is divided by 2, there is a reminder– <cite>1</cite>. They do not divide perfectly
+into each other, and 3 is <em>not</em> a multiple of 2.</p>
+</div>
+<ol class="arabic" start="6">
+<li><p>Using a for-loop and the <cite>range</cite> function, print every number from <cite>0</cite> to
+<cite>79</cite>.</p></li>
+<li><p>Type the following list into your iPython session. Then, print each item
+in the list using a for-loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;purple&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Using the same list as the previous problem, as well as <em>list-indexing</em>
+print the first letter in each word of the <cite>colors</cite> list.</p>
+<p>Recall that you can print the <em>first letter</em> of a string with the following
+syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Balloonicorn&quot;</span>
+
+<span class="nb">print</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Using anything from this lesson (be sure to use a loop!), find a way to
+produce the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span>
+<span class="mi">8</span>
+<span class="mi">9</span>
+<span class="mi">10</span>
+<span class="mi">11</span>
+<span class="mi">12</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Hint:</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Use a While loop</strong></p>
+<blockquote>
+<div><p>Using a while-loop would be the most straightforward way to do this.
+Make a variable called <cite>counter</cite>, and set it to <cite>7</cite>. Then, your while
+loop could look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">counter</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<ol class="arabic" start="10">
+<li><p>Using a similar technique as above, find a way to produce the following
+output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span>
+<span class="mi">10</span>
+<span class="mi">12</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Hint:</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Use a While loop</strong></p>
+<p>Notice that instead of adding <cite>1</cite> to the counter variable, we could
+be adding <cite>2</cite>. If you simply modify the solution from the previous
+problem to change</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>you should be all set.</p>
+</div>
+</section>
+</section>
+<section class="section" id="debugging">
+<h2>Debugging</h2>
+<section class="section" id="id1">
+<h3>Directions</h3>
+<p>In the following problems, you’ll find code that is invalid or not allowed in
+some way. Read the code, and see if you can predict what is wrong. When you’re
+ready, hover over the solution area to reveal the error message that Python
+shows, along with an explanation of what is going wrong.</p>
+<ol class="arabic simple">
+<li><p>What’s wrong with this code?</p></li>
+</ol>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="mi">5</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span> <span class="n">num</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Can’t iterate over integers</strong></p>
+<p>It’s not possible to loop over an integer.</p>
+<p>So, you’d get the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="mi">5</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="n">num</span>
+<span class="gp">...</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;int&#39; object is not iterable</span>
+</pre></div>
+</div>
+<p>In order to have numbers in a for loop, you need to have a <em>list</em> of
+numbers. So, use <cite>range</cite>!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="n">num</span>
+<span class="gp">...</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>What’s wrong with this code?</p></li>
+</ol>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span> <span class="n">colors</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>While loops need a condition</strong></p>
+<p>While loops don’t use the <code class="docutils literal notranslate"><span class="pre">thing</span> <span class="pre">in</span> <span class="pre">things</span></code> syntax. To start a while-loop,
+you must construct some kind of boolean expression, like a comparison of
+equality (<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">==</span> <span class="pre">5</span></code>) or value (<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>).</p>
+<p>So, you’d get the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span> <span class="n">color</span>
+<span class="gp">...</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;color&#39; is not defined</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section class="section" id="external-resources">
+<h2>External Resources</h2>
+<section class="section" id="videos">
+<h3>Videos</h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=6HWK6O4-28E" rel="noreferrer noopener" target="_blank">Loops</a></p></li>
+</ul>
+</section>
+<section class="section" id="reading">
+<h3>Reading</h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wiki.python.org/moin/ForLoop" rel="noreferrer noopener" target="_blank">Loops in the Python Wiki</a></p></li>
+<li><p><a class="reference external" href="http://www.python-course.eu/loops.php" rel="noreferrer noopener" target="_blank">While Loops Tutorial</a></p></li>
+</ul>
+</section>
+</section>
+<section class="section" id="final-assignment">
+<h2>Final Assignment</h2>
+<p>Create a new <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">repl session</a> called <strong>module_5_printing.py</strong>.</p>
+<section class="section" id="part-1-quiz-questions">
+<h3>Part 1: Quiz Questions</h3>
+<ol class="arabic simple">
+<li><p>Define a list of quiz questions of your choosing. This list should be a list
+of <em>strings</em>.</p></li>
+<li><p>Loop through your list of quiz questions (use a for-loop!), and ask the user
+for the answer to each question (use <cite>raw_input</cite>).</p></li>
+</ol>
+</section>
+<section class="section" id="part-2-todo-list-program">
+<h3>Part 2: Todo List Program</h3>
+<ol class="arabic simple">
+<li><p>In the same repl, make a list called <cite>todo_list</cite> and add one item to it.
+“Do Laundry” is a safe choice.</p></li>
+<li><p>Ask the user if they’d like to A) add a todo list item or B) quit.
+Capture their input into a variable called <cite>command</cite>.</p></li>
+<li><p>Start a while-loop. It should keep looping until the <cite>command</cite> variable is
+equal to <code class="docutils literal notranslate"><span class="pre">&quot;quit&quot;</span></code>.</p></li>
+<li><p>In the body of the while loop, check if the user’s <cite>command</cite> is <code class="docutils literal notranslate"><span class="pre">&quot;add&quot;</span></code>.
+If so, ask them what they’d like to add using <cite>raw_input</cite>. Once you have
+the item they’d like to add, append it to the list called <code class="docutils literal notranslate"><span class="pre">todo_list</span></code>.</p></li>
+<li><p>Still in the body of the while-loop, in the last line, prompt the user again
+for what they’d like to do next: A) add a todo list item or B) quit. Be sure
+to capture their input in a variable called <cite>command</cite>. Otherwise, the while
+loop will never end.</p></li>
+</ol>
+</section>
+<section class="section" id="part-3-print-todo-list">
+<h3>Part 3: Print Todo List</h3>
+<ol class="arabic simple">
+<li><p>In the same repl (outside of the while-loop), print each item of the
+<code class="docutils literal notranslate"><span class="pre">todo_list</span></code>.</p></li>
+</ol>
+<p>Your output should look something like this (it’s ok if you end up with a
+different order of ingredients):</p>
+<div class="console highlight-default notranslate"><div class="highlight"><pre><span></span>What is 2 + 2?
+4
+What is 5 + 5?
+10
+What is the capital of the US?
+Washington DC
+What would you like to do A) add an item B) quit?
+A
+What item would you like to add?
+Take dog for a walk
+What would you like to do A) add an item B) quit?
+quit
+Do Laundry
+Take dog for a walk
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+          </main>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+            <a rel="prev" href="lists.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a rel="next" href="dictionaries.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+              <i class="fa fa-angle-right"></i>
+            </a>
+
+            <div style="clear: both"></div>
+          </nav>
+        </div>
+
+      <nav class="nav-wide-wrapper" aria-label="Page navigation">
+        <a rel="prev" href="lists.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a rel="next" href="dictionaries.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </nav>
+    </div>
+    <script src="../_static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../_static/book.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      if (window.ace) {
+        window.editors = Array.from(document.querySelectorAll('.playground'))
+          .filter(el => el.querySelector('.editable') !== null)
+          .map(el => {
+            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
+            const editorEl = el.querySelector('.editable');
+
+            const aceEditor = window.ace.edit(editorEl);
+            aceEditor.setTheme('ace/theme/github');
+            aceEditor.session.setMode('ace/mode/python');
+            aceEditor.setValue(contents);
+            aceEditor.clearSelection();
+
+            const button = el.querySelector('.run');
+            button.addEventListener('click', e => {
+              const icon = button.querySelector('i');
+              if (icon.classList.contains('fa-play')) {
+                icon.classList.replace('fa-play', 'fa-repeat');
+                button.querySelector('.btn-label').innerText = 'Run this again';
+              }
+            });
+
+            return [el, aceEditor];
+          });
+        }
+    </script>
+    <script type="text/python">
+      from browser import window
+      from output import create_playground_runner
+      for el, editor in window.editors:
+          create_playground_runner(
+              el.querySelector('.run'),
+              editor,
+              el.querySelector('.console')
+          )
+    </script>
+  </body>
+</html>
