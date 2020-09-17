@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Module 4: Python Lists</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-Type" />
+
+    <!--
+    <link rel="stylesheet" href="../_static/variables.css">
+    <link rel="stylesheet" href="../_static/general.css">
+    -->
+    <link rel="stylesheet" href="../_static/chrome.css">
+    <link rel="stylesheet" href="../_static/print.css" media="print">
+    <link rel="stylesheet" href="../_static/FontAwesome/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../_static/main.css">
+    <link rel="stylesheet" href="../_static/pygments.css">
+    <style>
+    </style>
+    <script src="../_static/brython.js"></script>
+    <script src="../_static/brython_modules.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
+    ></script>
+    <link rel="stylesheet" href="../_static/override.css">
+  </head>
+  <body onload="brython(1)">
+
+    <script type="text/javascript">
+      var path_to_root = "file:///Users/ashley/hackbright/explore-python/_build/";
+      var default_theme = "light";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+          var sidebar = localStorage.getItem('mdbook-sidebar');
+          if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+            localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+          }
+        } catch (e) { }
+    </script>
+
+    <script type="text/javascript">
+      var html = document.querySelector('html');
+      var sidebar = 'hidden';
+      if (document.body.clientWidth >= 1080) {
+        try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+        sidebar = sidebar || 'visible';
+      }
+      html.classList.remove('sidebar-visible');
+      html.classList.add("sidebar-" + sidebar);
+    </script>
+
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-scrollbox">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-1.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-2.html">Module 2: More Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">Module 3: Python Conditionals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 4: Python Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#practice-section">Practice Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-resources">External Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-assignment">Final Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control-flow.html">Module 5: Logic and Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Module 6: Python Dictionaries</a></li>
+</ul>
+
+      </div>
+      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+      <div class="page">
+        <div id="menu-bar-hover-placeholder"></div>
+
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+
+          <h1 class="menu-title">Hackbright Academy's Explore Python</h1>
+
+          <div class="right-buttons">
+          </div>
+        </div>
+
+        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+        <script type="text/javascript">
+            document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+            document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+            Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+            });
+        </script>
+
+        <div id="content" class="content">
+          <main>
+            <section class="section" id="module-4-python-lists">
+<h1>Module 4: Python Lists</h1>
+<section class="section" id="welcome">
+<h2>Welcome</h2>
+<p>In this module, we introduce Python’s list, the most commonly used data
+structure that is built into the language itself. Just like any list of stuff
+you encounter in everyday life, a list in Python is just a bunch of items
+arranged in some order. You can add items to a list and also remove items from
+it. What can the items be? Anything!</p>
+<p>Why are lists so useful? Let’s recall what computers do so well - repetitive
+tasks. So a list basically contains a potentially enormous amount of little
+tasks (or data), and the computer simply goes through the items one after the
+next, very very quickly. The possibilities are endless!</p>
+</section>
+<section class="section" id="lesson">
+<h2>Lesson</h2>
+<section class="section" id="topics">
+<h3>Topics</h3>
+<ul class="simple">
+<li><p>List creation</p></li>
+<li><p>Important list methods</p></li>
+<li><p>Indexing lists</p></li>
+<li><p>Indexing strings</p></li>
+<li><p>The <cite>range</cite> function</p></li>
+</ul>
+</section>
+<section class="section" id="introduction-to-lists">
+<h3>Introduction to Lists</h3>
+<p>So far, we’ve covered 3 main data types in Python: strings, integers, and
+booleans. Next, we’ll cover lists in Python. At it’s most basic level, a Python
+list is meant to keep a collection of <em>other</em> values in order. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cupcake&#39;</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;cookie&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the above code, the variable <cite>desserts</cite> has the value of a Python list. While
+there are other data types contained in the list (strings, in this case), it’s
+important to recognize that the value of the variable <cite>desserts</cite> as a whole is a
+list.</p>
+</section>
+<section class="section" id="syntax">
+<h3>Syntax</h3>
+<p>There are a couple of important things to note about the way we can define lists
+in Python.</p>
+<ol class="arabic simple">
+<li><p>A list begins and ends with a square bracket character, ie <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code>.</p></li>
+<li><p>The items in a list are separated by commas.</p></li>
+</ol>
+</section>
+<section class="section" id="finding-the-length-of-a-list">
+<h3>Finding the length of a list</h3>
+<p>It’s possible to get the length of the list using the same built-in <cite>len</cite> function
+that we’ve used to get the length of a string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cupcake&#39;</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;cookie&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">desserts</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>We can also store that value of <cite>3</cite> in a variable, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cupcake&#39;</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;cookie&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">desserts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">dessers_length</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="empty-lists">
+<h3>Empty Lists</h3>
+<p>It’s possible make a list with no items.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>What’s the length of an empty list?</p>
+<div class="hover-reveal topic">
+<p class="topic-title">An empty list’s length is zero</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">desserts</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section class="section" id="adding-items-to-a-list">
+<h3>Adding Items to a List</h3>
+<p>It’s possible add a items to our empty <cite>desserts</cite> list using the method called
+<cite>append</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">desserts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;cupcake&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What does our desserts list look like now? How could we check?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Let’s print the</strong> <cite>desserts</cite> <strong>list</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">desserts</span>
+<span class="go">[&#39;cupcake&#39;]</span>
+</pre></div>
+</div>
+</div>
+<p>So, a one-item list is great, but we’d like to add a couple more items, like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">desserts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;ice cream&#39;</span><span class="p">)</span>
+<span class="n">desserts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;cookie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What do you think the list looks like now?</p>
+<p>Option A) <code class="docutils literal notranslate"><span class="pre">['cupcake,</span> <span class="pre">ice</span> <span class="pre">cream,</span> <span class="pre">cookie']</span></code></p>
+<p>Option B) <code class="docutils literal notranslate"><span class="pre">['cupcake',</span> <span class="pre">'ice</span> <span class="pre">cream',</span> <span class="pre">'cookie']</span></code></p>
+<p>Option C) <code class="docutils literal notranslate"><span class="pre">['cookie']</span></code></p>
+<p>Option D) <code class="docutils literal notranslate"><span class="pre">['cookie',</span> <span class="pre">'ice</span> <span class="pre">cream',</span> <span class="pre">'cupcake']</span></code></p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Option B</strong></p>
+<p>The list has 3 <em>separate</em> strings in it. As each item was added, or more
+specifically <strong>appended</strong>, to the list, it was put at the <em>end</em> of the list.</p>
+</div>
+</section>
+<section class="section" id="accessing-items-in-a-list">
+<h3>Accessing items in a list</h3>
+<p>We can ask for a particular item in a list, or <strong>index</strong> the list, using the
+following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;cupcake&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;ice cream&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;cookie&#39;</span>
+</pre></div>
+</div>
+<p>The place of an item in a list, with regards to the order of the list, is
+called the item’s <strong>index</strong>. In the <cite>desserts</cite> list, the string <code class="docutils literal notranslate"><span class="pre">'cupcake'</span></code>
+has the index of <cite>0</cite>, the string <code class="docutils literal notranslate"><span class="pre">'ice</span> <span class="pre">cream'</span></code> has the index of <cite>1</cite>, and the
+string <code class="docutils literal notranslate"><span class="pre">'cookie'</span></code> has the index of <cite>2</cite>.</p>
+<p>Interestingly, the first item in the list <em>does not</em> have the index of 1.
+<strong>Python list indexing starts at zero, rather than one.</strong> This can be a little
+tricky at first, so let’s do some practice.</p>
+<section class="section" id="check-for-understanding-list-indexing">
+<h4>Check for Understanding: List Indexing</h4>
+<p>Given the following list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">languages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Portuguese&#39;</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">,</span> <span class="s1">&#39;Russian&#39;</span><span class="p">,</span> <span class="s1">&#39;Mandarin&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>How would you do the following?</p>
+<div class="admonition note">
+<p class="admonition-title">Try it out!</p>
+<div class="admonition-body docutils container">
+<p>Try this out in a <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">repl session</a> console by copying the <cite>languages</cite> list, and
+attempting to index the list.</p>
+</div>
+</div>
+<ul class="simple">
+<li><p>Index the list in order to print out <cite>Spanish</cite>?</p></li>
+</ul>
+<div class="hover-reveal topic">
+<p class="topic-title"><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">languages[2]</span></code></p>
+<p>The third item in <cite>languages</cite> has the index of <cite>2</cite>.</p>
+</div>
+<ul class="simple">
+<li><p>Index the list in order to print out <cite>Portuguese</cite>?</p></li>
+</ul>
+<div class="hover-reveal topic">
+<p class="topic-title"><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">languages[0]</span></code></p>
+<p>The first item in <cite>languages</cite> has the index of <cite>0</cite>.</p>
+</div>
+<ul class="simple">
+<li><p>Index the list in order to print out <cite>Mandarin</cite>?</p></li>
+</ul>
+<div class="hover-reveal topic">
+<p class="topic-title"><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">languages[4]</span></code></p>
+<p>The fifth item in <cite>languages</cite> has the index of <cite>4</cite>.</p>
+</div>
+</section>
+<section class="section" id="index-errors">
+<h4>Index Errors</h4>
+<p>If you try to access an item at an index that does not exist in a list, you get
+an <cite>IndexError</cite>. For example, given the following two-item list, there is item
+at index <cite>0</cite> and another item at index <cite>1</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;pink&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We can safely ask for both the item at index <cite>0</cite> and the item at index <cite>1</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;purple&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;pink&#39;</span>
+</pre></div>
+</div>
+<p>However, if we try to get the item at index <cite>2</cite>, there’s an error.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+<p>As we’ll see in the control flow module, this is a fairly common error to get.
+However, its also a very easy error to fix. Getting an <cite>IndexError</cite> simply means
+you’re trying to get something that <em>isn’t there</em>.</p>
+</section>
+</section>
+<section class="section" id="two-more-list-methods">
+<h3>Two More List Methods</h3>
+<p>Just like strings, lists have a variety of <strong>methods</strong>, or programmatic
+behaviors or capabilities. Methods are always notated like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some_data_type</span><span class="o">.</span><span class="n">method_name</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <strong>append</strong> method is perhaps the most common and important method for
+lists in Python.</p>
+<p>Let’s learn about 2 more methods.</p>
+<section class="section" id="the-pop-list-method">
+<h4>The <cite>pop</cite> list method</h4>
+<p>There are several ways to remove items from a list. In order to remove the last
+item in a list, you can use the method <cite>pop</cite>.</p>
+<p>Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cupcake&#39;</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;cookie&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">&#39;cookie&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">desserts</span>
+<span class="go">[&#39;cupcake&#39;, &#39;ice cream&#39;]</span>
+</pre></div>
+</div>
+<p>After <cite>pop</cite> ran, <code class="docutils literal notranslate"><span class="pre">'cookie'</span></code> was removed!</p>
+<p>Try this out for yourself in the Python repl console.</p>
+</section>
+<section class="section" id="the-sort-list-method">
+<h4>The <cite>sort</cite> list method</h4>
+<p>One of the wonderful thing about lists in Python is that they keep track
+of order. Once the list is defined, the order of the items is maintained unless
+purposefully modified. So, the desserts list will always have <code class="docutils literal notranslate"><span class="pre">&quot;cupcake&quot;</span></code>
+first, and <code class="docutils literal notranslate"><span class="pre">&quot;ice</span> <span class="pre">cream&quot;</span></code> second, and so on.</p>
+<p>Let’s learn how to change the order! It’s conceivable that we would want a list
+of strings in alphabetical order, rather than the original order:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cupcake&#39;</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;cookie&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">desserts</span>
+<span class="go">[&#39;cookie&#39;, &#39;cupcake&#39;, &#39;ice cream&#39;]</span>
+</pre></div>
+</div>
+<p>The list is now in alphabetical order. Nice!</p>
+</section>
+</section>
+<section class="section" id="what-goes-in-a-list">
+<h3>What goes in a list?</h3>
+<p>Up until now, we’ve been storing strings in our lists. It’s also possible
+to make lists of integers and booleans as well. Here are a couple of examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">some_booleans</span> <span class="o">=</span> <span class="p">[</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>What would <code class="docutils literal notranslate"><span class="pre">my_numbers[0]</span></code> give you?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>It’s the first item!</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">my_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">&lt;type &#39;int&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>What would <code class="docutils literal notranslate"><span class="pre">some_booleans[2]</span></code> give you?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>It’s the third item!</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">some_booleans</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">some_booleans</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">&lt;type &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<section class="section" id="heterogenenous-lists">
+<h4>Heterogenenous Lists</h4>
+<p>Additionally, you can store many different data types in the same list.
+Here’s an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stuff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cupcake&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">47</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>What would <code class="docutils literal notranslate"><span class="pre">stuff[1]</span></code> give you?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>It’s the second item!</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">stuff</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">stuff</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">&lt;type &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section class="section" id="string-indexing">
+<h3>String Indexing</h3>
+<p>While strings and lists are different in many ways, they also share some of
+the same characteristics. Just like a list, it’s also possible to index a string.</p>
+<p>For example, we let’s say we have a variable called <cite>my_name</cite> and it’s value
+is the string <code class="docutils literal notranslate"><span class="pre">&quot;Balloonicorn&quot;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Balloonicorn&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">something</span> <span class="o">=</span> <span class="n">my_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>What will happen when the following code runs?:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">something</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>The first letter of</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Balloonicorn&quot;</span></code> gets printed</p>
+<p>Using square brackets to index a string results in obtaining one of its
+characters. This is pretty nifty!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Balloonicorn&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">something</span> <span class="o">=</span> <span class="n">my_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">something</span>
+<span class="go">B</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">something</span> <span class="o">=</span> <span class="n">my_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>What will happen when the following code runs?:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_pet</span> <span class="o">=</span> <span class="s2">&quot;Arfy&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">my_pet</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>The third letter of</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Arfy&quot;</span></code> gets printed</p>
+<p>Since <strong>strings are also zero-indexed</strong>, asking for the letter at
+index 2 gives us the letter <cite>f</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_pet</span> <span class="o">=</span> <span class="s2">&quot;Arfy&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">my_pet</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">f</span>
+</pre></div>
+</div>
+<p>At index 0 is the letter <cite>A</cite>, at index 1 is the letter <cite>r</cite>, and at index
+2 is the letter <cite>f</cite>.</p>
+</div>
+</section>
+<section class="section" id="the-range-function">
+<h3>The <cite>range</cite> Function</h3>
+<p>Now that we’ve learned lists in Python, it’s time to learn about a very common
+<strong>built-in function</strong> in Python that <em>produces</em> a list.</p>
+<p>First, lets review other built-in functions we know. Which built-in functions
+have we learned about?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><cite>type</cite> <strong>and</strong> <cite>len</cite></p>
+<p>We’ve learned about 2 built-in functions so far. A built-in function is a
+function that can be called in any Python code, without having to define
+it or import it from somewhere else.</p>
+<p>As a review, here’s how we’ve used <cite>type</cite> and <cite>len</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_message</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_message</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">my_message</span><span class="p">)</span>
+<span class="go">11</span>
+</pre></div>
+</div>
+<p><cite>type</cite> shows the data type for whatever is passed in to the <cite>type</cite> function.
+In this case, we passed a variable, <cite>my_message</cite>, whose value is a string.</p>
+<p><cite>len</cite> shows the length of whatever is passed in. In this case, we passed in a
+string which has 11 characters (including the space).</p>
+</div>
+<p>A third built-in function is called <cite>range</cite>. You must pass it in an integer as
+an argument, and it will return a list of integers.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[0, 1, 2]</span>
+</pre></div>
+</div>
+<p>In this first example, we passed in <cite>3</cite> to the range function. So, <cite>range</cite>
+returned a <strong>list</strong> of <strong>3 numbers</strong>. The numbers begin at 0, just like indices
+in lists and strings.</p>
+<p>Here are a couple more examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">my_nums</span>
+<span class="go">[0, 1, 2, 3]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">more_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">more_nums</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">more_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">more_nums</span>
+<span class="go">[0, 1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="section" id="practice-section">
+<h2>Practice Section</h2>
+<section class="section" id="directions">
+<h3>Directions</h3>
+<p>Login to your account and start a new repl <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">here</a>. Title it <strong>module_4_practice.py</strong>.</p>
+<p>Complete the practice problems below on Repl.it.</p>
+<ol class="arabic simple">
+<li><p>Make a variable <cite>characters</cite>, whose value is a list. Inside the list should
+be at least 5 names of your favorite book or TV characters, as strings.</p></li>
+<li><p>Make a variable <cite>furniture</cite>, whose value is a list. Inside the list should
+be at least 4 names of pieces of furniture, as strings.</p></li>
+<li><p>Make a variable <cite>odd_nums</cite>, whose value is a list. Inside the list should be
+5 odd numbers, as integers.</p></li>
+<li><p>Make a variable <cite>even_nums</cite>, whose value is a list. Inside the list should be
+5 even numbers, as integers.</p></li>
+<li><p>Make a variable <cite>todo_list</cite>, whose value is a list. Inside the list should be
+two things you need to accomplish today, as strings.</p></li>
+<li><p>Append one character to your list called <cite>characters</cite>.</p></li>
+<li><p>Append one piece of furniture to your list called <cite>furniture</cite>.</p></li>
+<li><p>Append one odd integer to your list called <cite>odd_nums</cite>.</p></li>
+<li><p>Append one even integer to your list called <cite>even_nums</cite>.</p></li>
+<li><p>Append one To Do List item to your list called <cite>todo_list</cite>.</p></li>
+<li><p>Make a list of the following numbers in the following order: 0, 1, 2, 3, 4,
+5, 6. Hover over the section below if you’d like a hint.</p></li>
+</ol>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Use the</strong> <cite>range</cite> <strong>built-in function</strong></p>
+<p>The built-in function called <cite>range</cite> is very good at making lists of numbers.
+Use it!</p>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Remove the last item from your <cite>todo_list</cite> variable using the list method
+called <cite>pop</cite>.</p></li>
+<li><p>Remove the last item from your <cite>furniture</cite> variable using the list method
+called <cite>pop</cite>.</p></li>
+<li><p>Using list indexing, print out the third odd number in your list called
+<cite>odd_nums</cite>. Remember, indices start at <cite>0</cite>, not <cite>1</cite>. So, what index does
+the third item have? Hover below to reveal.</p></li>
+</ol>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>The third item has the index of 2</strong></p>
+<p>Since the first item in your <cite>odd_nums</cite> list has the index of <cite>0</cite>, the
+second has the index of <cite>1</cite>, and the third has the index of <cite>2</cite>.</p>
+</div>
+<ol class="arabic simple" start="15">
+<li><p>Using list indexing, print out the fifth even number in your list called
+<cite>even_nums</cite>. Remember, indices start at <cite>0</cite>, not <cite>1</cite>. So, what index does
+the fifth item have? Hover below to reveal.</p></li>
+</ol>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>The fifth item has the index of 4</strong></p>
+<p>Since the first item in your <cite>odd_nums</cite> list has the index of <cite>0</cite>, the
+second has the index of <cite>1</cite>, and so on, the fifth item has the index of
+<cite>4</cite>.</p>
+</div>
+<ol class="arabic simple" start="16">
+<li><p>Using the following code, print the fifth letter in the variable called
+<cite>word1</cite>– the letter <cite>c</cite>. Do this using string indexing:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">word1</span> <span class="o">=</span> <span class="s2">&quot;delicious&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="17">
+<li><p>Using the following code, print the second letter in the variable called
+<cite>word2</cite>– the letter <cite>u</cite>. Do this using string indexing:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">word2</span> <span class="o">=</span> <span class="s2">&quot;yummy&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="18">
+<li><p>Given the following list of numbers that are not in order, sort the list.
+You can do this using the list method called <cite>sort</cite>:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="section" id="debugging">
+<h2>Debugging</h2>
+<section class="section" id="id1">
+<h3>Directions</h3>
+<p>As a programmer, debugging is a fact of life. There are times you write code
+that Python doesn’t understand. In these cases, Python will display an error
+message. The more familiar you are with Python’s many error messages, the faster
+you’ll be at debugging code. But there’s good news: Python’s error messages are
+incredibly descriptive and helpful in figuring out what the problem is.</p>
+<p>In the following problems, you’ll find code that is invalid or not allowed in
+some way. Read the code, and see if you can predict what is wrong. When you’re
+ready, hover over the solution area to reveal the error message that Python
+shows, along with an explanation of what is going wrong.</p>
+<p>1) What’s wrong with this code?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pizza_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;olives&#39;</span><span class="p">,</span> <span class="s1">&#39;mushrooms&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">pizza_toppings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><cite>IndexError</cite> <strong>since there is no item at index 3</strong></p>
+<p>In order for a list to have something at the index of <cite>3</cite>, there would need to
+be <em>4 items</em> .</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 63%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Item Place</p></th>
+<th class="head"><p>Index</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>first item</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>second item</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>third item</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>So, this code throws in <cite>IndexError</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pizza_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;olives&#39;</span><span class="p">,</span> <span class="s1">&#39;mushrooms&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">pizza_toppings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>What’s wrong with this code?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;cupcake&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Must use</strong> <cite>append</cite> <strong>to add an item to end of list</strong></p>
+<p>The list method to use in order to add something to the end of a list is
+called <cite>append</cite>. Lists don’t have a method called <cite>add</cite>.</p>
+<p>So, this code throws in <cite>AttributeError</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;cupcake&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">AttributeError</span>: <span class="n">&#39;list&#39; object has no attribute &#39;add&#39;</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>What’s wrong with this code?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">desserts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="hover-reveal topic">
+<p class="topic-title"><cite>IndexError</cite> <strong>since there is no item at index 0</strong></p>
+<p>In order for a list to have something at the index of <cite>0</cite>, there would need
+to be at <em>least</em> one item. An empty list has <em>nothing</em> at index 0.</p>
+<p>So, this code throws in <cite>IndexError</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desserts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">desserts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section class="section" id="external-resources">
+<h2>External Resources</h2>
+<section class="section" id="videos">
+<h3>Videos</h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=ohCDWZgNIU0" rel="noreferrer noopener" target="_blank">Socratica Python Lists</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=IdzKOVnTjVA" rel="noreferrer noopener" target="_blank">List Methods</a></p>
+<ul class="simple">
+<li><p>Note: This video goes a little beyond what this module covers, but it’s a
+good video for those who’d like to go a bit further.</p></li>
+</ul>
+</section>
+</section>
+<section class="section" id="final-assignment">
+<h2>Final Assignment</h2>
+<p>Create a <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">new repl session</a> called <strong>module_4_printing.py</strong>.</p>
+<section class="section" id="part-1">
+<h3>Part 1</h3>
+<p>Ask the user as series of questions using <strong>raw_input</strong>, capturing their input
+into appropriately-named variables. The questions should be</p>
+<ul class="simple">
+<li><p>Where would you like to travel to? Name one place.</p></li>
+<li><p>What is another place you’d like to travel to? Name one place.</p></li>
+<li><p>What is one more place you’d like to travel to? Name one place.</p></li>
+</ul>
+<p>Add each piece of user input to an empty list that you create. Please make sure
+to give the list an appropriate name.</p>
+<p>Sort the list of places.</p>
+<p>Then, tell the user where they said they’d like to go. Show each place on a
+separate line.</p>
+</section>
+<section class="section" id="part-2">
+<h3>Part 2</h3>
+<p>Copy the following list into your file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fun_words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;elephant&quot;</span><span class="p">,</span> <span class="s2">&quot;balloon&quot;</span><span class="p">,</span> <span class="s2">&quot;macchiato&quot;</span><span class="p">,</span> <span class="s2">&quot;angostura&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then, make a two empty lists– one called <cite>first_letters</cite> and one called
+<cite>third letters</cite>.</p>
+<p>Using list_indexing along with string_indexing, make a variable for the <em>first</em>
+letter of each word in the <cite>fun_words</cite> list.</p>
+<p>Need a hint?</p>
+<div class="hover-reveal topic">
+<p class="topic-title"><strong>Double index</strong></p>
+<p>If you index the <cite>fun_words</cite> list to get out a word, and then index the
+word to get out a letter, you’re halfway there.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_word</span> <span class="o">=</span> <span class="n">fun_words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">first_letter_first_word</span> <span class="o">=</span> <span class="n">first_word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>All that’s left is to put that letter into your first words list.</p>
+</div>
+</section>
+<section class="section" id="part-3">
+<h3>Part 3</h3>
+<p>Copy the following 3 lists into your file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">websites</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;facebook&quot;</span><span class="p">,</span> <span class="s2">&quot;twitter&quot;</span><span class="p">,</span> <span class="s2">&quot;buzzfeed&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;mango&quot;</span><span class="p">,</span> <span class="s2">&quot;berry&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Henry&quot;</span><span class="p">,</span> <span class="s2">&quot;Rick&quot;</span><span class="p">,</span> <span class="s2">&quot;Carl&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Find the length of each of these lists, and store this value in three
+separate variables.</p>
+<p>Make an empty list called <cite>lengths</cite>.</p>
+<p>Add each length to the <cite>lengths</cite> lists.</p>
+</section>
+<section class="section" id="part-4">
+<h3>Part 4</h3>
+<p>Make a list of 25 numbers. Do not hard-code the numbers– that is, don’t
+type out 25 numbers yourself. Review the lesson if you’re not sure how to make a
+list of numbers using Python.</p>
+<p>Once you have your list of 25 numbers, print out the first, fifth, tenth, and
+fifteenth item in your list.</p>
+</section>
+</section>
+</section>
+
+          </main>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+            <a rel="prev" href="conditionals.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a rel="next" href="control-flow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+              <i class="fa fa-angle-right"></i>
+            </a>
+
+            <div style="clear: both"></div>
+          </nav>
+        </div>
+
+      <nav class="nav-wide-wrapper" aria-label="Page navigation">
+        <a rel="prev" href="conditionals.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a rel="next" href="control-flow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </nav>
+    </div>
+    <script src="../_static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../_static/book.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      if (window.ace) {
+        window.editors = Array.from(document.querySelectorAll('.playground'))
+          .filter(el => el.querySelector('.editable') !== null)
+          .map(el => {
+            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
+            const editorEl = el.querySelector('.editable');
+
+            const aceEditor = window.ace.edit(editorEl);
+            aceEditor.setTheme('ace/theme/github');
+            aceEditor.session.setMode('ace/mode/python');
+            aceEditor.setValue(contents);
+            aceEditor.clearSelection();
+
+            const button = el.querySelector('.run');
+            button.addEventListener('click', e => {
+              const icon = button.querySelector('i');
+              if (icon.classList.contains('fa-play')) {
+                icon.classList.replace('fa-play', 'fa-repeat');
+                button.querySelector('.btn-label').innerText = 'Run this again';
+              }
+            });
+
+            return [el, aceEditor];
+          });
+        }
+    </script>
+    <script type="text/python">
+      from browser import window
+      from output import create_playground_runner
+      for el, editor in window.editors:
+          create_playground_runner(
+              el.querySelector('.run'),
+              editor,
+              el.querySelector('.console')
+          )
+    </script>
+  </body>
+</html>

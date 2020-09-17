@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome!</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-Type" />
+
+    <!--
+    <link rel="stylesheet" href="_static/variables.css">
+    <link rel="stylesheet" href="_static/general.css">
+    -->
+    <link rel="stylesheet" href="_static/chrome.css">
+    <link rel="stylesheet" href="_static/print.css" media="print">
+    <link rel="stylesheet" href="_static/FontAwesome/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="_static/main.css">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <style>
+    </style>
+    <script src="_static/brython.js"></script>
+    <script src="_static/brython_modules.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
+    ></script>
+    <link rel="stylesheet" href="_static/override.css">
+  </head>
+  <body onload="brython(1)">
+
+    <script type="text/javascript">
+      var path_to_root = "file:///Users/ashley/hackbright/explore-python/_build/";
+      var default_theme = "light";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+          var sidebar = localStorage.getItem('mdbook-sidebar');
+          if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+            localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+          }
+        } catch (e) { }
+    </script>
+
+    <script type="text/javascript">
+      var html = document.querySelector('html');
+      var sidebar = 'hidden';
+      if (document.body.clientWidth >= 1080) {
+        try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+        sidebar = sidebar || 'visible';
+      }
+      html.classList.remove('sidebar-visible');
+      html.classList.add("sidebar-" + sidebar);
+    </script>
+
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-scrollbox">
+        <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/basics-1.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/basics-2.html">Module 2: More Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/conditionals.html">Module 3: Python Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/lists.html">Module 4: Python Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/control-flow.html">Module 5: Logic and Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/dictionaries.html">Module 6: Python Dictionaries</a></li>
+</ul>
+
+      </div>
+      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+      <div class="page">
+        <div id="menu-bar-hover-placeholder"></div>
+
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+
+          <h1 class="menu-title">Hackbright Academy's Explore Python</h1>
+
+          <div class="right-buttons">
+          </div>
+        </div>
+
+        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+        <script type="text/javascript">
+            document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+            document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+            Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+            });
+        </script>
+
+        <div id="content" class="content">
+          <main>
+            <section class="section" id="welcome">
+<h1>Welcome!</h1>
+<p>This is the introduction. It’s a work in progress. I’d continue reading if I were you :P</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+          </main>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+            <a rel="prev" href="" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a rel="next" href="contents/basics-1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+              <i class="fa fa-angle-right"></i>
+            </a>
+
+            <div style="clear: both"></div>
+          </nav>
+        </div>
+
+      <nav class="nav-wide-wrapper" aria-label="Page navigation">
+        <a rel="prev" href="" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a rel="next" href="contents/basics-1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </nav>
+    </div>
+    <script src="_static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_static/book.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      if (window.ace) {
+        window.editors = Array.from(document.querySelectorAll('.playground'))
+          .filter(el => el.querySelector('.editable') !== null)
+          .map(el => {
+            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
+            const editorEl = el.querySelector('.editable');
+
+            const aceEditor = window.ace.edit(editorEl);
+            aceEditor.setTheme('ace/theme/github');
+            aceEditor.session.setMode('ace/mode/python');
+            aceEditor.setValue(contents);
+            aceEditor.clearSelection();
+
+            const button = el.querySelector('.run');
+            button.addEventListener('click', e => {
+              const icon = button.querySelector('i');
+              if (icon.classList.contains('fa-play')) {
+                icon.classList.replace('fa-play', 'fa-repeat');
+                button.querySelector('.btn-label').innerText = 'Run this again';
+              }
+            });
+
+            return [el, aceEditor];
+          });
+        }
+    </script>
+    <script type="text/python">
+      from browser import window
+      from output import create_playground_runner
+      for el, editor in window.editors:
+          create_playground_runner(
+              el.querySelector('.run'),
+              editor,
+              el.querySelector('.console')
+          )
+    </script>
+  </body>
+</html>
