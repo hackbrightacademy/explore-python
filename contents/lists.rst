@@ -1,20 +1,20 @@
-======================
-Module 4: Python Lists
-======================
+=====
+Lists
+=====
 
 Welcome
 =======
 
 In this module, we introduce Python's list, the most commonly used data
-structure that is built into the language itself. Just like any list of stuff 
-you encounter in everyday life, a list in Python is just a bunch of items 
-arranged in some order. You can add items to a list and also remove items from 
+structure that is built into the language itself. Just like any list of stuff
+you encounter in everyday life, a list in Python is just a bunch of items
+arranged in some order. You can add items to a list and also remove items from
 it. What can the items be? Anything!
 
 Why are lists so useful? Let's recall what computers do so well - repetitive
 tasks. So a list basically contains a potentially enormous amount of little
 tasks (or data), and the computer simply goes through the items one after the
-next, very very quickly. The possibilities are endless! 
+next, very very quickly. The possibilities are endless!
 
 
 Lesson
@@ -501,7 +501,7 @@ Directions
 Login to your account and start a new repl `here
 <https://repl.it/languages/python>`_. Title it **module_4_practice.py**.
 
-Complete the practice problems below on Repl.it. 
+Complete the practice problems below on Repl.it.
 
 1) Make a variable `characters`, whose value is a list. Inside the list should
    be at least 5 names of your favorite book or TV characters, as strings.

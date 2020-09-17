@@ -1,6 +1,6 @@
-=============================
-Module 3: Python Conditionals
-=============================
+====================================
+Booleans and Conditional Expressions
+====================================
 
 Welcome
 =======
@@ -12,16 +12,16 @@ We're about to talk about conditionals, and conditionals are all about boolean
 expressions.
 
 We also introduced debugging in the last module. Once you get past the intial
-annoyance of an error message, debugging can be like puzzle; it's the game of 
-figuring out what's going wrong, why, and how to fix it. Debugging in Python 
-is especially pleasant because Python provides clear, helpful error messages. 
-There's more debugging to come for you, both in this and future modules --- 
+annoyance of an error message, debugging can be like puzzle; it's the game of
+figuring out what's going wrong, why, and how to fix it. Debugging in Python
+is especially pleasant because Python provides clear, helpful error messages.
+There's more debugging to come for you, both in this and future modules ---
 and in your future life as a coder.
 
-These concepts --- data types, printing, variables, expressions and 
-conditionals --- aren't just stepping stones that you'll never see again. As 
-a programmer, you'll use each of these every day (print statements are especially 
-useful for debugging). As you develop a solid understanding of these concepts, 
+These concepts --- data types, printing, variables, expressions and
+conditionals --- aren't just stepping stones that you'll never see again. As
+a programmer, you'll use each of these every day (print statements are especially
+useful for debugging). As you develop a solid understanding of these concepts,
 you're building a strong foundation for yourself as a coder.
 
 
@@ -273,7 +273,7 @@ Directions
 ----------
 
 Login to your account and start a new repl `here
-<https://repl.it/languages/python>`_. Title your new session  
+<https://repl.it/languages/python>`_. Title your new session
 **module_3_practice.py**.
 
 Complete the practice problems below in this repl console. If you'd like to
@@ -469,5 +469,5 @@ into appropriately-named variables. The questions should be
 
   - If they do not enjoy jokes, ask them why, and capture that into a variable.
 
-At the end of your program, print a summary of all of the answers to their 
+At the end of your program, print a summary of all of the answers to their
 questions.

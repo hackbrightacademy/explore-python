@@ -1,23 +1,23 @@
-================================
-Module 5: Logic and Control Flow
-================================
+======================
+Logic and Control Flow
+======================
 
 Welcome
 =======
 
-Now that you've got basic data types conditional logic, and lists down, it's 
-time to add another element to the equation. Control flow opens many doors for 
-crafting interesting, usefully repetitive programs. We'll add a lot of new 
-syntax in this module, and it's more important than ever to practice and 
+Now that you've got basic data types conditional logic, and lists down, it's
+time to add another element to the equation. Control flow opens many doors for
+crafting interesting, usefully repetitive programs. We'll add a lot of new
+syntax in this module, and it's more important than ever to practice and
 explore on your own.
 
 Programming is an Art Form
 --------------------------
 
-This is where creativity can really come in handy-- with control flow and 
-loops, the world is your oyster! Want to print each letter of a word, one 
-at a time? You can! Want to ask the user for input until they type "quit"? You 
-can! And *so* much more. 
+This is where creativity can really come in handy-- with control flow and
+loops, the world is your oyster! Want to print each letter of a word, one
+at a time? You can! Want to ask the user for input until they type "quit"? You
+can! And *so* much more.
 
 Lesson
 ======

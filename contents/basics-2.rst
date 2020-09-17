@@ -1,21 +1,21 @@
-============================
-Module 2: More Python Basics
-============================
+==================
+More Python Basics
+==================
 
 Welcome
 =======
 
 At this point, you should feel pretty comfortable with making strings and
 integers in Python. You should also feel comfortable with writing and running
-Python, and viewing the output using Repl.it. If you don't feel like you've 
-mastered both of these things, please revisit Module 1 to be sure you can move 
+Python, and viewing the output using Repl.it. If you don't feel like you've
+mastered both of these things, please revisit Module 1 to be sure you can move
 forward successfully.
 
 Learning to Love Errors
 -----------------------
 
-An important part of learning to code is learning to feel okay when something 
-goes wrong. As you progress in this module, focus on the new vocabulary and 
+An important part of learning to code is learning to feel okay when something
+goes wrong. As you progress in this module, focus on the new vocabulary and
 syntax. Practice and explore as much as possible. If/when you see an error
 message, read it. It's completely normal to write code that results in an error.
 Give yourself time and brain energy to not simply fix the error, but to also
@@ -380,7 +380,7 @@ Articles/Documentation
 
 - Official Python documentation for `data types <https://docs.python.org/2/library/datatypes.html>`_
 
-- `Programiz resource <https://www.programiz.com/python-programming/variables-datatypes>`_ on Python datatypes 
+- `Programiz resource <https://www.programiz.com/python-programming/variables-datatypes>`_ on Python datatypes
 
 
 Final Assignment
@@ -389,10 +389,10 @@ Final Assignment
 Create a `new repl session
 <https://repl.it/languages/python>`_ and name it **module_2_printing.py**.
 
-Create 4 variables called **family_member1**, **family_member2**, 
-**family_member3**, and **family_member4**. Set their values equal to strings 
-containing the names of 4 of your family members. Then, call the **len** 
-function on each of your family member variables, capturing the return value 
+Create 4 variables called **family_member1**, **family_member2**,
+**family_member3**, and **family_member4**. Set their values equal to strings
+containing the names of 4 of your family members. Then, call the **len**
+function on each of your family member variables, capturing the return value
 of the call to **len** in a new variable each time.
 
 At this point, you should have created **8** variables.
