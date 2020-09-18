@@ -57,3 +57,7 @@
 a.previous[href=""], a.next[href=""] {
   color: #ffc3cb;
 }
+
+.admonition-body > :not(p):first-child {
+  padding-top: 0.5em;
+}
