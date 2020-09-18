@@ -40,7 +40,7 @@ html_domain_indices = False
 html_scaled_image_link = False
 html_copy_source = False
 html_add_permalinks = ""
-html_theme_path = ["./theme"]
+html_theme_path = ["."]
 hb_hostname = "fellowship.hackbrightacademy.com"
 
 imgmath_image_format = "svg"
