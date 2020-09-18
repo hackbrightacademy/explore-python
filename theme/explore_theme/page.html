@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
     <style>
     </style>
-    <script src="{{ pathto('_static/brython.js', 1) }}"></script>
-    <script src="{{ pathto('_static/brython_modules.js', 1) }}"></script>
+    <script>
+      window.languagePluginUrl = '{{ pathto("_static/", 1) }}';
+    </script>
+    <script crossorigin src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
     <script
       crossorigin
       src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
@@ -33,8 +35,10 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
     ></script>
     <link rel="stylesheet" href="{{ pathto('_static/override.css', 1) }}">
+
+
   </head>
-  <body onload="brython(1)">
+  <body>
 
     <script type="text/javascript">
       var path_to_root = "{{ theme_path_to_root }}";
@@ -128,11 +132,33 @@
         </a>
       </nav>
     </div>
+    <script>
+      // Bootstrap pyodide as early as reasonable
+    </script>
     <script src="{{ pathto('_static/clipboard.min.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ pathto('_static/book.js', 1) }}" type="text/javascript" charset="utf-8"></script>
-
     <script src="{{ pathto('_static/main.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script>
+      const consoleBuffer = {
+        buffer: [],
+        push: function (msg) {
+          this.buffer.push(msg);
+          return this;
+        },
+        flush: function () {
+          const contents = this.buffer.join('\n');
+          this.buffer = [];
+          return contents;
+        }
+      };
+
+      (() => {
+        const ogConsole = console.log;
+        console.log = function (msg) {
+          consoleBuffer.push(msg);
+          ogConsole.apply(console, arguments);
+        }
+      })();
       if (window.ace) {
         window.editors = Array.from(document.querySelectorAll('.playground'))
           .filter(el => el.querySelector('.editable') !== null)
@@ -157,17 +183,25 @@
 
             return [el, aceEditor];
           });
+      }
+      languagePluginLoader.then(() => {
+
+        if (window.editors) {
+          window.editors.forEach(([el, editor]) => {
+            el.querySelector('.run').addEventListener('click', e => {
+              // Get rid of any errors or shit that might have gotten printed out beforehand
+              consoleBuffer.flush();
+              try {
+                pyodide.runPython(editor.getValue());
+              } catch {
+                consoleBuffer.buffer.unshift();
+              }
+              el.querySelector('.console').innerText = consoleBuffer.flush();
+            });
+          });
         }
-    </script>
-    <script type="text/python">
-      from browser import window
-      from output import create_playground_runner
-      for el, editor in window.editors:
-          create_playground_runner(
-              el.querySelector('.run'),
-              editor,
-              el.querySelector('.console')
-          )
+        console.log(pyodide.runPython('type()'));
+      });
     </script>
   </body>
 </html>
