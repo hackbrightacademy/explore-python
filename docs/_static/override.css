@@ -47,6 +47,15 @@
   background-color: var(--brandColor);
   color: white;
 }
+.playground .console code {
+  border: 0;
+  font-size: inherit;
+  color: inherit;
+  padding: 0;
+}
+.playground .console .error {
+  font-weight: bold;
+}
 
 .terms_to_know {
   --titleBg: #1eb99a;
@@ -54,10 +63,34 @@
   --titlePrefix: 'Terms to Know';
 }
 
-a.previous[href=""], a.next[href=""] {
+a.previous[href=''],
+a.next[href=''] {
   color: #ffc3cb;
 }
 
 .admonition-body > :not(p):first-child {
   padding-top: 0.5em;
+}
+
+.right-buttons {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+
+#sidebar code {
+  color: inherit;
+  border: 0;
+  padding: 0 3px;
+}
+
+#sidebar li:before {
+  counter-increment: section;
+  content: counters(section, '.') ' ';
+  margin-right: 0.25em;
+}
+
+#sidebar ul {
+  counter-reset: section;
+  font-weight: 600;
 }
