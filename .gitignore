@@ -3,3 +3,4 @@ __pycache__
 _build
 .buildinfo
 .doctrees
+*.code-workspace
