@@ -10,8 +10,8 @@
       {%- endfor %}
     {%- endif %}
 
-    <link rel="stylesheet" href="{{ pathto('_static/chrome.css', 1) }}">
-    <link rel="stylesheet" href="{{ pathto('_static/print.css', 1) }}" media="print">
+    <link rel="stylesheet" href="{{ pathto('_static/mdbook/chrome.css', 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/mdbook/print.css', 1) }}" media="print">
     <link rel="stylesheet" href="{{ pathto('_static/FontAwesome/css/fontawesome.min.css', 1) }}">
 
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}">
@@ -126,11 +126,8 @@
         </a>
       </nav>
     </div>
-    <script>
-      // Bootstrap pyodide as early as reasonable
-    </script>
-    <script src="{{ pathto('_static/clipboard.min.js', 1) }}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ pathto('_static/book.js', 1) }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ pathto('_static/mdbook/clipboard.min.js', 1) }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ pathto('_static/mdbook/book.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ pathto('_static/main.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script>
       const consoleBuffer = {
