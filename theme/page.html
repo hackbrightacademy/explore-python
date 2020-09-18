@@ -32,12 +32,10 @@
     <link rel="stylesheet" href="{{ pathto('_static/override.css', 1) }}">
   </head>
   <body>
-
     <script type="text/javascript">
-      var path_to_root = "{{ theme_path_to_root }}";
+      var path_to_root = "{{ pathto('_static/mdbook', 1) }}";
       var default_theme = "{{ theme_default_theme }}";
     </script>
-
     <!-- Work around some values being stored in localStorage wrapped in quotes -->
     <script type="text/javascript">
         try {
