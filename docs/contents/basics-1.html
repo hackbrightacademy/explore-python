@@ -113,21 +113,18 @@
 <h1>Python Basics</h1>
 <section class="section" id="intro">
 <h2>Intro</h2>
-<p>In this module, you’ll learn about Python basics such as variables, types,
-printing, expressions, and debugging. These are some of the
-most fundamental principles of programming in Python. Some of the things you’ll
-learn here are common to many languages, whereas some are specific to Python.
-Regardless, the things you’ll learn in this module are going to enable you to
-craft more complex, multistep programs later on.</p>
+<p>In this module, you’ll learn about Python basics such as variables, types, printing, expressions,
+and debugging. These are some of the most fundamental principles of programming in Python. Some of
+the things you’ll learn here are common to many languages, whereas some are specific to Python.
+Regardless, the things you’ll learn in this module are going to enable you to craft more complex,
+multistep programs later on.</p>
 <section class="section" id="go-slow-to-go-fast">
 <h3>Go Slow To Go Fast</h3>
-<p>Take time to allow yourself to master these basic concepts, as they will show
-up again and again as you dive into more intermediate and advanced Python
-concepts later.</p>
-<p>Being a new programmer is hard — there’s <strong>so</strong> much to learn, <strong>so</strong> many
-different languages and countless resources to get started.  As a new coder,
-it can be difficult to stay focused. Sometimes, all it takes is an
-unfamiliar error message to prevent a new coder from sticking with it. Be
+<p>Take time to allow yourself to master these basic concepts, as they will show up again and again as
+you dive into more intermediate and advanced Python concepts later.</p>
+<p>Being a new programmer is hard — there’s <strong>so</strong> much to learn, <strong>so</strong> many different languages and
+countless resources to get started.  As a new coder, it can be difficult to stay focused. Sometimes,
+all it takes is an unfamiliar error message to prevent a new coder from sticking with it. Be
 persistent!</p>
 </section>
 <section class="section" id="topics-we-ll-cover">
@@ -142,14 +139,12 @@ persistent!</p>
 </section>
 <section class="section" id="python-syntax">
 <h2>Python Syntax</h2>
-<p>Software engineers use <cite>programming languages</cite> to communicate with computers in
-order to tell them how to do something. Programming languages are much like
-other types of languages (including natural languages like English!) — they’re
-made of specific words (in programming, we call these`tokens`) arranged in a
-specific way.</p>
-<p>Python is a popular language because, compared to other programming languages,
-its syntax is especially succinct and readable. For example, here’s how you’d
-output a message in Java:</p>
+<p>Software engineers use <cite>programming languages</cite> to communicate with computers in order to tell them
+how to do something. Programming languages are much like other types of languages (including natural
+languages like English!) — they’re made of specific words (in programming, we call these`tokens`)
+arranged in a specific way.</p>
+<p>Python is a popular language because, compared to other programming languages, its syntax is
+especially succinct and readable. For example, here’s how you’d output a message in Java:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -158,9 +153,8 @@ output a message in Java:</p>
 </pre></div>
 </div>
 <p>Try it out for yourself! The box below is a code <cite>playground</cite>; it can execute Python code and
-display program output. You can even edit the code inside! Click the red button in the
-playground below to run the code inside. Program output will appear in a box below the code
-editor.</p>
+display program output. You can even edit the code inside! Click the red button in the playground
+below to run the code inside. Program output will appear in a box below the code editor.</p>
 <div class="playground"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isn&#39;t Python fun?&quot;</span><span class="p">)</span>
 </pre></div>
@@ -180,16 +174,16 @@ detail.</p>
 <h2>Objects and Classes</h2>
 <p>First let’s talk about what <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is. To do that, we’ll need to define what
 objects and classes are.</p>
-<p>A <cite>value</cite> or <cite>object</cite> is a piece of data that a program can manipulate. So far, you’ve seen the values
-<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Isn't</span> <span class="pre">Python</span> <span class="pre">fun?&quot;</span></code>. Both values (we can also say “both objects”) are
-members of the class, <cite>str</cite> (a shortened version of the word <em>string</em>, as in, “a string of characters”).</p>
+<p>A <cite>value</cite> or <cite>object</cite> is a piece of data that a program can manipulate. So far, you’ve seen the
+objects <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Isn't</span> <span class="pre">Python</span> <span class="pre">fun?&quot;</span></code>. Both are members of the class, <cite>str</cite> (a
+shortened version of the word <em>string</em>, as in, “a string of characters”).</p>
 <p><cite>Classes</cite> are like categories. In Python, an object’s class is analogous with its <em>type</em>
 (ex.: <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is a <em>type</em> of string), so you can find out what class a value
 belongs to using <cite>type</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The code above doesn’t print values to the screen though, which is why we’ll use it inside
+<p>The code above doesn’t print anything to the screen screen though, which is why we’ll combine it with
 <cite>print</cite>:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">))</span>
 </pre></div>
@@ -221,7 +215,7 @@ single-quotes — in either case, Python will produce the same output.</p>
 </pre></div>
 </div>
 </div><pre class="console">Delicious knishes
-</pre></div><p>Another class is <cite>int</cite>, short for <em>integer</em>. For example, the value <code class="docutils literal notranslate"><span class="pre">100</span></code> is an integer. <cite>print</cite>
+</pre></div><p>Another class is <cite>int</cite>, short for <em>integer</em>. For example, the object <code class="docutils literal notranslate"><span class="pre">100</span></code> is an integer. <cite>print</cite>
 also works with integers:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
@@ -248,13 +242,13 @@ single-quotes (<code class="docutils literal notranslate"><span class="pre">'</s
 <dt>integer (<cite>int</cite>)</dt><dd><p>A whole number that can be <em>signed</em> (<code class="docutils literal notranslate"><span class="pre">-1</span></code>) or <em>unsigned</em> (<code class="docutils literal notranslate"><span class="pre">1</span></code>). They belong to the
 class <cite>int</cite>.</p>
 </dd>
-<dt>float (<cite>float</cite>)</dt><dd><p>A number with a decimal point that belongs to class <cite>float</cite>. These can also be signed (<code class="docutils literal notranslate"><span class="pre">-3.02</span></code>) or unsigned
-(<code class="docutils literal notranslate"><span class="pre">3.02</span></code>).</p>
+<dt>float (<cite>float</cite>)</dt><dd><p>A number with a decimal point that belongs to class <cite>float</cite>. These can also be signed
+(<code class="docutils literal notranslate"><span class="pre">-3.02</span></code>) or unsigned (<code class="docutils literal notranslate"><span class="pre">3.02</span></code>).</p>
 </dd>
 </dl>
 </div>
 </div>
-<p>Pop quiz! What’s the class of values <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code>? They look like
+<p>Pop quiz! What’s the class of objects <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code>? They look like
 numbers but are surrounded by quotation marks like strings. Run the code below to find out!</p>
 <div class="playground"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;17&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;4.1&quot;</span><span class="p">))</span>
@@ -311,7 +305,7 @@ underscores to break up large numbers.</p>
 </div>
 </div><pre class="console">True
 False
-</pre></div><p>Pay very close attention to the fact that neither of these values are enclosed in
+</pre></div><p>Pay very close attention to the fact that neither of these are enclosed in
 quotations marks (for example, <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code> is a string and not a boolean). Unfortuantely,
 when you print out <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code>, their outputs look identical. But don’t be
 fooled! They’re still members of different classes.</p>
@@ -325,7 +319,7 @@ fooled! They’re still members of different classes.</p>
 &lt;class &#x27;bool&#x27;&gt;
 True
 &lt;class &#x27;str&#x27;&gt;
-</pre></div><p>Also, both values <em>must</em> start with a capital letter — otherwise, Python won’t recognize them and
+</pre></div><p>Also, booleans <em>must</em> start with a capital letter — otherwise, Python won’t recognize them and
 give an error. Here’s what happens when we try to print <code class="docutils literal notranslate"><span class="pre">True</span></code> but forget to capitalize
 the <code class="docutils literal notranslate"><span class="pre">T</span></code>:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">true</span><span class="p">)</span>
@@ -336,19 +330,15 @@ the <code class="docutils literal notranslate"><span class="pre">T</span></code>
     exec(code_str, namespace)
   File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
 NameError: name &#x27;true&#x27; is not defined
-</pre></div><p>The <cite>NoneType</cite> class is even <em>more</em> exclusive — it’s comprised of single member, the value
+</pre></div><p>The <cite>NoneType</cite> class is even <em>more</em> exclusive — it’s comprised of single member, the object
 <code class="docutils literal notranslate"><span class="pre">None</span></code>. <code class="docutils literal notranslate"><span class="pre">None</span></code> is how Python represents nothingness, is similar to the mathematical idea of
 <em>null</em>.</p>
-<p>If you try to print <code class="docutils literal notranslate"><span class="pre">None</span></code>, nothing will appear!</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
 </pre></div>
 </div>
 </div><pre class="console">None
-</pre></div><p>It does have a class though, so we <em>do</em> see something when we print the type of <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
-</pre></div>
-</div>
-</div><pre class="console">&lt;class &#x27;NoneType&#x27;&gt;
+&lt;class &#x27;NoneType&#x27;&gt;
 </pre></div><div class="admonition terms_to_know">
 <p class="admonition-title"></p>
 <div class="admonition-body docutils container">
@@ -362,48 +352,131 @@ to be mentioned, but they represent <em>true</em> and <em>false</em>.</p>
 </div>
 </div>
 </section>
-</section>
-<section class="section" id="functions">
-<h2>Functions</h2>
-<p><cite>print</cite> and <cite>type</cite> are the names of built-in <cite>functions</cite>. A <cite>function</cite> is something that
-can take <em>in</em> values, <em>do something</em> with those values, and then <em>output</em> a value. Built-in
-functions are ones that Python has already created for you (you can also define your <em>own</em> functions
-but it’s an intermediate idea that we won’t go into in this book).</p>
-<p>You use a function by adding parentheses after the function’s name. If a function requires inputs,
-you add them inside the parentheses. A function’s inputs are also known as its <cite>arguments</cite>. For
-example, you can use <cite>print</cite> with zero arguments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>You can also use <cite>print</cite> with one argument.</p>
+<section class="section" id="looping-back-to-print-hello-world">
+<h3>Looping Back to <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code></h3>
+<p>Let’s take a look at your first Python program again.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>…or <em>many</em> arguments!</p>
+<div class="mcq" data-id="mcq-1" data-ans="c" data-feedback="{&quot;a&quot;: &quot;You can tell that something isn&#x27;t a string because it&#x27;s not surrounded by quotes.&quot;, &quot;b&quot;: &quot;You can tell that something isn&#x27;t a string because it&#x27;s not surrounded by quotes.&quot;, &quot;c&quot;: &quot;Yup! Strings are surrounded by quotes.&quot;, &quot;d&quot;: &quot;This isn&#x27;t a trick question. There&#x27;s a string there, we promise.&quot;}"><p>Which part of the code block above is a <strong>string</strong>?</p>
+<div class="docutils container">
+<ol class="upperalpha">
+<div class="mcq-answer-group"><input id="mcq-1-a" type="radio" name="mcq-1" value="a" /><label for="mcq-1-a"><li><p>All of the code is a string</p>
+</li></label></div><div class="mcq-answer-group"><input id="mcq-1-b" type="radio" name="mcq-1" value="b" /><label for="mcq-1-b"><li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> is a string</p>
+</li></label></div><div class="mcq-answer-group"><input id="mcq-1-c" type="radio" name="mcq-1" value="c" /><label for="mcq-1-c"><li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is a string</p>
+</li></label></div><div class="mcq-answer-group"><input id="mcq-1-d" type="radio" name="mcq-1" value="d" /><label for="mcq-1-d"><li><p>This is a trick question — there are <em>no</em> strings in the code above!</p>
+</li></label></div></ol>
+</div>
+<button class="mcq-answer-checker">Check Answer</button><p class="mcq-alert"></p></div><p>You’ve learned what’s up with <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code>. Now we’ll deconstruct the
+rest of <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code>. After the next section, you’ll begin to understand what you’ve
+been doing whenever you use <cite>print</cite> and <cite>type</cite>.</p>
+</section>
+</section>
+<section class="section" id="functions">
+<h2>Functions</h2>
+<p>A <cite>function</cite> is something that can take <em>in</em> objects, <em>do something</em> with those objects, and then
+<em>output</em> an object. So far, you’ve encountered two functions — <cite>print</cite> and <cite>type</cite>. You’ve been using
+<cite>print</cite> to get Python to output and display information on the screen and <cite>type</cite> to get an object’s
+class. Both functions are <cite>built-in functions</cite> — functions that Python has already created for
+you, as a convenience. This is another reason why software engineers like Python so much!</p>
+<div class="admonition note">
+<p class="admonition-title">You can also create your own functions</p>
+<div class="admonition-body docutils container">
+<p>The opposite of a built-in function is a user-defined function. That’s right — Python allows you
+to create your <em>own</em> functions! We won’t cover how to do that in this book, but it’s something to
+look forward to as you continue learning Python.</p>
+</div>
+</div>
+<div class="admonition terms_to_know">
+<p class="admonition-title"></p>
+<div class="admonition-body docutils container">
+<dl class="simple">
+<dt>function</dt><dd><p>A function can consume objects as input, do <em>something</em>, and output an object.</p>
+</dd>
+<dt>built-in functions</dt><dd><p>Built-in functions are functions that come with Python. Some examples of built-in functions are
+<cite>print</cite> and <cite>type</cite>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<section class="section" id="calling-functions">
+<h3>Calling Functions</h3>
+<p>The act of using a function is known as making a function <cite>call</cite>; in other words, when you use a
+function, you’re <cite>calling</cite> the function.</p>
+<p>The syntax for calling functions in Python is very similar to other languages. To make a function
+call, you write the function’s name and add a pair of parentheses. The parentheses tells Python that
+it should go ahead and make the function <em>go</em>. If a function requires inputs, you add them <em>inside</em>
+the parentheses. A function’s inputs are known as its <cite>arguments</cite>. With this new vocabulary in mind,
+let’s examine the program we’ve been dissecting again.</p>
+<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><pre class="console">Hello, world!
+</pre></div><p>This program <em>calls</em> the print function with one <em>argument</em> — the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">If you want to call a function, don’t forget the parentheses!</p>
+<div class="admonition-body docutils container">
+<p>If you leave them out, you’re telling Python that you don’t want
+to call the function, so nothing will happen:</p>
+<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span>
+</pre></div>
+</div>
+</div><pre class="console"></pre></div></div>
+</div>
+<p>Some functions don’t require any arguments. In that case, you only need to add a pair of parentheses
+(<code class="docutils literal notranslate"><span class="pre">()</span></code>) to call the function. For example, you can actually <cite>print</cite> function with zero arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Other functions need more than one argument. You can supply multiple arguments to a function by
+separating each with a comma. The <cite>print</cite> function can handle multiple arguments too!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;that&#39;s a lot&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We use the term <cite>call</cite> to refer to the act of using a function. For example, when you call the <cite>print</cite>
-function with more than one argument, it’ll output the values of those arguments and separate each
-with a space.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;that&#39;s a lot&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<p><cite>print</cite> is pretty cool — it works with zero or more arguments. When you call <cite>print</cite> with one
+argument, it’ll display the argument on a single line. With multiple arguments, it’ll display all of
+them on a single line, separated with a space. With no arguments, it might look like nothing
+happens, but it actually prints out an empty line. Check it out!</p>
+<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One argument&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;lots of arguments&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cool!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><pre class="console">100 that&#x27;s a lot True
-</pre></div><p>When you call <cite>print</cite> with no arguments, it might look like nothing happens, but it actually outputs
-an empty line. Check it out:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WHOA!&quot;</span><span class="p">)</span>
-</pre></div>
+</div><pre class="console">One argument
+
+100 lots of arguments True
+
+Cool!
+</pre></div><div class="admonition terms_to_know">
+<p class="admonition-title"></p>
+<div class="admonition-body docutils container">
+<dl class="simple">
+<dt>function call</dt><dd><p>When you use a function — by writing its name followed by a pair of parentheses (ex.: <code class="docutils literal notranslate"><span class="pre">print()</span></code>)
+— you’re making a function call.</p>
+</dd>
+<dt>arguments</dt><dd><p>A function’s arguments are its inputs. Arguments go inside the parentheses of a function call
+(ex.: <code class="docutils literal notranslate"><span class="pre">print(&quot;Hi!&quot;)</span></code>)</p>
+</dd>
+</dl>
 </div>
-</div><pre class="console">
-
-
-WHOA!
-</pre></div><p>While <cite>print</cite> can take in zero or more arguments, functions like <cite>type</cite> only work with a certain
-number of arguments. Here’s what happens when we call <cite>type</cite> with no arguments:</p>
+</div>
+</section>
+<section class="section" id="errors-you-might-encounter-with-functions">
+<h3>Errors You Might Encounter with Functions</h3>
+<p>As far as functions go, <cite>print</cite> is very flexible — it can handle zero, one, or more arguments.
+Most functions aren’t as flexible. They usually have restrictions on the number of arguments you can
+input. There are also functions that are only compatible with a certain class. If this sounds like a
+<em>lot</em> of information to remember about <em>every</em> single function you might ever encounter — don’t
+worry! Engineers aren’t expected to memorize any of that. In fact, an unspoken rule in software
+engineering is that if your code runs perfectly the first time you run it, you should be worried;
+that’s because instead of memorizing the correct way to call every single function, engineers rely
+on information from error messages to point them in the right direction.</p>
+<p><cite>type</cite> is a function that only knows how to handle a certain number of arguments. You’ve used <cite>type</cite>
+before, so you know it works with one argument for now, but how can you tell for <em>sure</em> (without
+using external resources)? A great way to do this is to call <cite>type</cite> incorrectly and intentionally
+cause an error message to appear.</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-repeat"></i><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -412,8 +485,10 @@ number of arguments. Here’s what happens when we call <cite>type</cite> with n
     exec(code_str, namespace)
   File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
 TypeError: type() takes 1 or 3 arguments
-</pre></div><p>Python will output an error message to tell us that <cite>type</cite> requires <em>exactly</em> 1 or 3 arguments (we
+</pre></div><p>Aha!</p>
+<p>Python will output an error message to tell us that <cite>type</cite> requires <em>exactly</em> 1 or 3 arguments (we
 won’t go into how to use <cite>type</cite> with 3 arguments… it’s complicated…).</p>
+</section>
 <section class="section" id="another-function">
 <h3>Another Function</h3>
 <p>Some functions, like <cite>print</cite> and <cite>type</cite>, are compatible with all types of values but there are other
@@ -594,6 +669,8 @@ not able to be understood.</p>
     </div>
     <script src="../_static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../_static/book.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="../_static/main.js" type="text/javascript" charset="utf-8"></script>
     <script>
       if (window.ace) {
         window.editors = Array.from(document.querySelectorAll('.playground'))
