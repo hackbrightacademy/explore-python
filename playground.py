@@ -1,12 +1,12 @@
 """Playground directive.
 
+This will render a code playground where readers can edit and run Python in the browser.
+
+Example:
+
     .. playground::
 
       print("hi")
-
-Will render:
-    <div class="playground">
-
 """
 
 from typing import List
@@ -24,40 +24,35 @@ from unittest.mock import patch
 
 
 class playground(General, Element):
-    pass
+    """playground node.
+
+    Holds the text editor and console output area.
+    """
 
 
 def visit_playground(self, node: playground):
+    # FIXME:
+    # I'm pretty sure the proper way to do this is to call some sort of docutils method
+    # but eh... on well.
     playground_classes = ["playground"]
     if "show_output" in node:
         playground_classes += ["show_output"]
-
     self.body.append(f"<div class=\"{' '.join(playground_classes)}\">")
+
     self.body.append('<div class="buttons">')
     self.body.append('<button class="run">')
-
-    if "show_output" in node:
-        self.body.append('<i class="fa fa-repeat"></i>')
-        self.body.append('<span class="btn-label">Run this again</span>')
-    else:
-        self.body.append('<i class="fa fa-play"></i>')
-        self.body.append('<span class="btn-label">Click to run</span>')
-
+    self.body.append('<i class="fas fa-play"></i>')
+    self.body.append('<span class="btn-label">Click to run</span>')
     self.body.append("</button>")
     self.body.append("</div>")
+
+    # Contents of the code editor starts after this open div
     self.body.append('<div class="editable">')
 
 
 def depart_playground(self, node: playground):
     self.body.append("</div>")
-
-    if "stdout" in node:
-        self.body.append('<pre class="console">')
-        self.body.append(html.escape(node["stdout"], quote=True))
-        self.body.append("</pre>")
-    else:
-        self.body.append('<pre class="console"></pre>')
-
+    self.body.append('<pre class="console"></pre>')
     self.body.append("</div>")
 
 
@@ -67,22 +62,22 @@ class Playground(Directive):
     has_content = True
     option_spec = {"show_output": directives.flag, "editable": directives.flag}
 
-    def exec_code(self, code_str):
-        try:
-            namespace = {"__name__": "__main__"}
-            exec(code_str, namespace)
-        except Exception:
-            traceback.print_exc(file=sys.stdout)
+    def _exec_code(self, code_str: str) -> str:
+        """Execute code_str as Python and return any output as a string."""
+
+        with patch("sys.stdout", new_callable=StringIO) as output:
+            try:
+                namespace = {"__name__": "__main__"}
+                exec(code_str, namespace)
+            except Exception:
+                traceback.print_exc(file=sys.stdout)
+
+            return output.getvalue()
 
     def run(self) -> List[playground]:
         code = "\n".join(self.content)
         node = playground(code, **self.options)
         self.add_name(node)
-
-        if "show_output" in self.options:
-            with patch("sys.stdout", new_callable=StringIO) as string_stdout:
-                self.exec_code(code)
-                node["stdout"] = string_stdout.getvalue()
 
         lit_node = literal_block(code, code)
         lit_node["language"] = "python"

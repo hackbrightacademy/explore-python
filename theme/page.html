@@ -36,6 +36,7 @@
       var path_to_root = "{{ pathto('_static/mdbook', 1) }}";
       var default_theme = "{{ theme_default_theme }}";
     </script>
+
     <!-- Work around some values being stored in localStorage wrapped in quotes -->
     <script type="text/javascript">
         try {
@@ -125,70 +126,6 @@
     <script src="{{ pathto('_static/mdbook/clipboard.min.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ pathto('_static/mdbook/book.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ pathto('_static/main.js', 1) }}" type="text/javascript" charset="utf-8"></script>
-    <script>
-      const consoleBuffer = {
-        buffer: [],
-        push: function (msg) {
-          this.buffer.push(msg);
-          return this;
-        },
-        flush: function () {
-          const contents = this.buffer.join('\n');
-          this.buffer = [];
-          return contents;
-        }
-      };
-
-      (() => {
-        const ogConsole = console.log;
-        console.log = function (msg) {
-          consoleBuffer.push(msg);
-          ogConsole.apply(console, arguments);
-        }
-      })();
-      if (window.ace) {
-        window.editors = Array.from(document.querySelectorAll('.playground'))
-          .filter(el => el.querySelector('.editable') !== null)
-          .map(el => {
-            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
-            const editorEl = el.querySelector('.editable');
-
-            const aceEditor = window.ace.edit(editorEl);
-            aceEditor.setTheme('ace/theme/github');
-            aceEditor.session.setMode('ace/mode/python');
-            aceEditor.setValue(contents);
-            aceEditor.clearSelection();
-
-            const button = el.querySelector('.run');
-            button.addEventListener('click', e => {
-              const icon = button.querySelector('i');
-              if (icon.classList.contains('fa-play')) {
-                icon.classList.replace('fa-play', 'fa-repeat');
-                button.querySelector('.btn-label').innerText = 'Run this again';
-              }
-            });
-
-            return [el, aceEditor];
-          });
-      }
-      languagePluginLoader.then(() => {
-
-        if (window.editors) {
-          window.editors.forEach(([el, editor]) => {
-            el.querySelector('.run').addEventListener('click', e => {
-              // Get rid of any errors or shit that might have gotten printed out beforehand
-              consoleBuffer.flush();
-              try {
-                pyodide.runPython(editor.getValue());
-              } catch {
-                consoleBuffer.buffer.unshift();
-              }
-              el.querySelector('.console').innerText = consoleBuffer.flush();
-            });
-          });
-        }
-        console.log(pyodide.runPython('type()'));
-      });
-    </script>
+    <script src="{{ pathto('_static/playground.js', 1) }}" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
