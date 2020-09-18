@@ -17,7 +17,7 @@ master_doc = "index"
 templates_path = ["_templates"]
 sys.path.append(".")
 
-extensions = ["sphinxlectern", "playground"]
+extensions = ["sphinxlectern", "sphinxlectern.mcq", "playground"]
 
 exclude_patterns = [
     "_build",
