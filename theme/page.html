@@ -57,10 +57,9 @@
       html.classList.add("sidebar-" + sidebar);
     </script>
 
-
     <nav id="sidebar" class="sidebar" aria-label="Table of contents">
       <div class="sidebar-scrollbox">
-        {{ toctree(includehidden=True, maxdepth=2, collapse=True) }}
+        {{ toctree(includehidden=True, maxdepth=3, collapse=False) }}
       </div>
       <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
     </nav>
@@ -72,18 +71,18 @@
         <div id="menu-bar" class="menu-bar sticky bordered">
           <div class="left-buttons">
             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-              <i class="fa fa-bars"></i>
+              <i class="fas fa-bars"></i>
             </button>
           </div>
 
           <h1 class="menu-title">{{ project }}</h1>
 
           <div class="right-buttons">
-            {%- if theme_git_repository_url %}}
-              <a href="{{ theme_git_repository_url }}" title="Git repository" aria-label="Git repository">
-                <i id="git-repository-button" class="fa github-square"></i>
+            {%- if theme_git_repository_url %}
+              <a class="icon-button" href="{{ theme_git_repository_url }}" title="Git repository" aria-label="Git repository">
+                <i id="git-repository-button" class="fab fa-github"></i>
               </a>
-            {% endif %}
+            {%- endif %}
           </div>
         </div>
 
@@ -103,10 +102,10 @@
 
           <nav class="nav-wrapper" aria-label="Page navigation">
             <a rel="prev" href="{{ prev.link|e }}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-              <i class="fa fa-angle-left"></i>
+              <i class="fas fa-angle-left"></i>
             </a>
             <a rel="next" href="{{ next.link|e }}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-              <i class="fa fa-angle-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
 
             <div style="clear: both"></div>
@@ -115,11 +114,11 @@
 
       <nav class="nav-wide-wrapper" aria-label="Page navigation">
         <a rel="prev" href="{{ prev.link|e }}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-          <i class="fa fa-angle-left"></i>
+          <i class="fas fa-angle-left"></i>
         </a>
 
         <a rel="next" href="{{ next.link|e }}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-          <i class="fa fa-angle-right"></i>
+          <i class="fas fa-angle-right"></i>
         </a>
       </nav>
     </div>
