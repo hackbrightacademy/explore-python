@@ -41,7 +41,7 @@ def visit_playground(self, node: playground):
 
     self.body.append('<div class="buttons">')
     self.body.append('<button class="run">')
-    self.body.append('<i class="fas fa-play"></i>')
+    self.body.append('<span class="btn-icon"><i class="fa fa-play"></i></span>')
     self.body.append('<span class="btn-label">Click to run</span>')
     self.body.append("</button>")
     self.body.append("</div>")
