@@ -31,6 +31,7 @@
       var path_to_root = "../_static/mdbook";
       var default_theme = "light";
     </script>
+
     <!-- Work around some values being stored in localStorage wrapped in quotes -->
     <script type="text/javascript">
         try {
@@ -40,6 +41,7 @@
           }
         } catch (e) { }
     </script>
+
     <script type="text/javascript">
       var html = document.querySelector('html');
       var sidebar = 'hidden';
@@ -302,7 +304,7 @@ especially succinct and readable. For example, here’s how you’d output a mes
 <p>Try it out for yourself! The box below is a code <cite>playground</cite>; it can execute Python code and
 display program output. You can even edit the code inside! Click the red button in the playground
 below to run the code inside. Program output will appear in a box below the code editor.</p>
-<div class="playground"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<div class="playground"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isn&#39;t Python fun?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -332,7 +334,7 @@ belongs to using <cite>type</cite>.</p>
 </div>
 <p>The code above doesn’t print anything to the screen screen though, which is why we’ll combine it with
 <cite>print</cite>:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">))</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><div class="admonition terms_to_know">
@@ -357,21 +359,21 @@ will be able to tell the difference between one class and another.</p>
 <p>Strings are surrounded by quotation marks; Python can identify strings enclosed with double-quotes
 (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) <em>and</em> single-quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>). For example, try replacing the double-quotes below with
 single-quotes — in either case, Python will produce the same output.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delicious knishes&quot;</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delicious knishes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>Another class is <cite>int</cite>, short for <em>integer</em>. For example, the object <code class="docutils literal notranslate"><span class="pre">100</span></code> is an integer. <cite>print</cite>
 also works with integers:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>Printing the type of <code class="docutils literal notranslate"><span class="pre">100</span></code> gives us the class, <cite>int</cite>:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>There are also numbers with a decimal point that are stored in a format called
 <em>floating-point</em>; they belong to the <cite>float</cite> class:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">4.1</span><span class="p">))</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">4.1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><div class="admonition terms_to_know">
@@ -392,7 +394,7 @@ class <cite>int</cite>.</p>
 </div>
 <p>Pop quiz! What’s the class of objects <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code>? They look like
 numbers but are surrounded by quotation marks like strings. Run the code below to find out!</p>
-<div class="playground"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;17&quot;</span><span class="p">))</span>
+<div class="playground"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;17&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;4.1&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -402,7 +404,7 @@ quotation marks will <em>always</em> be a string.</p>
 <p>Here’s another example of why precision matters when it comes to Python syntax: we
 typically use commas to break uplarge numbers, like <code class="docutils literal notranslate"><span class="pre">529,600</span></code>. Let’s see what happens
 when we try to print it out:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">529</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">529</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>Gah! Frustratingly, the code above is <em>syntactically correct</em> — in other words, Python
@@ -416,7 +418,7 @@ with <cite>print</cite>. For example, here’s how you’d print three strings, 
 <p>Python interprets the comma in <code class="docutils literal notranslate"><span class="pre">529,600</span></code> just like in interprets the commas in the code
 above. To Python, <code class="docutils literal notranslate"><span class="pre">print(529,600)</span></code> looks a lot like printing two numbers, <code class="docutils literal notranslate"><span class="pre">529</span></code> and
 <code class="docutils literal notranslate"><span class="pre">600</span></code>. Let’s look at both examples again:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">529</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -438,7 +440,7 @@ underscores to break up large numbers.</p>
 <p>The <cite>bool</cite> class, or <em>boolean</em> class, is an exclusive club with just two members — the values
 <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>Like with all other values, you can print them out with <cite>print</cite>.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -446,7 +448,7 @@ underscores to break up large numbers.</p>
 quotations marks (for example, <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code> is a string and not a boolean). Unfortuantely,
 when you print out <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code>, their outputs look identical. But don’t be
 fooled! They’re still members of different classes.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;True&quot;</span><span class="p">))</span>
@@ -455,13 +457,13 @@ fooled! They’re still members of different classes.</p>
 </div><pre class="console"></pre></div><p>Also, booleans <em>must</em> start with a capital letter — otherwise, Python won’t recognize them and
 give an error. Here’s what happens when we try to print <code class="docutils literal notranslate"><span class="pre">True</span></code> but forget to capitalize
 the <code class="docutils literal notranslate"><span class="pre">T</span></code>:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">true</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">true</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>The <cite>NoneType</cite> class is even <em>more</em> exclusive — it’s comprised of single member, the object
 <code class="docutils literal notranslate"><span class="pre">None</span></code>. <code class="docutils literal notranslate"><span class="pre">None</span></code> is how Python represents nothingness, is similar to the mathematical idea of
 <em>null</em>.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -534,7 +536,7 @@ call, you write the function’s name and add a pair of parentheses. The parenth
 it should go ahead and make the function <em>go</em>. If a function requires inputs, you add them <em>inside</em>
 the parentheses. A function’s inputs are known as its <cite>arguments</cite>. With this new vocabulary in mind,
 let’s examine the program we’ve been dissecting again.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>This program <em>calls</em> the print function with one <em>argument</em> — the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code>.</p>
@@ -543,7 +545,7 @@ let’s examine the program we’ve been dissecting again.</p>
 <div class="admonition-body docutils container">
 <p>If you leave them out, you’re telling Python that you don’t want
 to call the function, so nothing will happen:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div></div>
@@ -562,7 +564,7 @@ separating each with a comma. The <cite>print</cite> function can handle multipl
 argument, it’ll display the argument on a single line. With multiple arguments, it’ll display all of
 them on a single line, separated with a space. With no arguments, it might look like nothing
 happens, but it actually prints out an empty line. Check it out!</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One argument&quot;</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One argument&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;lots of arguments&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
@@ -597,7 +599,7 @@ on information from error messages to point them in the right direction.</p>
 before, so you know it works with one argument for now, but how can you tell for <em>sure</em> (without
 using external resources)? A great way to do this is to call <cite>type</cite> incorrectly and intentionally
 cause an error message to appear.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">()</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">()</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>Aha!</p>
@@ -611,7 +613,7 @@ functions that only work with certain types of values. An example of this is the
 <p>The <cite>len</cite> function will give you the length of its argument. So, it makes sense that <cite>len</cite> requires
 one argument and that it only understands arguments belonging to certain classes. Think about it —
 members of the <cite>int</cite> class are numbers and numbers don’t have lengths.</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>If a function isn’t compatible with one of its arguments, Python will give us a <cite>TypeError</cite> — the
@@ -622,7 +624,7 @@ which isn’t compatible with <cite>len</cite>.</p>
 </pre></div>
 </div>
 <p>Again, we won’t see the result of calling <cite>len</cite> unless we print it out though:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><i class="fa fa-play"></i><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hi!&quot;</span><span class="p">))</span>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hi!&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div></section>
