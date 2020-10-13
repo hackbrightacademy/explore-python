@@ -31,7 +31,7 @@ exclude_patterns = [
     "**/venv",
 ]
 
-html_theme = handouts_theme = "explore_theme"
+html_theme = handouts_theme = "theme"
 revealjs_theme = "revealjs"
 html_show_sourcelink = False
 html_show_sphinx = False
@@ -40,8 +40,7 @@ html_domain_indices = False
 html_scaled_image_link = False
 html_copy_source = False
 html_add_permalinks = ""
-html_theme_path = ["./theme"]
-hb_hostname = "fellowship.hackbrightacademy.com"
+html_theme_path = ["."]
 
 imgmath_image_format = "svg"
 imgmath_add_tooltips = False

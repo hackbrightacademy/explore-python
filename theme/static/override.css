@@ -1,0 +1,115 @@
+.ace_editor {
+  font-family: var(--fontMono);
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+/*
+ * Pygments's GitHub theme looks NOTHING like Ace's GitHub theme, so these overrides are
+ * to make Pygments look more like Ace. Because there's no way I'm doing it the other way around.
+ */
+
+.highlight .gp {
+  font-weight: bold;
+  color: var(--orange);
+}
+.highlight .s2,
+.highlight .s1 {
+  color: #de1343;
+}
+.highlight .n,
+.highlight .mi {
+  color: #0286b3;
+}
+.highlight .nb,
+.highlight .p,
+.highlight .kc {
+  font-weight: bold;
+  color: black;
+}
+
+/*
+ * Styles for code playgrounds.
+ */
+.playground .console {
+  /* This is where program output appears. */
+  /* These variables are overriding styles in .console */
+  --bg: var(--lightGray);
+  --color: #333;
+  border-radius: 0;
+  max-height: 150px;
+  overflow: auto;
+}
+.playground .editable {
+  /* The code editor. We want to restrict its height so adding additional lines of code doesn't make the page look gross */
+  min-height: 150px;
+}
+.playground .buttons {
+  font-size: 0.7rem;
+  background: #e8e8e8;
+  padding: 3px 5px 0 5px;
+}
+.playground button {
+  font-size: inherit;
+}
+.playground button i {
+  margin-right: 0.25em;
+}
+.playground button:hover,
+.playground button:active {
+  background-color: var(--brandColor);
+  color: white;
+}
+.playground .console code {
+  /* Override styles from <code> so output has a normal color, height, etc. */
+  border: 0;
+  font-size: inherit;
+  color: inherit;
+  padding: 0;
+}
+.playground .console .error {
+  font-weight: bold;
+}
+
+/* FIXME: The "terms to know" admonition that should really be added to sphinx-lectern... */
+.terms_to_know {
+  --titleBg: #1eb99a;
+  --titleColor: white;
+  --titlePrefix: 'Terms to Know';
+}
+
+/* Make links that go nowhere a faded color so they don't look clickable. */
+/* FIXME: We should eventually like... *actually* disable the links. */
+a.previous[href=''],
+a.next[href=''] {
+  color: #ffc3cb;
+}
+
+/* Spacing looks weird if an element doesn't have a margin-top... but also, margin-top doesn't
+ * really work out? I forget why though (but that's why padding-top is here) */
+.admonition-body > :not(p):first-child {
+  padding-top: 0.5em;
+}
+
+.right-buttons {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+
+#sidebar code {
+  color: inherit;
+  border: 0;
+  padding: 0 3px;
+}
+
+#sidebar li:before {
+  counter-increment: section;
+  content: counters(section, '.') ' ';
+  margin-right: 0.25em;
+}
+
+#sidebar ul {
+  counter-reset: section;
+  font-weight: 600;
+}

@@ -5,20 +5,17 @@
     <title>More Python Basics</title>
     <meta content="text/html; charset=utf-8" http-equiv="content-Type" />
 
-    <!--
-    <link rel="stylesheet" href="../_static/variables.css">
-    <link rel="stylesheet" href="../_static/general.css">
-    -->
-    <link rel="stylesheet" href="../_static/chrome.css">
-    <link rel="stylesheet" href="../_static/print.css" media="print">
-    <link rel="stylesheet" href="../_static/FontAwesome/css/fontawesome.min.css">
-
+    <link rel="stylesheet" href="../_static/mdbook/chrome.css">
+    <link rel="stylesheet" href="../_static/mdbook/print.css" media="print">
     <link rel="stylesheet" href="../_static/main.css">
     <link rel="stylesheet" href="../_static/pygments.css">
-    <style>
-    </style>
-    <script src="../_static/brython.js"></script>
-    <script src="../_static/brython_modules.js"></script>
+
+    <script src="https://kit.fontawesome.com/f1153f9c7d.js" crossorigin="anonymous"></script>
+
+    <script>
+      window.languagePluginUrl = '../_static/pyodide/';
+    </script>
+    <script crossorigin src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
     <script
       crossorigin
       src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
@@ -29,10 +26,9 @@
     ></script>
     <link rel="stylesheet" href="../_static/override.css">
   </head>
-  <body onload="brython(1)">
-
+  <body>
     <script type="text/javascript">
-      var path_to_root = "file:///Users/ashley/hackbright/explore-python/_build/";
+      var path_to_root = "../_static/mdbook";
       var default_theme = "light";
     </script>
 
@@ -57,24 +53,174 @@
       html.classList.add("sidebar-" + sidebar);
     </script>
 
-
     <nav id="sidebar" class="sidebar" aria-label="Table of contents">
       <div class="sidebar-scrollbox">
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics-1.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics-1.html">Python Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics-1.html#intro">Intro</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#go-slow-to-go-fast">Go Slow To Go Fast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#topics-we-ll-cover">Topics We’ll Cover</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics-1.html#python-syntax">Python Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics-1.html#objects-and-classes">Objects and Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#strings-integers-and-floats">Strings, Integers, and Floats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#booleans-and-nonetype">Booleans and NoneType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#looping-back-to-print-hello-world">Looping Back to <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics-1.html#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#calling-functions">Calling Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#errors-you-might-encounter-with-functions">Errors You Might Encounter with Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#another-function">Another Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics-1.html#practice-section">Practice Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#directions">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics-1.html#debugging-section">Debugging Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics-1.html#id1">Directions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">More Python Basics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#welcome">Welcome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lesson">Lesson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#practice-section">Practice Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#external-resources">External Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#welcome">Welcome</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-to-love-errors">Learning to Love Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lesson">Lesson</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#topics">Topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expressions">Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boolean-expressions">Boolean Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#putting-it-together">Putting it Together</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mathematical-expressions">Mathematical Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calling-functions-and-setting-variables">Calling Functions and Setting Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#one-more-function">One More Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-function-to-capture-user-input">A function to capture user input</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#practice-section">Practice Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directions">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#external-resources">External Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#videos">Videos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#articles-documentation">Articles/Documentation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#final-assignment">Final Assignment</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="conditionals.html">Booleans and Conditional Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="control-flow.html">Logic and Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">Booleans and Conditional Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html#lesson">Lesson</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#topics">Topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#a-review-of-boolean-expressions">A Review of Boolean Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#conditional-logic">Conditional Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#if-statement-syntax">If-Statement Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#using-elif">Using <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#nested-if-statements">Nested If-Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#using-raw-input-with-if-statements">Using <strong>raw_input</strong> with if-statements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html#practice-section">Practice Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#directions">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#id1">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html#external-resources">External Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#videos">Videos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditionals.html#articles">Articles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html#final-assignment">Final Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists.html#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html#lesson">Lesson</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#topics">Topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#introduction-to-lists">Introduction to Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#finding-the-length-of-a-list">Finding the length of a list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#empty-lists">Empty Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#adding-items-to-a-list">Adding Items to a List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#accessing-items-in-a-list">Accessing items in a list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#two-more-list-methods">Two More List Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#what-goes-in-a-list">What goes in a list?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#string-indexing">String Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#the-range-function">The <cite>range</cite> Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html#practice-section">Practice Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#directions">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#id1">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html#external-resources">External Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#videos">Videos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html#final-assignment">Final Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#part-1">Part 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#part-2">Part 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#part-3">Part 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#part-4">Part 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control-flow.html">Logic and Control Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#welcome">Welcome</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#programming-is-an-art-form">Programming is an Art Form</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#lesson">Lesson</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#topics">Topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#introduction-to-control-flow">Introduction to Control Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#loops">Loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#a-simple-example">A Simple Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#while-loops">While-loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#for-loops">For-loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#practice">Practice</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#directions">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#id1">Directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#external-resources">External Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#videos">Videos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#reading">Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html#final-assignment">Final Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#part-1-quiz-questions">Part 1: Quiz Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#part-2-todo-list-program">Part 2: Todo List Program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html#part-3-print-todo-list">Part 3: Print Todo List</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       </div>
@@ -88,13 +234,16 @@
         <div id="menu-bar" class="menu-bar sticky bordered">
           <div class="left-buttons">
             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-              <i class="fa fa-bars"></i>
+              <i class="fas fa-bars"></i>
             </button>
           </div>
 
           <h1 class="menu-title">Hackbright Academy's Explore Python</h1>
 
           <div class="right-buttons">
+              <a class="icon-button" href="https://github.com/hackbrightacademy/explore-python/" title="Git repository" aria-label="Git repository">
+                <i id="git-repository-button" class="fab fa-github"></i>
+              </a>
           </div>
         </div>
 
@@ -517,10 +666,10 @@ string as well (similar to the others).</p>
 
           <nav class="nav-wrapper" aria-label="Page navigation">
             <a rel="prev" href="basics-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-              <i class="fa fa-angle-left"></i>
+              <i class="fas fa-angle-left"></i>
             </a>
             <a rel="next" href="conditionals.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-              <i class="fa fa-angle-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
 
             <div style="clear: both"></div>
@@ -529,54 +678,17 @@ string as well (similar to the others).</p>
 
       <nav class="nav-wide-wrapper" aria-label="Page navigation">
         <a rel="prev" href="basics-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-          <i class="fa fa-angle-left"></i>
+          <i class="fas fa-angle-left"></i>
         </a>
 
         <a rel="next" href="conditionals.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-          <i class="fa fa-angle-right"></i>
+          <i class="fas fa-angle-right"></i>
         </a>
       </nav>
     </div>
-    <script src="../_static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../_static/book.js" type="text/javascript" charset="utf-8"></script>
-
+    <script src="../_static/mdbook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../_static/mdbook/book.js" type="text/javascript" charset="utf-8"></script>
     <script src="../_static/main.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-      if (window.ace) {
-        window.editors = Array.from(document.querySelectorAll('.playground'))
-          .filter(el => el.querySelector('.editable') !== null)
-          .map(el => {
-            const contents = el.querySelector('pre') && el.querySelector('pre').innerText;
-            const editorEl = el.querySelector('.editable');
-
-            const aceEditor = window.ace.edit(editorEl);
-            aceEditor.setTheme('ace/theme/github');
-            aceEditor.session.setMode('ace/mode/python');
-            aceEditor.setValue(contents);
-            aceEditor.clearSelection();
-
-            const button = el.querySelector('.run');
-            button.addEventListener('click', e => {
-              const icon = button.querySelector('i');
-              if (icon.classList.contains('fa-play')) {
-                icon.classList.replace('fa-play', 'fa-repeat');
-                button.querySelector('.btn-label').innerText = 'Run this again';
-              }
-            });
-
-            return [el, aceEditor];
-          });
-        }
-    </script>
-    <script type="text/python">
-      from browser import window
-      from output import create_playground_runner
-      for el, editor in window.editors:
-          create_playground_runner(
-              el.querySelector('.run'),
-              editor,
-              el.querySelector('.console')
-          )
-    </script>
+    <script src="../_static/playground.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
