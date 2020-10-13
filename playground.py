@@ -62,18 +62,6 @@ class Playground(Directive):
     has_content = True
     option_spec = {"show_output": directives.flag, "editable": directives.flag}
 
-    def _exec_code(self, code_str: str) -> str:
-        """Execute code_str as Python and return any output as a string."""
-
-        with patch("sys.stdout", new_callable=StringIO) as output:
-            try:
-                namespace = {"__name__": "__main__"}
-                exec(code_str, namespace)
-            except Exception:
-                traceback.print_exc(file=sys.stdout)
-
-            return output.getvalue()
-
     def run(self) -> List[playground]:
         code = "\n".join(self.content)
         node = playground(code, **self.options)
@@ -86,6 +74,8 @@ class Playground(Directive):
         return [node]
 
 
+# FIXME: we should move terms_to_know directive to sphinx-lectern instead of
+# leaving it here
 class terms_to_know(Admonition, Element):
     pass
 
@@ -109,5 +99,7 @@ class TermsToKnow(BaseAdmonition):
 def setup(app: Sphinx):
     app.add_node(playground, handouts=(visit_playground, depart_playground))
     app.add_directive("playground", Playground)
+
+    # FIXME: this should all be moved to sphinx-lectern
     app.add_directive("termstoknow", TermsToKnow)
     app.add_node(terms_to_know, handouts=(visit_terms_to_know, depart_terms_to_know))
