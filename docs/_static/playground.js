@@ -36,10 +36,9 @@
   document.querySelectorAll('.playground .run').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const icon = btn.querySelector('i');
-      if (icon.classList.contains('fa-play')) {
-        icon.classList.replace('fa-play', 'fa-repeat');
-        btn.querySelector('.btn-label').innerText = 'Run this again';
-      }
+      icon.classList.toggle('fa-play');
+      icon.classList.toggle('fa-repeat');
+      btn.querySelector('.btn-label').innerText = 'Run this again';
     });
   });
 })();
@@ -106,9 +105,7 @@
       });
     };
     if (window.editors && window.playgroundConsole && window.pyodide) {
-      const { editors, playgroundConsole, pyodide } = window;
-
-      editors.forEach(({ playground, aceEditor }) => {
+      window.editors.forEach(({ playground, aceEditor }) => {
         if (playground.classList.contains('show_output')) {
           runAndDisplayCode(aceEditor.getValue(), playground);
         }
