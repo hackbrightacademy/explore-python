@@ -105,9 +105,7 @@
       });
     };
     if (window.editors && window.playgroundConsole && window.pyodide) {
-      const { editors, playgroundConsole, pyodide } = window;
-
-      editors.forEach(({ playground, aceEditor }) => {
+      window.editors.forEach(({ playground, aceEditor }) => {
         if (playground.classList.contains('show_output')) {
           runAndDisplayCode(aceEditor.getValue(), playground);
         }
