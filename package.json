@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  }
+}
