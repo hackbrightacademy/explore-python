@@ -275,33 +275,35 @@ The `NoneType` class is even *more* exclusive --- it's comprised of single membe
 Looping Back to ``print("Hello, world!")``
 ------------------------------------------
 
-Let's take a look at your first Python program again.
+Let's take a look at your first Python program again. Can you identify the string in the code below?
 
 .. code-block:: python
 
   print("Hello, world!")
 
-.. mcq:: Which part of the code block above is a **string**?
-  :answer: C
+.. knowledge-check::
 
-  A. All of the code is a string
+  .. mcq:: Which part of the code block above is a **string**?
+    :answer: C
 
-     :feedback: You can tell that something isn't a string because it's not
-                surrounded by quotes.
+    A. All of the code is a string
 
-  B. ``print`` is a string
+       :feedback: You can tell that something isn't a string because it's not
+                  surrounded by quotes.
 
-     :feedback: You can tell that something isn't a string because it's not
-                surrounded by quotes.
+    B. ``print`` is a string
 
-  C. ``"Hello, world!"`` is a string
+       :feedback: You can tell that something isn't a string because it's not
+                  surrounded by quotes.
 
-     :feedback: Yup! Strings are surrounded by quotes.
+    C. ``"Hello, world!"`` is a string
 
-  D. This is a trick question --- there are *no* strings in the code above!
+       :feedback: Yup! Strings are surrounded by quotes.
 
-     :feedback: This isn't a trick question. There's a string there, we
-                promise.
+    D. This is a trick question --- there are *no* strings in the code above!
+
+       :feedback: This isn't a trick question. There's a string there, we
+                  promise.
 
 You've learned what's up with ``"Hello, world!"``. Now we'll deconstruct the
 rest of ``print("Hello, world!")``. After the next section, you'll begin to understand what you've

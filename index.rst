@@ -4,6 +4,8 @@ Welcome!
 
 This is the introduction. It's a work in progress. I'd continue reading if I were you :P
 
+Howdy!
+
 .. toctree::
   :hidden:
 
