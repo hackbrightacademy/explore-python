@@ -35,14 +35,23 @@ def visit_playground(self, node: playground):
     # I'm pretty sure the proper way to do this is to call some sort of docutils method
     # but eh... on well.
     playground_classes = ["playground"]
+    icon_classes = ["fa"]
+    runtext = "Click to run"
     if "show_output" in node:
         playground_classes += ["show_output"]
-    self.body.append(f"<div class=\"{' '.join(playground_classes)}\">")
+        icon_classes += ["fa-repeat"]
+        runtext = "Run this again"
+    else:
+        icon_classes += ["fa-play"]
 
+    self.body.append(f"<div class=\"{' '.join(playground_classes)}\">")
     self.body.append('<div class="buttons">')
     self.body.append('<button class="run">')
-    self.body.append('<span class="btn-icon"><i class="fa fa-play"></i></span>')
-    self.body.append('<span class="btn-label">Click to run</span>')
+    self.body.append('<span class="btn-icon">')
+    self.body.append(f"<i class=\"{' '.join(icon_classes)}\"></i></span>")
+    self.body.append('<span class="btn-label">')
+    self.body.append(runtext)
+    self.body.append("</span>")
     self.body.append("</button>")
     self.body.append("</div>")
 
