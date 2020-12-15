@@ -55,8 +55,8 @@ especially succinct and readable. For example, here's how you'd output a message
   print("Hello, world!")
 
 Try it out for yourself! The box below is a code `playground`; it can execute Python code and
-display program output. You can even edit the code inside! Click the red button in the playground
-below to run the code inside. Program output will appear in a box below the code editor.
+display program output. You can even edit the code inside! Click the `Click to run` button in the
+playground below to run the code inside. Program output will appear in a box below the code editor.
 
 .. playground::
 
