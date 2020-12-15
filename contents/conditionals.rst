@@ -97,7 +97,7 @@ In our pseudocode, the line that says ``if module is finished`` is called an
 **if-statement**. Python if-statements look pretty similar to our pseudocode.
 Here is some valid Python code that does a similar thing:
 
-.. code-block:: python
+.. playground:: 
 
     module = "incomplete"
     if module == "complete":
@@ -129,7 +129,7 @@ of this code?
 If-Statement Syntax
 -------------------
 
-.. code-block:: python
+.. playground:: 
 
     if family_member1 == family_member2:
         print "You have two family members with the same name."

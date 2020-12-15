@@ -36,52 +36,53 @@ Variables
 
 In Python, it is often that you will assign nicknames to values. This way, you
 can refer to values later and use them in other parts of your code. The act
-of assigning a nickname to a value is called **variable assignment**.
+of assigning a nickname to a value is called `variable assignment`.
 
-Here is an example::
+Here is an example
+
+.. code-block:: python
 
   >>> hackbright = "balloonicorn, magic, and python"
 
 **In the above code, what part is the variable?**
 
-.. topic:: ``hackbright``
-  :class: hover-reveal
+.. togglereveal::
 
   We can think of this like a nickname for some actual value that exists (a
   string, in this case).
 
 **In the above code, which part is the value that the variable represents?**
 
-.. topic:: ``"balloonicorn, magic, and python"``
-  :class: hover-reveal
+.. togglereveal::
 
-  This string is the value that the variable ``hackbright`` represents.
+  This string is the value that the variable `hackbright` represents.
 
+The line of Python assigns that string to the variable `hackbright`. Now, to
+to print the value of `hackbright`:
 
-The line of Python assigns that string to the variable **hackbright**. Now, if
-I want to print my string, I can do the following::
-
-  >>> print hackbright
-  balloonicorn, magic, and python
+.. playground:: 
+  
+  hackbright = "balloonicorn, magic, and python"
+  print(hackbright)
 
 .. note:: No quotes around variables.
 
   It's important to note that variables do **not** have quotation marks around
-  them. Once a variable such as **hackbright** is assigned a value, Python can
+  them. Once a variable such as `hackbright` is assigned a value, Python can
   understand what it is when you use it.
 
-If you ask a variable for it's datatype using the **type** function, you'll see
+If you ask a variable for it's datatype using the `type` function, you'll see
 that a variable's type is that of it's actual value. Read the following code
-block::
+block:
 
-  >>> sanfran = "rainy"
-  >>> temp = 62
-  >>> print type(sanfran)
-  <type 'str'>
-  >>> print type(temp)
-  <type 'int'>
+.. playground::
 
-Importantly, the **temp** variable is an integer, whereas the **sanfran** variable
+  sanfran = "rainy"
+  temp = 62
+  print(type(sanfran))
+  print(type(temp))
+
+Importantly, the ``temp`` variable is an integer, whereas the ``sanfran`` variable
 is a string.
 
 Expressions
@@ -91,7 +92,7 @@ An expression is any part of a statement that can results in a value. We've
 already been using expressions, in fact. In the following code, the string
 ``"rainy"`` is an expression-- it results in a value of the type string::
 
-  >>> print "rainy"
+  >>> print("rainy")
 
 However, expressions can be a bit more complex. We'll talk about 2 kinds of
 expressions here: boolean expressions and mathematical expressions.
@@ -111,7 +112,8 @@ same *value*. This comparison of two strings *results* in a value. Can you spot
 the result of the expression in the above code?
 
 .. topic:: **The expression results in True**
-  :class: hover-reveal
+  .. togglereveal::
+
 
   This expression results in a Boolean value of ``True``. We can see that
   in the Python interpreter on the second line of the code snippet.
@@ -179,12 +181,12 @@ Calling Functions and Setting Variables
 ---------------------------------------
 
 Next, we'll cover how to capture the return value of a function into
-a variable. Remember the **len** function from Module 1? Here's a refresher::
+a variable. Remember the ``len`` function from Module 1? Here's a refresher::
 
   >>> len("Balloonicorn")
   12
 
-We can capture the integer **12** into a variable with the following code::
+We can capture the integer ``12`` into a variable with the following code::
 
   >>> name_length = len("Balloonicorn")
   >>> print name_length
@@ -195,7 +197,7 @@ Check out the data type for our new variable::
   >>> type(name_length)
   <type 'int'>
 
-It's an integer! Cool. We could also set a variable for the **"Balloonicorn"**
+It's an integer! Cool. We could also set a variable for the ``"Balloonicorn"``
 string. So, starting from the top::
 
   >>> name = "Balloonicorn"
@@ -221,7 +223,7 @@ Let's add one more function to that list.
 A function to capture user input
 --------------------------------
 
-**raw_input** is a built-in function that allows you to prompt a user of your
+`raw_input` is a built-in function that allows you to prompt a user of your
 program for some input. In our example here, *you* are going to be the user of
 your program. Of course, you're also the author of your program. Welcome to the
 world of software engineering :)
@@ -243,13 +245,13 @@ So, type a quick message to yourself, and press enter
   >>> my_message = raw_input("Write a message to yourself: ")
   Write a message to yourself: good job!
 
-Then, print the variable called **my_message**::
+Then, print the variable called ``my_message``::
 
   >>> print my_message
   good job!
 
-The value of the **my_message** variable is the thing you typed in! Pretty cool.
-Notably, the string that you passed into the **raw_input** function
+The value of the ``my_message`` variable is the thing you typed in! Pretty cool.
+Notably, the string that you passed into the ``raw_input`` function
 (``Write a messahe to yourself:``) is what gets printed right before the user
 starts typing. You can think of it like a prompt for the user's input.
 
@@ -260,49 +262,48 @@ Practice Section
 Directions
 ----------
 
-Login to your Repl.it account and start a new repl `here
-<https://repl.it/languages/python>`_.
-
-Complete the practice problems below in this repl console. If you'd like to
+Complete the practice problems below in the playground below. If you'd like to
 work through the practice in several sittings and save your work in between,
-make sure you are logged in to Repl.it consistently saving your work.
+you can copy your work and save it locally.
 
-1) Make a variable with the name **a** and set the value to **"Hello, world."**
-2) Make a variable with the name **message** and set the value to
-   **"Howdy, folks!"**
-3) Make a variable with the name **my_num** and set the value to **406**.
-4) Make a variable with the name **i** and set the value to **40**.
-5) Print the variable called **a**.
-6) Print the variable called **message**.
-7) Print the variable called **my_num**.
-8) Print the variable called **i**.
-9) Write an expression that evaluates the equality of the integer **9** to the
-   integer **10**.
-10) Write an expression that evaluates the equality of the string **Hello**
-    to string **"hello"**.
-11) Write an expression that evaluates to the sum of the variable **i** and the
-    variable **my_num**.
+1) Make a variable with the name `a` and set the value to ``'Hello, world."``
+2) Make a variable with the name ``message`` and set the value to
+   ``"Howdy, folks!"``
+3) Make a variable with the name ``my_num`` and set the value to ``406``.
+4) Make a variable with the name ``i`` and set the value to ``40``.
+5) Print the variable called ``a``.
+6) Print the variable called ``message``.
+7) Print the variable called ``my_num``.
+8) Print the variable called ``i``.
+9) Write an expression that evaluates the equality of the integer ``9`` to the
+   integer ``10``.
+10) Write an expression that evaluates the equality of the string ``Hello``
+    to string ``"hello"``.
+11) Write an expression that evaluates to the sum of the variable ``i`` and the
+    variable ``my_num``.
 12) Write an expression that evaluates to the difference of the variable
-    **my_num** and the variable **i**.
+    ``my_num`` and the variable ``i``.
 13) Let's say you have four friends: Larry, Gina, Erika, and Buster. Make 4
     variables-- one for each friend. The name of each variable is up to you,
     but the value should be a string which is the name of each friend. Once
     you make the 4 variables, print them all on the same line, separated by
     spaces.
-14) Capture the return value of the following code to a variable called
-    **length_of_balloonicorn**.
+14) Capture the return value of the following code to a variable called``length_of_balloonicorn``.
 
     .. code-block:: python
 
       len("balloonicorn")
 
 15) Capture the return value of the following code to a variable called
-    **are_names_equal**.
+    ``are_names_equal``.
 
     .. code-block:: python
 
       "Balloonicorn" == "baLLOONicorn"
 
+  .. playground::
+
+    #your code here
 
 Debugging
 =========
@@ -328,11 +329,12 @@ shows, along with an explanation of what is going wrong.
   >>> "Hello" = a
 
 .. topic:: **Variable name must be on the left side of equals sign**
-  :class: hover-reveal
+  .. togglereveal::
+
 
   In order to successfully set a variable in Python, the name of the variable
   must appear on the left-hand side of the equals sign. The thing on the right
-  is the actual **value** of the variable (a string, integer, Boolean, etc.)
+  is the actual `value` of the variable (a string, integer, Boolean, etc.)
 
   The error message is a little odd for this one, but Python is essentially
   that you're trying to use a "literal" string as a variable name, which is
@@ -351,7 +353,8 @@ shows, along with an explanation of what is going wrong.
   >>> 887 = my_num
 
 .. topic:: **Variable name must be on the left side of equals sign**
-  :class: hover-reveal
+  .. togglereveal::
+
 
   The problem with this code is the same as the previous problem. Although
   the variable we're trying to create is **my_num**, and the value is an

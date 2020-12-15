@@ -290,48 +290,40 @@ fully understand what the problem was.</p>
 <h3>Variables</h3>
 <p>In Python, it is often that you will assign nicknames to values. This way, you
 can refer to values later and use them in other parts of your code. The act
-of assigning a nickname to a value is called <strong>variable assignment</strong>.</p>
-<p>Here is an example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hackbright</span> <span class="o">=</span> <span class="s2">&quot;balloonicorn, magic, and python&quot;</span>
+of assigning a nickname to a value is called <cite>variable assignment</cite>.</p>
+<p>Here is an example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hackbright</span> <span class="o">=</span> <span class="s2">&quot;balloonicorn, magic, and python&quot;</span>
 </pre></div>
 </div>
 <p><strong>In the above code, what part is the variable?</strong></p>
-<div class="hover-reveal topic">
-<p class="topic-title"><code class="docutils literal notranslate"><span class="pre">hackbright</span></code></p>
-<p>We can think of this like a nickname for some actual value that exists (a
+<div class="togglereveal "><details class="admonition-body"><summary></summary><p>We can think of this like a nickname for some actual value that exists (a
 string, in this case).</p>
-</div>
-<p><strong>In the above code, which part is the value that the variable represents?</strong></p>
-<div class="hover-reveal topic">
-<p class="topic-title"><code class="docutils literal notranslate"><span class="pre">&quot;balloonicorn,</span> <span class="pre">magic,</span> <span class="pre">and</span> <span class="pre">python&quot;</span></code></p>
-<p>This string is the value that the variable <code class="docutils literal notranslate"><span class="pre">hackbright</span></code> represents.</p>
-</div>
-<p>The line of Python assigns that string to the variable <strong>hackbright</strong>. Now, if
-I want to print my string, I can do the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hackbright</span>
-<span class="go">balloonicorn, magic, and python</span>
+</details></div><p><strong>In the above code, which part is the value that the variable represents?</strong></p>
+<div class="togglereveal "><details class="admonition-body"><summary></summary><p>This string is the value that the variable <cite>hackbright</cite> represents.</p>
+</details></div><p>The line of Python assigns that string to the variable <cite>hackbright</cite>. Now, to
+to print the value of <cite>hackbright</cite>:</p>
+<div class="playground"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hackbright</span> <span class="o">=</span> <span class="s2">&quot;balloonicorn, magic, and python&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hackbright</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
+</div><pre class="console"></pre></div><div class="admonition note">
 <p class="admonition-title">No quotes around variables.</p>
 <div class="admonition-body docutils container">
 <p>It’s important to note that variables do <strong>not</strong> have quotation marks around
-them. Once a variable such as <strong>hackbright</strong> is assigned a value, Python can
+them. Once a variable such as <cite>hackbright</cite> is assigned a value, Python can
 understand what it is when you use it.</p>
 </div>
 </div>
-<p>If you ask a variable for it’s datatype using the <strong>type</strong> function, you’ll see
+<p>If you ask a variable for it’s datatype using the <cite>type</cite> function, you’ll see
 that a variable’s type is that of it’s actual value. Read the following code
 block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sanfran</span> <span class="o">=</span> <span class="s2">&quot;rainy&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temp</span> <span class="o">=</span> <span class="mi">62</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">sanfran</span><span class="p">)</span>
-<span class="go">&lt;type &#39;str&#39;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
-<span class="go">&lt;type &#39;int&#39;&gt;</span>
+<div class="playground"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sanfran</span> <span class="o">=</span> <span class="s2">&quot;rainy&quot;</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="mi">62</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sanfran</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Importantly, the <strong>temp</strong> variable is an integer, whereas the <strong>sanfran</strong> variable
+</div><pre class="console"></pre></div><p>Importantly, the <code class="docutils literal notranslate"><span class="pre">temp</span></code> variable is an integer, whereas the <code class="docutils literal notranslate"><span class="pre">sanfran</span></code> variable
 is a string.</p>
 </section>
 <section class="section" id="expressions">
@@ -339,7 +331,7 @@ is a string.</p>
 <p>An expression is any part of a statement that can results in a value. We’ve
 already been using expressions, in fact. In the following code, the string
 <code class="docutils literal notranslate"><span class="pre">&quot;rainy&quot;</span></code> is an expression– it results in a value of the type string:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;rainy&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rainy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>However, expressions can be a bit more complex. We’ll talk about 2 kinds of
@@ -357,8 +349,9 @@ following Boolean expression:</p>
 though they are denoted with different kinds of quotation marks, they have the
 same <em>value</em>. This comparison of two strings <em>results</em> in a value. Can you spot
 the result of the expression in the above code?</p>
-<div class="hover-reveal topic">
-<p class="topic-title"><strong>The expression results in True</strong></p>
+<div class="topic">
+<p class="topic-title"><strong>The expression results in True</strong>
+.. togglereveal::</p>
 <p>This expression results in a Boolean value of <code class="docutils literal notranslate"><span class="pre">True</span></code>. We can see that
 in the Python interpreter on the second line of the code snippet.</p>
 </div>
@@ -423,12 +416,12 @@ out this example:</p>
 <section class="section" id="calling-functions-and-setting-variables">
 <h3>Calling Functions and Setting Variables</h3>
 <p>Next, we’ll cover how to capture the return value of a function into
-a variable. Remember the <strong>len</strong> function from Module 1? Here’s a refresher:</p>
+a variable. Remember the <code class="docutils literal notranslate"><span class="pre">len</span></code> function from Module 1? Here’s a refresher:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Balloonicorn&quot;</span><span class="p">)</span>
 <span class="go">12</span>
 </pre></div>
 </div>
-<p>We can capture the integer <strong>12</strong> into a variable with the following code:</p>
+<p>We can capture the integer <code class="docutils literal notranslate"><span class="pre">12</span></code> into a variable with the following code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Balloonicorn&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">name_length</span>
 <span class="go">12</span>
@@ -439,7 +432,7 @@ a variable. Remember the <strong>len</strong> function from Module 1? Here’s a
 <span class="go">&lt;type &#39;int&#39;&gt;</span>
 </pre></div>
 </div>
-<p>It’s an integer! Cool. We could also set a variable for the <strong>“Balloonicorn”</strong>
+<p>It’s an integer! Cool. We could also set a variable for the <code class="docutils literal notranslate"><span class="pre">&quot;Balloonicorn&quot;</span></code>
 string. So, starting from the top:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Balloonicorn&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">name_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -462,7 +455,7 @@ are:</p>
 </section>
 <section class="section" id="a-function-to-capture-user-input">
 <h3>A function to capture user input</h3>
-<p><strong>raw_input</strong> is a built-in function that allows you to prompt a user of your
+<p><cite>raw_input</cite> is a built-in function that allows you to prompt a user of your
 program for some input. In our example here, <em>you</em> are going to be the user of
 your program. Of course, you’re also the author of your program. Welcome to the
 world of software engineering :)</p>
@@ -480,13 +473,13 @@ world of software engineering :)</p>
 <span class="go">Write a message to yourself: good job!</span>
 </pre></div>
 </div>
-<p>Then, print the variable called <strong>my_message</strong>:</p>
+<p>Then, print the variable called <code class="docutils literal notranslate"><span class="pre">my_message</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">my_message</span>
 <span class="go">good job!</span>
 </pre></div>
 </div>
-<p>The value of the <strong>my_message</strong> variable is the thing you typed in! Pretty cool.
-Notably, the string that you passed into the <strong>raw_input</strong> function
+<p>The value of the <code class="docutils literal notranslate"><span class="pre">my_message</span></code> variable is the thing you typed in! Pretty cool.
+Notably, the string that you passed into the <code class="docutils literal notranslate"><span class="pre">raw_input</span></code> function
 (<code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">a</span> <span class="pre">messahe</span> <span class="pre">to</span> <span class="pre">yourself:</span></code>) is what gets printed right before the user
 starts typing. You can think of it like a prompt for the user’s input.</p>
 </section>
@@ -495,46 +488,49 @@ starts typing. You can think of it like a prompt for the user’s input.</p>
 <h2>Practice Section</h2>
 <section class="section" id="directions">
 <h3>Directions</h3>
-<p>Login to your Repl.it account and start a new repl <a class="reference external" href="https://repl.it/languages/python" rel="noreferrer noopener" target="_blank">here</a>.</p>
-<p>Complete the practice problems below in this repl console. If you’d like to
+<p>Complete the practice problems below in the playground below. If you’d like to
 work through the practice in several sittings and save your work in between,
-make sure you are logged in to Repl.it consistently saving your work.</p>
+you can copy your work and save it locally.</p>
 <ol class="arabic">
-<li><p>Make a variable with the name <strong>a</strong> and set the value to <strong>“Hello, world.”</strong></p></li>
-<li><p>Make a variable with the name <strong>message</strong> and set the value to
-<strong>“Howdy, folks!”</strong></p></li>
-<li><p>Make a variable with the name <strong>my_num</strong> and set the value to <strong>406</strong>.</p></li>
-<li><p>Make a variable with the name <strong>i</strong> and set the value to <strong>40</strong>.</p></li>
-<li><p>Print the variable called <strong>a</strong>.</p></li>
-<li><p>Print the variable called <strong>message</strong>.</p></li>
-<li><p>Print the variable called <strong>my_num</strong>.</p></li>
-<li><p>Print the variable called <strong>i</strong>.</p></li>
-<li><p>Write an expression that evaluates the equality of the integer <strong>9</strong> to the
-integer <strong>10</strong>.</p></li>
-<li><p>Write an expression that evaluates the equality of the string <strong>Hello</strong>
-to string <strong>“hello”</strong>.</p></li>
-<li><p>Write an expression that evaluates to the sum of the variable <strong>i</strong> and the
-variable <strong>my_num</strong>.</p></li>
+<li><p>Make a variable with the name <cite>a</cite> and set the value to <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">world.&quot;</span></code></p></li>
+<li><p>Make a variable with the name <code class="docutils literal notranslate"><span class="pre">message</span></code> and set the value to
+<code class="docutils literal notranslate"><span class="pre">&quot;Howdy,</span> <span class="pre">folks!&quot;</span></code></p></li>
+<li><p>Make a variable with the name <code class="docutils literal notranslate"><span class="pre">my_num</span></code> and set the value to <code class="docutils literal notranslate"><span class="pre">406</span></code>.</p></li>
+<li><p>Make a variable with the name <code class="docutils literal notranslate"><span class="pre">i</span></code> and set the value to <code class="docutils literal notranslate"><span class="pre">40</span></code>.</p></li>
+<li><p>Print the variable called <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
+<li><p>Print the variable called <code class="docutils literal notranslate"><span class="pre">message</span></code>.</p></li>
+<li><p>Print the variable called <code class="docutils literal notranslate"><span class="pre">my_num</span></code>.</p></li>
+<li><p>Print the variable called <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></li>
+<li><p>Write an expression that evaluates the equality of the integer <code class="docutils literal notranslate"><span class="pre">9</span></code> to the
+integer <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Write an expression that evaluates the equality of the string <code class="docutils literal notranslate"><span class="pre">Hello</span></code>
+to string <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code>.</p></li>
+<li><p>Write an expression that evaluates to the sum of the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> and the
+variable <code class="docutils literal notranslate"><span class="pre">my_num</span></code>.</p></li>
 <li><p>Write an expression that evaluates to the difference of the variable
-<strong>my_num</strong> and the variable <strong>i</strong>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">my_num</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></li>
 <li><p>Let’s say you have four friends: Larry, Gina, Erika, and Buster. Make 4
 variables– one for each friend. The name of each variable is up to you,
 but the value should be a string which is the name of each friend. Once
 you make the 4 variables, print them all on the same line, separated by
 spaces.</p></li>
-<li><p>Capture the return value of the following code to a variable called
-<strong>length_of_balloonicorn</strong>.</p>
+<li><p>Capture the return value of the following code to a variable called``length_of_balloonicorn``.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;balloonicorn&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p>Capture the return value of the following code to a variable called
-<strong>are_names_equal</strong>.</p>
+<code class="docutils literal notranslate"><span class="pre">are_names_equal</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Balloonicorn&quot;</span> <span class="o">==</span> <span class="s2">&quot;baLLOONicorn&quot;</span>
 </pre></div>
 </div>
 </li>
 </ol>
+<blockquote>
+<div><div class="playground"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
+</pre></div>
+</div>
+</div><pre class="console"></pre></div></div></blockquote>
 </section>
 </section>
 <section class="section" id="debugging">
@@ -554,11 +550,12 @@ shows, along with an explanation of what is going wrong.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Hello&quot;</span> <span class="o">=</span> <span class="n">a</span>
 </pre></div>
 </div>
-<div class="hover-reveal topic">
-<p class="topic-title"><strong>Variable name must be on the left side of equals sign</strong></p>
+<div class="topic">
+<p class="topic-title"><strong>Variable name must be on the left side of equals sign</strong>
+.. togglereveal::</p>
 <p>In order to successfully set a variable in Python, the name of the variable
 must appear on the left-hand side of the equals sign. The thing on the right
-is the actual <strong>value</strong> of the variable (a string, integer, Boolean, etc.)</p>
+is the actual <cite>value</cite> of the variable (a string, integer, Boolean, etc.)</p>
 <p>The error message is a little odd for this one, but Python is essentially
 that you’re trying to use a “literal” string as a variable name, which is
 not allowed. Thus, this code results in a <strong>SyntaxError</strong>– Python can parse
@@ -573,8 +570,9 @@ the text in a meaningful way.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">887</span> <span class="o">=</span> <span class="n">my_num</span>
 </pre></div>
 </div>
-<div class="hover-reveal topic">
-<p class="topic-title"><strong>Variable name must be on the left side of equals sign</strong></p>
+<div class="topic">
+<p class="topic-title"><strong>Variable name must be on the left side of equals sign</strong>
+.. togglereveal::</p>
 <p>The problem with this code is the same as the previous problem. Although
 the variable we’re trying to create is <strong>my_num</strong>, and the value is an
 integer rather than a string, the same rules apply. So, here’s the error

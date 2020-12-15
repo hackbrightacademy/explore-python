@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7ac2aadf10e68ef3cd629537c37c2222ceda62da0dba17a78be90b79d3032c76"
+            "sha256": "6b18116f458c40d022539ca5b55d9df36eedc009a0da81f09e852af5e6314954"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -186,7 +186,7 @@
         },
         "sphinx-lectern": {
             "editable": true,
-            "git": "ssh://git@github.com/hackbrightacademy/sphinx-lectern.git",
+            "git": "https://github.com/hackbrightacademy/sphinx-lectern.git",
             "ref": "5de3c14069534fb7031b54b2df811cdd84b0a436"
         },
         "sphinxcontrib-applehelp": {
