@@ -7,7 +7,7 @@ verify_ssl = true
 black = "*"
 
 [packages]
-sphinx-lectern = {editable = true, git = "https://github.com/hackbrightacademy/sphinx-lectern.git"}
+sphinx-lectern = {editable = true, git = "ssh://git@github.com/hackbrightacademy/sphinx-lectern.git"}
 invoke = "*"
 sphinx = "*"
 pygments-style-github = "*"
