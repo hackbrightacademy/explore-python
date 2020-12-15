@@ -5,3 +5,4 @@ _build
 .doctrees
 *.code-workspace
 node_modules
+*.lock
