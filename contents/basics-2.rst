@@ -101,7 +101,9 @@ Boolean Expressions
 -------------------
 
 Boolean expressions enable you to compare two values in Python. Check out the
-following Boolean expression::
+following Boolean expression:
+
+.. code-block:: python
 
   >>> "hello" == 'hello'
   True
@@ -111,14 +113,14 @@ though they are denoted with different kinds of quotation marks, they have the
 same *value*. This comparison of two strings *results* in a value. Can you spot
 the result of the expression in the above code?
 
-.. topic:: **The expression results in True**
-  .. togglereveal::
-
+.. togglereveal::
 
   This expression results in a Boolean value of ``True``. We can see that
   in the Python interpreter on the second line of the code snippet.
 
-You can also ask if two values are **not equal** to each other::
+You can also ask if two values are **not equal** to each other:
+
+.. code-block:: python
 
   >>> "hello" != 'hello'
   False
