@@ -36,23 +36,30 @@ Topics We'll Cover
 Python Syntax
 =============
 
-Software engineers use `programming languages` to communicate with computers in order to tell them
-how to do something. Programming languages are much like other types of languages (including natural
-languages like English!) --- they're made of specific words (in programming, we call these`tokens`)
-arranged in a specific way.
+Software engineers use `programming languages` to communicate with computers in
+order to tell them how to do something. Programming languages are pretty similar to human languages
+in that sense --- both types of languages provide notations used to represent abstract thoughts and
+ideas.
 
-Python is a popular language because, compared to other programming languages, its syntax is
-especially succinct and readable. For example, here's how you'd output a message in Java:
+Python is a programming language that's similar to languages like JavaScript and Ruby. Over the past
+decade, Python has
+grown in popularity thanks to its especially succinct, readable, and elegant syntax.
+For example, here's a line of code written in Java:
 
 .. code-block:: java
 
   System.out.println("Hello, world!");
 
-...and here's how you'd output a message in Python:
+...and here is the equivalent but in Python:
 
 .. code-block:: python
 
   print("Hello, world!")
+
+The line of Python is far easier to read and understand, even by non-Python practitioners!
+
+Try Python!
+-----------
 
 Try it out for yourself! The box below is a code `playground`; it can execute Python code and
 display program output. You can even edit the code inside! Click the red button in the playground
@@ -63,14 +70,12 @@ below to run the code inside. Program output will appear in a box below the code
   print("Hello, world!")
   print("Isn't Python fun?")
 
-.. note:: Experimenting with code is the best way to learn
+You'll find these code playgrounds scattered across this book. Whenever you see one, please *do*
+play around with it. Experimenting with code is the *best* way to learn how it works.
 
-  Whenever you see a code playground in this book, *do* play around with it.
-  Add code, delete code, replace code, etc... then click the red button to run your code
-  and see what happens!
-
-You just executed your first Python program! Let's look at ``print("Hello, world!")`` in more
-detail.
+By the way, you just executed your first Python program! ...but what does it *mean*? In this
+chapter, we'll introduce you to Python's syntax essentials by breaking down each part of
+``print("Hello, world!")``.
 
 Objects and Classes
 ===================
@@ -78,13 +83,13 @@ Objects and Classes
 First let's talk about what ``"Hello, world!"`` is. To do that, we'll need to define what
 objects and classes are.
 
-A `value` or `object` is a piece of data that a program can manipulate. So far, you've seen the
-objects ``"Hello, world!"`` and ``"Isn't Python fun?"``. Both are members of the class, `str` (a
-shortened version of the word *string*, as in, "a string of characters").
+A :term:`value` or :term:`object` is a piece of data that a program can manipulate. So far,
+you've seen the objects ``"Hello, world!"`` and ``"Isn't Python fun?"``. Both are members of the
+class, :term:`str` (a shortened version of the word *string*, as in, "a string of characters").
 
-`Classes` are like categories. In Python, an object's class is analogous with its *type*
+:term:`Classes <class>` are like categories. In Python, an object's class is analogous with its *type*
 (ex.: ``"Hello, world!"`` is a *type* of string), so you can find out what class a value
-belongs to using `type`.
+belongs to using the :term:`type` function:
 
 .. code-block:: python
 
@@ -98,15 +103,26 @@ The code above doesn't print anything to the screen screen though, which is why 
 
   print(type("Hello, world!"))
 
-.. termstoknow::
+.. glossary::
 
-  object, value
+  object
+  value
     An object or value is a piece of data that a program can manipulate.
 
   class
     Objects are categorized by class, kind of like how animals are categorized by species. A value's
     class is analogous with its type. For example, ``"Hello, world!"`` is a type of string and a
     member of the class, `str`.
+
+  `str`
+  the `str` class
+    A string of letters. In Python, strings can be surrounded by double-quotes (``"``) or
+    single-quotes (``'``) and belong to the class, `str`.
+
+  `type`
+  the `type` function
+    A function that outputs the name of an object's class.
+
 
 Values that belong to different classes look different (they also behave in different ways but we'll
 talk more on that later) --- in other words, they use different syntax. As we talk about the basic
@@ -172,10 +188,14 @@ numbers but are surrounded by quotation marks like strings. Run the code below t
 
 **They're both strings.**
 
+.. FIXME: REWORD PARAGRAPH BELOW
+
 This is a good place to point out that Python is very particular about syntax. Something enclosed in
 quotation marks will *always* be a string.
 
-Here's another example of why precision matters when it comes to Python syntax: we
+.. FIXME: REWORD PARAGRAPH BELOW
+
+Here's another example of why precision matters when it comes to Python syntax:
 typically use commas to break uplarge numbers, like ``529,600``. Let's see what happens
 when we try to print it out:
 
@@ -285,6 +305,7 @@ Let's take a look at your first Python program again. Can you identify the strin
 
   .. mcq:: Which part of the code block above is a **string**?
     :answer: C
+    :show_feedback:
 
     A. All of the code is a string
 
@@ -459,159 +480,159 @@ Again, we won't see the result of calling `len` unless we print it out though:
 
   print(len("Hi!"))
 
-Practice Section
-================
+.. Practice Section
+.. ================
 
-Directions
-----------
+.. Directions
+.. ----------
 
-#. Print each of the following strings:
+.. #. Print each of the following strings:
 
-   - ``"hello world"``
+..    - ``"hello world"``
 
-   - ``'hi there world'``
+..    - ``'hi there world'``
 
-   - ``"Greetings, world!"``
+..    - ``"Greetings, world!"``
 
-   - ``"World?? Is it really you? Hi!!!!!!"``
+..    - ``"World?? Is it really you? Hi!!!!!!"``
 
-#. Print each of the following integers:
+.. #. Print each of the following integers:
 
-   - ``5000``
+..    - ``5000``
 
-   - ``5``
+..    - ``5``
 
-   - ``7``
+..    - ``7``
 
-#. Print a sentence that says what you had for breakfast this morning.
+.. #. Print a sentence that says what you had for breakfast this morning.
 
-#. Print a sentence that about something that you plan to do tomorrow.
+.. #. Print a sentence that about something that you plan to do tomorrow.
 
-#. Call the `type` function, passing the string ``"Howdy, partner"`` as an
-   argument.
+.. #. Call the `type` function, passing the string ``"Howdy, partner"`` as an
+..    argument.
 
-#. Call the `type` function, passing the boolean ``True`` as an argument.
+.. #. Call the `type` function, passing the boolean ``True`` as an argument.
 
-#. Call the `type` function, passing the boolean ``False`` as an argument.
+.. #. Call the `type` function, passing the boolean ``False`` as an argument.
 
-#. Call the `type` function, passing the integer ``88`` as an argument.
+.. #. Call the `type` function, passing the integer ``88`` as an argument.
 
-#. Call the `type` function, passing the string ``"775"`` as an argument.
+.. #. Call the `type` function, passing the string ``"775"`` as an argument.
 
-   - Notice anything interesting about the result?
+..    - Notice anything interesting about the result?
 
-   .. togglereveal::
+..    .. togglereveal::
 
-     Even if a string *contains* or is solely composed of a numeric value,
-     it's still a string!
+..      Even if a string *contains* or is solely composed of a numeric value,
+..      it's still a string!
 
-#. Print the each of the following strings on the same line, separated by
-   spaces: ``"apple"``, ``"berry"``, and ``'cherry'``.
+.. #. Print the each of the following strings on the same line, separated by
+..    spaces: ``"apple"``, ``"berry"``, and ``'cherry'``.
 
-#. Print the string ``"Hi, I have"``, the integer ``8``, and the string
-   ``"cats"``, separated by spaces.
+.. #. Print the string ``"Hi, I have"``, the integer ``8``, and the string
+..    ``"cats"``, separated by spaces.
 
-#. Use the `len` function in Python to print the length of the following
-   string: ``"supercalifragilisticexpealidocious"``.
+.. #. Use the `len` function in Python to print the length of the following
+..    string: ``"supercalifragilisticexpealidocious"``.
 
-Debugging Section
-=================
+.. Debugging Section
+.. =================
 
-Directions
-----------
+.. Directions
+.. ----------
 
-As a programmer, debugging is a fact of life. There are times you write code
-that Python doesn't understand. In these cases, Python will display an error
-message. The more familiar you are with Python's many error messages, the faster
-you'll be at debugging code. But there's good news: Python's error messages are
-incredibly descriptive and helpful in figuring out what the problem is.
+.. As a programmer, debugging is a fact of life. There are times you write code
+.. that Python doesn't understand. In these cases, Python will display an error
+.. message. The more familiar you are with Python's many error messages, the faster
+.. you'll be at debugging code. But there's good news: Python's error messages are
+.. incredibly descriptive and helpful in figuring out what the problem is.
 
-In the following problems, you'll find code that is invalid or not allowed in
-some way. Read the code, and see if you can predict what is wrong. When you're
-ready, hover over the solution area to reveal the error message that Python
-shows, along with an explanation of what is going wrong.
+.. In the following problems, you'll find code that is invalid or not allowed in
+.. some way. Read the code, and see if you can predict what is wrong. When you're
+.. ready, hover over the solution area to reveal the error message that Python
+.. shows, along with an explanation of what is going wrong.
 
-#. What's wrong with this code?
+.. #. What's wrong with this code?
 
-   .. code-block:: python
+..    .. code-block:: python
 
-     >>> len(True)
+..      >>> len(True)
 
-   .. togglereveal::
+..    .. togglereveal::
 
-     While it's completely valid to use a string as an argument for the `len`
-     function:
+..      While it's completely valid to use a string as an argument for the `len`
+..      function:
 
-     .. code-block:: python
+..      .. code-block:: python
 
-       >>> len("Hello")
-       5
+..        >>> len("Hello")
+..        5
 
-     it's not valid to pass a Boolean type into the `len` function:
+..      it's not valid to pass a Boolean type into the `len` function:
 
-     .. code-block:: python
+..      .. code-block:: python
 
-       >>> len(True)
-       Traceback (most recent call last):
-         File "<stdin>", line 1, in <module>
-       TypeError: object of type 'bool' has no len()
+..        >>> len(True)
+..        Traceback (most recent call last):
+..          File "<stdin>", line 1, in <module>
+..        TypeError: object of type 'bool' has no len()
 
-     Since there's no obvious answer for Python to give you for the length of
-     a boolean, it gives you a helpful message essentially stating that the
-     boolean thing you passed to `len` as no length associated with it.
+..      Since there's no obvious answer for Python to give you for the length of
+..      a boolean, it gives you a helpful message essentially stating that the
+..      boolean thing you passed to `len` as no length associated with it.
 
-     It's important to note that even though there are 4 characters that make
-     up the value ``True``, `len` doesn't return the integer ``4`` here. The
-     boolean type represents ``True`` in Python-- it's not simply the string
-     containing the letters ``"True"``. It's a magical, built-in value that has
-     meaning *without* quotation marks around it.
+..      It's important to note that even though there are 4 characters that make
+..      up the value ``True``, `len` doesn't return the integer ``4`` here. The
+..      boolean type represents ``True`` in Python-- it's not simply the string
+..      containing the letters ``"True"``. It's a magical, built-in value that has
+..      meaning *without* quotation marks around it.
 
-     So, without further ado, here's the error message:
+..      So, without further ado, here's the error message:
 
-     This is one example of a `TypeError` --- an error that's raised as a result
-     of data type you're trying to manipulate in an incorrect way (in this case,
-     you're trying to treat a boolean like a string).
+..      This is one example of a `TypeError` --- an error that's raised as a result
+..      of data type you're trying to manipulate in an incorrect way (in this case,
+..      you're trying to treat a boolean like a string).
 
-     Next time you see a `TypeError`, make sure you know what kind of thing
-     you're manipulating in your code. Are you trying to treat an integer like
-     a string? A string like a integer? A boolean like a string? The **type**
-     function is always there to help if you're not sure what type of thing
-     you're working with.
+..      Next time you see a `TypeError`, make sure you know what kind of thing
+..      you're manipulating in your code. Are you trying to treat an integer like
+..      a string? A string like a integer? A boolean like a string? The **type**
+..      function is always there to help if you're not sure what type of thing
+..      you're working with.
 
-#. What's wrong with this code?
+.. #. What's wrong with this code?
 
-   .. code-block:: python
+..    .. code-block:: python
 
-     >>> print(hello world)
+..      >>> print(hello world)
 
-   .. togglereveal::
+..    .. togglereveal::
 
-     In order to print a string, there must be quotes around the string.
-     When you don't wrap words in quotation marks, Python tries to evaluate the
-     word like it's a variable, keyword, or a built-in function. In this case,
-     Python is trying to figure out what ``hello`` and ``world`` mean.
+..      In order to print a string, there must be quotes around the string.
+..      When you don't wrap words in quotation marks, Python tries to evaluate the
+..      word like it's a variable, keyword, or a built-in function. In this case,
+..      Python is trying to figure out what ``hello`` and ``world`` mean.
 
-     Here is the error message:
+..      Here is the error message:
 
-     .. code-block:: python
+..      .. code-block:: python
 
-       >>> print(hello world)
-       Traceback (most recent call last):
-         File "<stdin>", line 1, in <module>
-       NameError: name 'hello' is not defined
+..        >>> print(hello world)
+..        Traceback (most recent call last):
+..          File "<stdin>", line 1, in <module>
+..        NameError: name 'hello' is not defined
 
-#. What's wrong with this code?
+.. #. What's wrong with this code?
 
-   .. code-block:: python
+..    .. code-block:: python
 
-     >>> print("hi" print "whats up")
+..      >>> print("hi" print "whats up")
 
-   .. togglereveal::
+..    .. togglereveal::
 
-     You can't put two print statements on the same line. In Python, whitespace (or
-     the space around the actual words that make up your code) is *meaningful*.
-     Python needs only the right amount of code to be on each line. Similarly,
-     indentation is also meaningful in Python. You'll see this in action in the
-     next module. For now, note that too much code on the same line results
-     in a **SyntaxError**, since the syntax that Python is trying to parse is
-     not able to be understood.
+..      You can't put two print statements on the same line. In Python, whitespace (or
+..      the space around the actual words that make up your code) is *meaningful*.
+..      Python needs only the right amount of code to be on each line. Similarly,
+..      indentation is also meaningful in Python. You'll see this in action in the
+..      next module. For now, note that too much code on the same line results
+..      in a **SyntaxError**, since the syntax that Python is trying to parse is
+..      not able to be understood.

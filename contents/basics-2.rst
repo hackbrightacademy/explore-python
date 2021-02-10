@@ -6,10 +6,8 @@ Welcome
 =======
 
 At this point, you should feel pretty comfortable with making strings and
-integers in Python. You should also feel comfortable with writing and running
-Python, and viewing the output using Repl.it. If you don't feel like you've
-mastered both of these things, please revisit Module 1 to be sure you can move
-forward successfully.
+integers in Python. If you don't feel like you've mastered both of these
+things, please revisit :doc:`basics-1` to be sure you can move forward successfully.
 
 Learning to Love Errors
 -----------------------
