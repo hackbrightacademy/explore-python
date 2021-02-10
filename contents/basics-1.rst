@@ -95,13 +95,21 @@ belongs to using the :term:`type` function:
 
   type("Hello, world!")
 
-The code above doesn't print anything to the screen screen though, which is why we'll combine it with
-`print`:
+The technical term for using a function is :term:`calling` a function. Think of it like calling on
+a friend by their name and asking them to do something for you.
+
+We won't be able to view the results of calling the :term:`type` function though, so if you try to
+run the line of code above, it will look as if nothing's happened. If we want to make the result of
+calling :term:`type` visible, we can combine it with a call to the :term:`print` function:
 
 .. playground::
   :show_output:
 
   print(type("Hello, world!"))
+
+The :term:`print` is a function used to display values onto the screen. We'll use this function a
+*lot* in this book; you should too! If you're ever curious about what's going on in the code you're
+working with, use the :term:`print` function!
 
 .. glossary::
 
@@ -115,7 +123,7 @@ The code above doesn't print anything to the screen screen though, which is why 
     member of the class, `str`.
 
   `str`
-  the `str` class
+  the string class
     A string of letters. In Python, strings can be surrounded by double-quotes (``"``) or
     single-quotes (``'``) and belong to the class, `str`.
 
@@ -123,6 +131,15 @@ The code above doesn't print anything to the screen screen though, which is why 
   the `type` function
     A function that outputs the name of an object's class.
 
+  call
+  calling
+  to call a function
+    Another way to describe using a function is to say that you're performing a *function call* or
+    that you're *calling* a function.
+
+  `print`
+  the `print` function
+    A function that displays values onto the screen, in a human-readable format.
 
 Values that belong to different classes look different (they also behave in different ways but we'll
 talk more on that later) --- in other words, they use different syntax. As we talk about the basic
@@ -141,40 +158,38 @@ single-quotes --- in either case, Python will produce the same output.
 
   print("Delicious knishes")
 
-Another class is `int`, short for *integer*. For example, the object ``100`` is an integer. `print`
-also works with integers:
+Another class is :term:`int`, short for *integer*. For example, the object ``100`` is an integer.
+:term:`print` also works with integers:
 
 .. playground::
   :show_output:
 
   print(100)
 
-Printing the type of ``100`` gives us the class, `int`:
+Printing the type of ``100`` gives us the class, :term:`int`:
 
 .. playground::
   :show_output:
 
   print(type(100))
 
-There are also numbers with a decimal point that are stored in a format called
-*floating-point*; they belong to the `float` class:
+There are also numbers with a decimal point that are stored in a format called *floating-point*;
+they belong to the :term:`float` class:
 
 .. playground::
   :show_output:
 
   print(type(4.1))
 
-.. termstoknow::
+.. glossary::
 
-  string (`str`)
-    A string of letters. In Python, strings can be surrounded by double-quotes (``"``) or
-    single-quotes (``'``) and belong to the class `str`
-
-  integer (`int`)
+  `int`
+  the integer class
     A whole number that can be *signed* (``-1``) or *unsigned* (``1``). They belong to the
     class `int`.
 
-  float (`float`)
+  `float`
+  the floating-point number class
     A number with a decimal point that belongs to class `float`. These can also be signed
     (``-3.02``) or unsigned (``3.02``).
 
@@ -186,23 +201,51 @@ numbers but are surrounded by quotation marks like strings. Run the code below t
   print(type("17"))
   print(type("4.1"))
 
-**They're both strings.**
+.. knowledge-check::
 
-.. FIXME: REWORD PARAGRAPH BELOW
+  .. mcq:: Which class(es) do the objects ``"17"`` and ``"4.1"`` belong to?
+    :answer: A
+    :show_feedback:
 
-This is a good place to point out that Python is very particular about syntax. Something enclosed in
-quotation marks will *always* be a string.
+    A. Both ``"17"`` and ``"4.1"`` belong to the `str` class
 
-.. FIXME: REWORD PARAGRAPH BELOW
+       :feedback: Correct. You can tell they're both strings because, if you ran the code in the
+         playground above, you'll see ``<class 'str'>`` twice --- once for each call to the `print`
+         function.
 
-Here's another example of why precision matters when it comes to Python syntax:
-typically use commas to break uplarge numbers, like ``529,600``. Let's see what happens
-when we try to print it out:
+    B. Both ``"17"`` and ``"4.1"`` belong to the `number` class
+
+       :feedback: *number* is not a Python data type.
+
+    C. Both ``"17"`` and ``"4.1"`` belong to the `int` class
+
+       :feedback: ``"17"`` and ``"4.1"`` certainly *look* like an integer and a float but if you run
+         the code in the palyground above, you'll see that they're both strings.
+
+    D. ``"17"`` belongs to `int` and ``"4.1"`` belongs to `float`
+
+       :feedback: ``"17"`` and ``"4.1"`` certainly *look* like an integer and a float but if you run
+         the code in the palyground above, you'll see that they're both strings.
+
+Be Precise with Your Syntax!
+----------------------------
+
+This is a good place to point out that you must be precise with your syntax when writing in a
+programming language. In Python, *anything* enclosed in quotation marks will **always** be a string,
+even if it looks like a number. For example, ``"500"``, ``"My favorite number is 3"``, and ``"4.1"``
+are all strings.
+
+Here's another example of why precision matters when it comes to Python syntax. As humans, we often
+use commas or periods to break up large numbers because it makes them more legible. For example, we
+can write the number *one hundred and fifty thousand, three hundred and sixty-eight* like so:
+*150,368*.
+
+Is ``150,368`` a valid Python integer? Let's try printing it out!
 
 .. playground::
   :show_output:
 
-  print(529,600)
+  print(150,368)
 
 Gah! Frustratingly, the code above is *syntactically correct* --- in other words, Python
 is able to run the code without complaining --- but it's probably not what we wanted.

@@ -42,19 +42,7 @@ Here is an example::
 
 **In the above code, what part is the variable?**
 
-.. topic:: ``hackbright``
-  :class: hover-reveal
-
-  We can think of this like a nickname for some actual value that exists (a
-  string, in this case).
-
 **In the above code, which part is the value that the variable represents?**
-
-.. topic:: ``"balloonicorn, magic, and python"``
-  :class: hover-reveal
-
-  This string is the value that the variable ``hackbright`` represents.
-
 
 The line of Python assigns that string to the variable **hackbright**. Now, if
 I want to print my string, I can do the following::
