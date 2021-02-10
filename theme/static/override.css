@@ -35,6 +35,10 @@ body {
 /*
  * Styles for code playgrounds.
  */
+.playground {
+  font-size: 1.05em;
+}
+
 .playground .console {
   /* This is where program output appears. */
   /* These variables are overriding styles in .console */
@@ -49,7 +53,7 @@ body {
   min-height: 150px;
 }
 .playground .buttons {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   background: #e8e8e8;
   padding: 3px 5px 0 5px;
 }
@@ -244,4 +248,37 @@ dl.glossary dt + dt:before {
 
 .hide-children * {
   display: none !important;
+}
+
+code, pre {
+  font-size: 96%;
+}
+
+code {
+  background: var(--lightGray);
+  border: 0;
+  border-radius: var(--borderRadius);
+}
+
+.mcq-body > *:first-child, .mcq-alert > div > *:first-child {
+  margin-top: 0;
+}
+
+
+.mcq-body > *:last-child, .mcq-alert > div > *:last-child {
+  margin-bottom: 0;
+}
+
+.mcq-answer-group label {
+  margin-left: 0.5em;
+}
+
+.mcq-alert {
+  line-height: 1.25em;
+}
+
+.mcq-alert code {
+  color: inherit;
+  background: inherit;
+  font-weight: bold;
 }
