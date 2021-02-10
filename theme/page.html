@@ -68,7 +68,6 @@
     <div id="page-wrapper" class="page-wrapper">
       <div class="page">
         <div id="menu-bar-hover-placeholder"></div>
-
         <div id="menu-bar" class="menu-bar sticky bordered">
           <div class="left-buttons">
             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -127,5 +126,55 @@
     <script src="{{ pathto('_static/mdbook/book.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ pathto('_static/main.js', 1) }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ pathto('_static/playground.js', 1) }}" type="text/javascript" charset="utf-8"></script>
+    <script>
+      document.querySelectorAll('.mcq-answer-group input').forEach((el, idx) => {
+        const questionID = el.parentElement.parentElement.parentElement.getAttribute('id');
+
+        const inputID = `${questionID}-input-${idx}`;
+        el.setAttribute('id', inputID);
+        el.nextElementSibling.setAttribute('for', inputID);
+      });
+
+      const highlightBackground = (targetEl) => {
+        Array.from(targetEl.parentElement.children)
+          .forEach((el) => {
+            el.style.backgroundColor = 'inherit';
+          });
+
+        // Traverse back until we get to the beginning
+        // of term or before we hit a <dd>
+        let curr = targetEl;
+        while (curr.previousElementSibling && curr.previousElementSibling.tagName !== 'DD') {
+          curr = curr.previousElementSibling;
+        }
+
+        const elementsToHighlight = [];
+        while (curr.tagName !== 'DD') {
+          elementsToHighlight.push(curr);
+          curr = curr.nextElementSibling;
+        }
+        elementsToHighlight.push(curr);
+
+        elementsToHighlight.forEach((el, idx) => {
+          el.style.backgroundColor = '#fff5a3';
+        });
+      };
+
+      const anchorLinks = document.querySelectorAll('a[href^="#term"]');
+
+      anchorLinks.forEach((anchorLink) => {
+        anchorLink.addEventListener('click', (evt) => {
+          const targetEl = document.querySelector(anchorLink.getAttribute('href'));
+
+          highlightBackground(targetEl);
+        });
+      });
+
+      (() => {
+        if (window.location.hash) {
+          highlightBackground(document.querySelector(window.location.hash));
+        }
+      });
+    </script>
   </body>
 </html>

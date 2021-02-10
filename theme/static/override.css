@@ -1,3 +1,7 @@
+body {
+  font-size: 18px;
+}
+
 .ace_editor {
   font-family: var(--fontMono);
   font-size: 0.9em;
@@ -51,13 +55,16 @@
 }
 .playground button {
   font-size: inherit;
+  background-color: var(--brandColor);
+  color: #eee;
+  border-radius: 5px;
 }
 .playground button i {
   margin-right: 0.25em;
 }
 .playground button:hover,
 .playground button:active {
-  background-color: var(--brandColor);
+  background-color: red;
   color: white;
 }
 .playground .console code {
@@ -114,6 +121,127 @@ a.next[href=''] {
   font-weight: 600;
 }
 
+#sidebar li {
+  font-weight: normal;
+}
+
+#sidebar li.current, #sidebar li.current > ul li {
+  font-weight: bold;
+}
+
+.upperalpha {
+  --listCounterStyle: upper-alpha;
+}
+
 ol, ul {
   counter-reset lictr;
+}
+
+ol li:before {
+  float: left;
+  content: counter(lictr, var(--listCounterStyle)) '.';
+  margin-right: 0.25em;
+  font-weight: bold;
+}
+
+ol li > *:not(ul):not(ol) {
+  margin-left: 1em !important;
+}
+
+#menu-bar {
+  background: var(--brandColor);
+  color: white;
+}
+
+#menu-bar .left-buttons {
+  margin: 0 0.75em;
+  align-items: center;
+}
+
+#menu-bar .left-buttons:hover {
+  background: #00000024;
+}
+
+#menu-bar .icon-button:hover {
+  background: none;
+}
+
+#menu-bar h1.menu-title {
+  font-size: 1.3em;
+}
+
+#content > nav.nav-wrapper a {
+  color: var(--brandColor) !important;
+}
+
+.section .section {
+  padding-left: 0;
+}
+
+.content a:link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.content a:visited {
+  color: #9c27b0;
+}
+
+.content a:hover {
+  text-decoration: none;
+}
+
+.content a[href^="#term"] {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.glossary {
+  --titleBg: #1eb99a;
+  --titleColor: white;
+}
+
+dl.glossary {
+  border: 1px solid var(--titleBg);
+  border-radius: var(--borderRadius);
+  margin: 1em 0.5em;
+  padding-bottom: 0.25em;
+}
+
+dl.glossary:before {
+  content: 'Terms to Know';
+  display: block;
+  font-weight: 700;
+  padding: 0.25em 0.5em;
+  background: var(--titleBg);
+  color: var(--titleColor);
+  margin-bottom: 0.5em;
+}
+
+dl.glossary dt, dl.glossary dd {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+dl.glossary dd {
+  padding-left: 2em;
+}
+
+dl.glossary dt {
+  display: inline-block;
+  padding-right: 0;
+}
+
+dl.glossary dt + dt {
+  padding-left: 0;
+}
+
+dl.glossary dt + dt:before {
+  content: ', ';
+}
+
+.hide-children * {
+  display: none !important;
 }
