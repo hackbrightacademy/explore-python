@@ -7,10 +7,11 @@ verify_ssl = true
 black = "*"
 
 [packages]
-sphinx-lectern = {editable = true, git = "ssh://git@github.com/hackbrightacademy/sphinx-lectern.git"}
 invoke = "*"
 sphinx = "*"
 pygments-style-github = "*"
+sphinx-autobuild = "*"
+sphinx-lectern = {editable = true, git = "ssh://git@github.com/hackbrightacademy/sphinx-lectern.git"}
 
 [pipenv]
 allow_prereleases = true

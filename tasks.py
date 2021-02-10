@@ -18,8 +18,7 @@ def sphinx(c):
 
 @task(pre=[clean, sphinx])
 def start(c):
-    with c.cd("docs"):
-        c.run("python3 -m http.server")
+    c.run("sphinx-autobuild -b handouts . _build")
 
 
 ns = Collection(start, sphinx)
