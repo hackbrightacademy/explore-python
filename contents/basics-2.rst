@@ -2,8 +2,8 @@
 Variables & Expressions
 =======================
 
-Welcome
-=======
+Intro
+=====
 
 At this point, you should feel pretty comfortable with making strings and
 integers in Python. If you don't feel like you've mastered both of these
@@ -19,112 +19,199 @@ message, read it. It's completely normal to write code that results in an error.
 Give yourself time and brain energy to not simply fix the error, but to also
 fully understand what the problem was.
 
-Lesson
-======
-
-Topics
-------
-
-- Variables
+Topics We'll Cover
+------------------
 
 - Expressions
 
+- Variables
+
 Variables
----------
+=========
 
-In Python, it is often that you will assign nicknames to values. This way, you
-can refer to values later and use them in other parts of your code. The act
-of assigning a nickname to a value is called **variable assignment**.
+A major benefit of all programming languages is that they give us the ability to refer to values
+by name. In computer science, these names are :term:`variables`. In Python, you can create a
+variable and assign it a value using the :term:`assignment operator`, `=`.
 
-Here is an example::
+Let's say we want to create a variable to store the string, ``"Hello, world!"``. Here's how to
+create a variable and assign it to ``"Hello, world!"`` in Python:
 
-  >>> hackbright = "balloonicorn, magic, and python"
+#. Think of a good name for the variable. Good variable names are mnemonic, descriptive, and short.
+   Since ``"Hello, world!"`` is a greeting, let's use `greeting` as our variable name.
 
-**In the above code, what part is the variable?**
+#. Type the variable name:
 
-**In the above code, which part is the value that the variable represents?**
+   .. code-block:: python
 
-The line of Python assigns that string to the variable **hackbright**. Now, if
-I want to print my string, I can do the following::
+     greeting
 
-  >>> print hackbright
-  balloonicorn, magic, and python
+#. Then, add the assignment operator. In Python, we always surround operators with spaces, so type a
+   space (`` ``), then the assignment operator (``=``), then add another space (`` ``):
 
-.. note:: No quotes around variables.
+   .. code-block:: python
 
-  It's important to note that variables do **not** have quotation marks around
-  them. Once a variable such as **hackbright** is assigned a value, Python can
-  understand what it is when you use it.
+     greeting =
 
-If you ask a variable for it's datatype using the **type** function, you'll see
-that a variable's type is that of it's actual value. Read the following code
-block::
+#. Finally, type the value you want to assign to the variable:
 
-  >>> sanfran = "rainy"
-  >>> temp = 62
-  >>> print type(sanfran)
-  <type 'str'>
-  >>> print type(temp)
-  <type 'int'>
+   .. code-block:: python
 
-Importantly, the **temp** variable is an integer, whereas the **sanfran** variable
-is a string.
+     greeting = "Hello, world!"
+
+Now we can use the variable name `greeting` whenever we want to use its value in our program. For
+example, we can use it with the `print` function. Try this for yourself by running the program
+in the code playground below!
+
+.. playground::
+
+  greeting = "Hello, world!"
+  print(greeting)
 
 Expressions
------------
+===========
 
-An expression is any part of a statement that can results in a value. We've
-already been using expressions, in fact. In the following code, the string
-``"rainy"`` is an expression-- it results in a value of the type string::
+An expression is any part of a statement that is evaluated by the computer and results in a value.
+You've already been using expressions throughout this book! Here's an example of an expression:
 
-  >>> print "rainy"
+.. code-block:: python
 
-However, expressions can be a bit more complex. We'll talk about 2 kinds of
-expressions here: boolean expressions and mathematical expressions.
+  100
 
-Boolean Expressions
--------------------
+There's not a lot of code in the example above but it *is* a complete expression that gets evaluated
+by the computer and results in the integer, ``100``.
 
-Boolean expressions enable you to compare two values in Python. Check out the
-following Boolean expression::
+You can create more complex expressions by combining smaller expressions with :term:`operators` to
+make larger, complicated expressions. For example, we can use the :term:`addition operator` (``+``)
+to create an expression that will result in the sum of two numbers:
 
-  >>> "hello" == 'hello'
-  True
+.. code-block:: python
 
-In this case, we're comparing two strings, ``"hello"`` and ``'hello'``. Even
-though they are denoted with different kinds of quotation marks, they have the
-same *value*. This comparison of two strings *results* in a value. Can you spot
-the result of the expression in the above code?
+  100 + 5
 
-.. topic:: **The expression results in True**
-  :class: hover-reveal
+In this section, we'll introduce you to even *more* operators starting with some operators you might
+already be familiar with --- arithmetic operators.
 
-  This expression results in a Boolean value of ``True``. We can see that
-  in the Python interpreter on the second line of the code snippet.
+Expressions with Arithmetic Operators
+-------------------------------------
 
-You can also ask if two values are **not equal** to each other::
+Here's a handy reference table of Python's basic arithmetic operators:
 
-  >>> "hello" != 'hello'
-  False
-  >>> "hello" != "goodbye"
-  True
++------------------------+-----------+
+| Operator               | Example   |
++========================+===========+
+| Addition (``+``)       | ``1 + 1`` |
++------------------------+-----------+
+| Subtraction (``-``)    | ``5 - 2`` |
++------------------------+-----------+
+| Multiplication (``*``) | ``0 * 4`` |
++------------------------+-----------+
+| Division (``/``)       | ``9 / 3`` |
++------------------------+-----------+
 
-Lastly, you can ask if one value is greater or less than another::
+.. playground::
 
-  >>> 40 > 30
-  True
-  >>> 50 < 100
-  True
-  >>> 50 > 100
-  False
+  print(1 + 1)
+  print(5 - 2)
+  print(0 * 4)
+  print(9 / 3)
 
-All of the above expressions also result in Boolean values.
+You can use an expression in place of a literal value. For example, we can write a variable
+assignment expression where the left operand (A.K.A. the part of the expression that's *after* the
+``=`` operator) is *another* expression:
 
-.. topic:: Try it out!
+.. code-block:: python
 
-  Open up a Python `repl session
-  <https://repl.it/languages/python>`_ and try writing a couple of your own Boolean
-  expressions.
+  total = 1 + 2
+
+There are two, nested expressions in the code above! Python will evaluate the innermost expression
+first. So, when we run the code above, Python will first evaluate ``1 + 2``:
+
+.. parsed-literal::
+
+  total = :red:`1 + 2`
+
+...which results in ``3``:
+
+.. parsed-literal::
+
+  total = :green:`3`
+
+Then, it'll evaluate the outermost expression:
+
+.. parsed-literal::
+
+  :red:`total = 3`
+
+...which will create a variable named `total` whose value is ``3``!
+
+.. playground::
+
+  total = 1 + 2
+  print(total)
+
+Expressions with Comparison Operators
+-------------------------------------
+
+Comparsion operators are used to build expressions that compare two values. Expressions that use
+comparison operators will always evaluate to a boolean value, either `True` or `False`.
+
+For example, we can use the :term:`equality comparison operators` (``==`` and ``!=``) to evaluate
+if two values are equal (``==``) or not equal (``!=``) to each other:
+
+.. playground::
+
+  print("hi" == "hi")
+  print(2 == 200)
+
+  print("hi" != "hi")
+  print(2 != 200)
+
+:term:`Order comparison operators` (``<``, ``>``, ``<=``, and ``>=``) are used to evaluate if two
+numbers are less than (``<``), greater than (``>``), less than or equal to (``<=``), or greater
+than or equal to (``>=``) each other.
+
+The way :term:`order comparison operators` work is different and depends on the types of objects
+you're comparing. Comparing integers and floats works the way you'd expect --- they're compared in
+sequential order, so larger numbers are greater than smaller numbers.
+
+.. playground::
+
+  print(0 < 100)
+  print(-500 > 2500)
+
+  print(1 <= 1)
+  print(9.35 >= 75)
+
+Strings are compared in order according to their Unicode code point. This means that
+strings are (more or less) compared in alphabetical order, so strings that start with ``"A"`` are
+less than strings that start with ``"Z"`` and uppercased letters (ex.: ``"K"``) are always less
+than lowercased letters (ex.: ``"k"``).
+
+.. playground::
+
+  print("Apple" < "egypt")
+  print("abcabcabc" > "zebra")
+
+  print("abc" <= "abc")
+  print("xyz" >= "XYZ")
+
+Here's a reference table of Python's comparison operators:
+
++-----------------------------------+-------------------+
+| Operator                          | Example           |
++===================================+===================+
+| Equality (``==``)                 | ``150 == 150``    |
++-----------------------------------+-------------------+
+| Inequality (``!=``)               | ``23 != 6``       |
++-----------------------------------+-------------------+
+| Less than (``<``)                 | ``"a" < "b"``     |
++-----------------------------------+-------------------+
+| Greater than (``>``)              | ``"bow" > "Zoo"`` |
++-----------------------------------+-------------------+
+| Less than or equal to (``<=``)    | ``-5 <= 0``       |
++-----------------------------------+-------------------+
+| Greater than or equal to (``>=``) | ``60 >= 500``     |
++-----------------------------------+-------------------+
 
 Putting it Together
 -------------------
@@ -138,28 +225,6 @@ into the repl console::
   False
   >>> my_name != your_name
   True
-
-Mathematical Expressions
-------------------------
-
-Python also enables you to write mathematical expressions. These should look
-pretty familiar to you-- they resemble something you'd type into a calculator::
-
-  >>> 2 + 2
-  4
-  >>> 2 - 1
-  1
-  >>> 30 * 2
-  60
-  >>> 20 / 2
-  10
-
-You can capture the result of a mathematical expression using a variable. Check
-out this example::
-
-  >>> the_sum = 2 + 2
-  >>> print the_sum
-  4
 
 Calling Functions and Setting Variables
 ---------------------------------------

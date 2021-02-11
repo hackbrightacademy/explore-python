@@ -27,30 +27,26 @@ Topics We'll Cover
 
 - Introduction to syntax
 
-- Data types
+- Objects and classes
 
-- Printing
-
-- Calling built-in functions
+- How to use the `print` and `type` functions
 
 Python Syntax
 =============
 
-Software engineers use `programming languages` to communicate with computers in
-order to tell them how to do something. Programming languages are pretty similar to human languages
-in that sense --- both types of languages provide notations used to represent abstract thoughts and
-ideas.
+Software engineers use `programming languages` to communicate with computers in order to tell them
+how to do something. Programming languages are pretty similar to human languages in that sense ---
+both types of languages provide notations used to represent abstract thoughts and ideas.
 
 Python is a programming language that's similar to languages like JavaScript and Ruby. Over the past
-decade, Python has
-grown in popularity thanks to its especially succinct, readable, and elegant syntax.
+decade, Python has grown in popularity thanks to its especially succinct, readable, and elegant syntax.
 For example, here's a line of code written in Java:
 
 .. code-block:: java
 
   System.out.println("Hello, world!");
 
-...and here is the equivalent but in Python:
+...and here's how you'd do the same thing in Python:
 
 .. code-block:: python
 
@@ -132,10 +128,11 @@ working with, use the :term:`print` function!
     A function that outputs the name of an object's class.
 
   call
-  calling
+  function call
   to call a function
     Another way to describe using a function is to say that you're performing a *function call* or
-    that you're *calling* a function.
+    that you're *calling* a function. When you use a function --- by writing its name followed by
+    a pair of parentheses (ex.: ``print()``) --- you're making a function call.
 
   `print`
   the `print` function
@@ -376,10 +373,10 @@ been doing whenever you use `print` and `type`.
 Functions
 =========
 
-A `function` is something that can take *in* objects, *do something* with those objects, and then
+A :term:`function` is something that can take *in* objects, *do something* with those objects, and then
 *output* an object. So far, you've encountered two functions --- `print` and `type`. You've been using
 `print` to get Python to output and display information on the screen and `type` to get an object's
-class. Both functions are `built-in functions` --- functions that Python has already created for
+class. Both functions are :term:`built-in functions` --- functions that Python has already created for
 you, as a convenience. This is another reason why software engineers like Python so much!
 
 .. note:: You can also create your own functions
@@ -388,7 +385,7 @@ you, as a convenience. This is another reason why software engineers like Python
   to create your *own* functions! We won't cover how to do that in this book, but it's something to
   look forward to as you continue learning Python.
 
-.. termstoknow::
+.. glossary::
 
   function
     A function can consume objects as input, do *something*, and output an object.
@@ -400,14 +397,14 @@ you, as a convenience. This is another reason why software engineers like Python
 Calling Functions
 -----------------
 
-The act of using a function is known as making a function `call`; in other words, when you use a
-function, you're `calling` the function.
+Earlier, you learned that the act of using a function is known as making a function `call`; in other
+words, when you use a function, you're `calling` the function.
 
 The syntax for calling functions in Python is very similar to other languages. To make a function
 call, you write the function's name and add a pair of parentheses. The parentheses tells Python that
 it should go ahead and make the function *go*. If a function requires inputs, you add them *inside*
-the parentheses. A function's inputs are known as its `arguments`. With this new vocabulary in mind,
-let's examine the program we've been dissecting again.
+the parentheses. A function's inputs are known as its :term:`arguments`. With this new vocabulary in
+mind, let's examine the program we've been dissecting again.
 
 .. playground::
   :show_output:
@@ -454,11 +451,7 @@ happens, but it actually prints out an empty line. Check it out!
   print()
   print("Cool!")
 
-.. termstoknow::
-
-  function call
-    When you use a function --- by writing its name followed by a pair of parentheses (ex.: ``print()``)
-    --- you're making a function call.
+.. glossary::
 
   arguments
     A function's arguments are its inputs. Arguments go inside the parentheses of a function call
