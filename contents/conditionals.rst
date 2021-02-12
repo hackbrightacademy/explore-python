@@ -11,6 +11,8 @@ concepts (especially expressions), you'll probably want to go back and review.
 We're about to talk about conditionals, and conditionals are all about boolean
 expressions.
 
+.. FIXME: prescriptive language 
+
 We also introduced debugging in the last module. Once you get past the intial
 annoyance of an error message, debugging can be like puzzle; it's the game of
 figuring out what's going wrong, why, and how to fix it. Debugging in Python
@@ -18,12 +20,13 @@ is especially pleasant because Python provides clear, helpful error messages.
 There's more debugging to come for you, both in this and future modules ---
 and in your future life as a coder.
 
+.. FIXME: prescriptive language 
+
 These concepts --- data types, printing, variables, expressions and
 conditionals --- aren't just stepping stones that you'll never see again. As
-a programmer, you'll use each of these every day (print statements are especially
+a programmer, you'll use each of these every day (print(statements are especially)
 useful for debugging). As you develop a solid understanding of these concepts,
 you're building a strong foundation for yourself as a coder.
-
 
 Lesson
 ======
@@ -39,18 +42,19 @@ A Review of Boolean Expressions
 -------------------------------
 
 In order to fully understand conditional logic, it's important to have a solid
-grasp of boolean expressions in python. Remember, a boolean expression is a
+grasp of boolean expressions in Python. Remember, a :term:`boolean expression` is a
 statement or a part of a statement that results in a Boolean value, such as
 ``True`` or ``False``. Comparisons are the most obvious and helpful example
-of boolean expressions:
+of boolean expressions. Below, we are asking the question: "Is the string 
+'rainbow rockstar' `the same as` the string 'mermaid unicorn'?"
 
 .. code-block:: python
 
     >>> "rainbow rockstar" == "mermaid unicorn"
     False
 
-This *expression*, which is the comparison of two strings, results in the
-Boolean value **False**. We can also compare two numbers. Read the following
+This :term:`expression`, which is the comparison of two strings, results in the
+Boolean value ``False``. We can also compare two numbers. Read the following
 boolean expressions:
 
 .. code-block:: python
@@ -63,7 +67,8 @@ boolean expressions:
     False
 
 Also, remember that ``True`` and ``False`` are values in their own right. If
-we wanted to simply make a variable whose value is ``True``, we could:
+we wanted to simply make a variable whose value is ``True``, we could assign it
+to a variable directly:
 
 .. code-block:: python
 
@@ -71,9 +76,11 @@ we wanted to simply make a variable whose value is ``True``, we could:
     >>> print my_var
     True
 
-Also, reaching way back to the first module, the string ``"True"`` is **not**
-the same as the Boolean value ``True``. They are two values that look the same,
-but are different **types**.
+Also, reaching way back to the first module, recall that the string ``"True"`` 
+is **not** the same as the Boolean value ``True``. They are two values that look 
+the same, but are different `types`.
+
+.. QUESTION: style ~ Boolean or boolean?
 
 As a fun aside, we could prove this using a Boolean expression:
 
@@ -86,8 +93,22 @@ As a fun aside, we could prove this using a Boolean expression:
     >>> "True" != True
     True
 
+.. glossary::
+
+  expression
+    A sequence of variables and operators (like ``+``, ``==``) that can be 
+    :term:`evaluated` to produce a result. 
+
+  boolean expression
+    An expression that results in a boolean value - either ``True`` or ``False``.
+
+  evaluate
+    lorem ipsum
+
 Conditional Logic
 -----------------
+
+.. FIXME: confusing example -> going to the movies if you finish...
 
 We're about to add a very useful tool to our toolkit. Conditional logic lets us
 set conditions, or prerequisites, in our code, such that only certain lines of
@@ -104,16 +125,16 @@ to go to the movies if you finish this module of work. Some "psedocode", or
         stay home and keep working.
 
 In our pseudocode, the line that says ``if module is finished`` is called an
-**if-statement**. Python if-statements look pretty similar to our pseudocode.
+`if-statement`. Python if-statements look pretty similar to our pseudocode.
 Here is some valid Python code that does a similar thing:
 
 .. code-block:: python
 
     module = "incomplete"
     if module == "complete":
-        print "Time to go to the movies"
+        print("Time to go to the movies")
     else:
-        print "Stay home and keep working."
+        print("Stay home and keep working.")
 
 .. FIXME: repl.it
 Try typing this out in your Python `repl console
@@ -131,9 +152,9 @@ of this code?
 
         >>> module = "incomplete"
         >>> if module == "complete":
-        ...     print "Time to go to the movies"
+        ...     print("Time to go to the movies")
         ... else:
-        ...     print "Stay home and keep working."
+        ...     print("Stay home and keep working.")
         ...
         `Stay home and keep working.`:cmd:
 
@@ -143,7 +164,7 @@ If-Statement Syntax
 .. code-block:: python
 
     if family_member1 == family_member2:
-        print "You have two family members with the same name."
+        print("You have two family members with the same name.")
 
 There are a couple important things to note about the correct way to craft an if-statement.
 
@@ -166,9 +187,9 @@ There are a couple important things to note about the correct way to craft an if
     .. code-block:: python
 
         if family_member1 == family_member2:
-            print "You have two family members with the same name."
-            print "Here is family member 1: ", family_member1
-            print "Here is family member 2: ", family_member2
+            print("You have two family members with the same name.")
+            print("Here is family member 1: ", family_member1)
+            print("Here is family member 2: ", family_member2)
 
 4) Optionally, an if-statement can have an **else** block-- what to do if the
    Boolean expression does not evaluate to **True**. Here's another example of
@@ -177,9 +198,9 @@ There are a couple important things to note about the correct way to craft an if
 .. code-block:: python
 
     if message_recipient == "Balloonicorn":
-        print "Balloonicorn, you have a message."
+        print("Balloonicorn, you have a message.")
     else:
-        print "No messages for you, Balloonicorn!"
+        print("No messages for you, Balloonicorn!")
 
 Using ``elif``
 --------------
@@ -190,11 +211,11 @@ the ``elif`` keyword. Here's an example:
 .. code-block:: python
 
     if message_recipient == "Balloonicorn":
-        print "Balloonicorn, you have a message."
+        print("Balloonicorn, you have a message.")
     elif message_recipient == "Hackbright":
-        print "Ballonicorn, can you take a message for Hackbright?"
+        print("Ballonicorn, can you take a message for Hackbright?")
     else:
-        print "No messages for you, Balloonicorn!"
+        print("No messages for you, Balloonicorn!")
 
 The ``elif`` keyword is a way to evaluate an *additional* condition, after the first
 has been checked.
@@ -221,9 +242,9 @@ the body of an if-statement. Here is an example:
   fav_animal = "cat"
 
   if num_pets > 5:
-      print "Wow, that's a lot of pets!"
+      print("Wow, that's a lot of pets!")
       if fav_animal == "cat":
-          print "I like cats too!"
+          print("I like cats too!")
 
 Nested if-statements can also have ``elif`` blocks and ``else`` blocks. To complicate the
 example above a bit:
@@ -235,15 +256,15 @@ example above a bit:
   fav_animal = "cat"
 
   if num_pets > 5:
-      print "Wow, that's a lot of pets!"
+      print("Wow, that's a lot of pets!")
       if fav_animal == "cat":
-          print "I like cats too!"
+          print("I like cats too!")
       else:
-          print "Why don't you like cats??"
+          print("Why don't you like cats??")
   elif num_pets == 2:
-      print "I hope your two pets are friends."
+      print("I hope your two pets are friends.")
   elif num_pets == 0:
-      print "Time to get a pet."
+      print("Time to get a pet.")
 
 Using **raw_input** with if-statements
 --------------------------------------
@@ -261,13 +282,13 @@ Using these two concepts, we can make a little advice machine:
 
 .. code-block:: python
 
-    >>> print "Would you like some advice?"
-    >>> print "If yes, type Y."
+    >>> print("Would you like some advice?")
+    >>> print("If yes, type Y.")
     >>> the_answer = raw_input("What's your answer? ")
     >>> if the_answer == "Y":
-    ...     print "A wise person knows when to ask for help."
+    ...     print("A wise person knows when to ask for help.")
     ... else:
-    ...     print "Ok, I won't give you any advice then."
+    ...     print("Ok, I won't give you any advice then.")
 
 Open a `repl Python console
 <https://repl.it/languages/python>`_ and type this out. Remember when this line runs:
@@ -309,8 +330,8 @@ and save your work in between.
 
 2) Write an if-statement for each of the above variables. The if-statement
    should check whether the length of the variable's value is greater than 9
-   characters. If it is, your code should print "long string". If it's
-   not, print "not a long string".
+   characters. If it is, your code should print("long string". If it's)
+   not, print("not a long string".)
 
    Here's a hint:
 
@@ -323,7 +344,7 @@ and save your work in between.
    .. code-block:: python
 
      if len(adjective) > 9:
-        print "long string"
+        print("long string")
 
 3) Using the **raw_input** function, prompt yourself to type something. Be sure
    to capture what you type into a variable. Once you have the variable, print
@@ -345,8 +366,8 @@ and save your work in between.
    2) a "too high" answer and 3) a "too low" answer all show the correct output.
 
 5) Write a conditional statement that checks if the variables **verb** and
-   **verb2** are equal to one another. If they are, print "They are equal!". If
-   they aren't, print 3 things: the value of verb, the value of verb2, and the
+   **verb2** are equal to one another. If they are, print("They are equal!". If)
+   they aren't, print(3 things: the value of verb, the value of verb2, and the)
    message "These are not the same"
 
 6) Type the following code to prompt the user to rate the movie *Wizard of Oz*
@@ -386,7 +407,7 @@ shows, along with an explanation of what is going wrong.
 
   >>> rating = 5
   >>> if rating = 5:
-  ...     print "Right in the middle."
+  ...     print("Right in the middle.")
 
 .. topic:: **Must use double-equals sign in if-statement**
   :class: hover-reveal
@@ -411,7 +432,7 @@ shows, along with an explanation of what is going wrong.
 
   rating = 5
   if rating == 5:
-  print "You rated a 5!"
+  print("You rated a 5!")
 
 .. FIXME: hover-reveal
 .. topic:: **Missing indentation for if-statement body**
@@ -424,32 +445,14 @@ shows, along with an explanation of what is going wrong.
   .. code-block:: python
 
     >>> if rating == 5:
-    ... print "You rated a 5!"
+    ... print("You rated a 5!")
       File "<stdin>", line 2
-        print "You rated a 5!"
+        print("You rated a 5!")
             ^
     IndentationError: expected an indented block
 
   Thankfully, Python is very good at showing us the problem. The next block of
   code was expected to be indented.
-
-External Resources
-==================
-
-Videos
-------
-
-`Let's Learn Python: Conditionals <https://www.youtube.com/watch?v=mQrci1kAwh4>`_
-
-`Socratica: Python If, Then, Else <https://www.youtube.com/watch?v=f4KOjWS_KZs&t=220s>`_
-
-Articles
---------
-
-`Wikibooks on Conditionals in Python <https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements>`_
-
-.. FIXME: Python 2 reference
-`Python 2 Conditionals Tutorial <http://www.python-course.eu/conditional_statements.php>`_
 
 Final Assignment
 ================
@@ -485,9 +488,9 @@ into appropriately-named variables. The questions should be
 
   - If they do enjoy jokes, ask them: What kinds of melons can't marry?
 
-  - Regardless of their answer, print "Cantelopes"
+  - Regardless of their answer, print("Cantelopes")
 
   - If they do not enjoy jokes, ask them why, and capture that into a variable.
 
-At the end of your program, print a summary of all of the answers to their
+At the end of your program, print(a summary of all of the answers to their)
 questions.
