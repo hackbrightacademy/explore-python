@@ -42,14 +42,18 @@ In order to fully understand conditional logic, it's important to have a solid
 grasp of boolean expressions in python. Remember, a boolean expression is a
 statement or a part of a statement that results in a Boolean value, such as
 ``True`` or ``False``. Comparisons are the most obvious and helpful example
-of boolean expressions::
+of boolean expressions:
+
+.. code-block:: python
 
     >>> "rainbow rockstar" == "mermaid unicorn"
     False
 
 This *expression*, which is the comparison of two strings, results in the
 Boolean value **False**. We can also compare two numbers. Read the following
-boolean expressions::
+boolean expressions:
+
+.. code-block:: python
 
     >>> 5 == 5
     True
@@ -59,7 +63,9 @@ boolean expressions::
     False
 
 Also, remember that ``True`` and ``False`` are values in their own right. If
-we wanted to simply make a variable whose value is ``True``, we could::
+we wanted to simply make a variable whose value is ``True``, we could:
+
+.. code-block:: python
 
     >>> my_var = True
     >>> print my_var
@@ -69,7 +75,9 @@ Also, reaching way back to the first module, the string ``"True"`` is **not**
 the same as the Boolean value ``True``. They are two values that look the same,
 but are different **types**.
 
-As a fun aside, we could prove this using a Boolean expression::
+As a fun aside, we could prove this using a Boolean expression:
+
+.. code-block:: python
 
     >>> type("True") == type(True)
     False
@@ -85,7 +93,9 @@ We're about to add a very useful tool to our toolkit. Conditional logic lets us
 set conditions, or prerequisites, in our code, such that only certain lines of
 code are run if certain conditions are met. This is similar to allowing yourself
 to go to the movies if you finish this module of work. Some "psedocode", or
-"fake" computer code, for you day might look like this::
+"fake" computer code, for you day might look like this:
+
+.. code-block:: python
 
     work on module
     if module is finished:
@@ -105,6 +115,7 @@ Here is some valid Python code that does a similar thing:
     else:
         print "Stay home and keep working."
 
+.. FIXME: repl.it
 Try typing this out in your Python `repl console
 <https://repl.it/languages/python>`_ on your own. What is the output
 of this code?
@@ -246,7 +257,9 @@ was provided to a program.
 As luck would have it, we do have a function that can take in input into our
 programs-- **raw_input**!
 
-Using these two concepts, we can make a little advice machine::
+Using these two concepts, we can make a little advice machine:
+
+.. code-block:: python
 
     >>> print "Would you like some advice?"
     >>> print "If yes, type Y."
@@ -257,7 +270,9 @@ Using these two concepts, we can make a little advice machine::
     ...     print "Ok, I won't give you any advice then."
 
 Open a `repl Python console
-<https://repl.it/languages/python>`_ and type this out. Remember when this line runs::
+<https://repl.it/languages/python>`_ and type this out. Remember when this line runs:
+
+.. code-block:: python
 
     >>> the_answer = raw_input("What's your answer? ")
 
@@ -271,7 +286,7 @@ Practice Section
 
 Directions
 ----------
-
+.. FIXME: repl.it instructions
 Login to your account and start a new repl `here
 <https://repl.it/languages/python>`_. Title your new session
 **module_3_practice.py**.
@@ -314,7 +329,7 @@ and save your work in between.
    to capture what you type into a variable. Once you have the variable, print
    the length of whatever you typed.
 
-4) Type the following into the repl Python console::
+4) Type the following into the repl Python console:
 
    >>> answer = raw_input("What is 2 + 2 ?")
    >>> answer_as_integer = int(answer)
@@ -334,7 +349,7 @@ and save your work in between.
    they aren't, print 3 things: the value of verb, the value of verb2, and the
    message "These are not the same"
 
-6) Type the following code to prompt the user to rate the movie *Wizard of Oz*::
+6) Type the following code to prompt the user to rate the movie *Wizard of Oz*
 
    >>> rating = raw_input("On a 1-10 scale, how would you rate Wizard of Oz?")
    >>> rating_as_integer = int(rating)
@@ -367,7 +382,7 @@ shows, along with an explanation of what is going wrong.
 
 
 1) What's wrong with this code?
-::
+.. code-block:: python
 
   >>> rating = 5
   >>> if rating = 5:
@@ -398,12 +413,15 @@ shows, along with an explanation of what is going wrong.
   if rating == 5:
   print "You rated a 5!"
 
+.. FIXME: hover-reveal
 .. topic:: **Missing indentation for if-statement body**
   :class: hover-reveal
 
   The if-statement body must be indented.
 
-  ::
+  :
+
+  .. code-block:: python
 
     >>> if rating == 5:
     ... print "You rated a 5!"
@@ -430,11 +448,13 @@ Articles
 
 `Wikibooks on Conditionals in Python <https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements>`_
 
+.. FIXME: Python 2 reference
 `Python 2 Conditionals Tutorial <http://www.python-course.eu/conditional_statements.php>`_
 
 Final Assignment
 ================
 
+.. FIXME: Replace repl.it with code playground
 Create a new `repl
 <https://repl.it/languages/python>`_ called **module_3_user_questions.py**.
 
