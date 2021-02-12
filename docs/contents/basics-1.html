@@ -63,9 +63,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#topics-we-ll-cover">Topics We’ll Cover</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#python-syntax">Python Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-syntax">Python Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#try-python">Try Python!</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#objects-and-classes">Objects and Classes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#strings-integers-and-floats">Strings, Integers, and Floats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#be-precise-with-your-syntax">Be Precise with Your Syntax!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#booleans-and-nonetype">Booleans and NoneType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#looping-back-to-print-hello-world">Looping Back to <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code></a></li>
 </ul>
@@ -76,28 +80,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#another-function">Another Function</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#practice-section">Practice Section</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#directions">Directions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#debugging-section">Debugging Section</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Directions</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="basics-2.html">Variables &amp; Expressions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basics-2.html#welcome">Welcome</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics-2.html#intro">Intro</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="basics-2.html#learning-to-love-errors">Learning to Love Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-2.html#topics-we-ll-cover">Topics We’ll Cover</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="basics-2.html#lesson">Lesson</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="basics-2.html#topics">Topics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics-2.html#variables">Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics-2.html#expressions">Expressions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics-2.html#boolean-expressions">Boolean Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics-2.html#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics-2.html#expressions">Expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics-2.html#expressions-with-arithmetic-operators">Expressions with Arithmetic Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-2.html#expressions-with-comparison-operators">Expressions with Comparison Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics-2.html#putting-it-together">Putting it Together</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics-2.html#mathematical-expressions">Mathematical Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics-2.html#calling-functions-and-setting-variables">Calling Functions and Setting Variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics-2.html#one-more-function">One More Function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics-2.html#a-function-to-capture-user-input">A function to capture user input</a></li>
@@ -108,7 +103,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="basics-2.html#debugging">Debugging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="basics-2.html#id1">Directions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics-2.html#id3">Directions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="basics-2.html#external-resources">External Resources</a><ul>
@@ -137,11 +132,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals.html#debugging">Debugging</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="conditionals.html#id1">Directions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="conditionals.html#external-resources">External Resources</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="conditionals.html#videos">Videos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conditionals.html#articles">Articles</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals.html#final-assignment">Final Assignment</a></li>
@@ -230,7 +220,6 @@
     <div id="page-wrapper" class="page-wrapper">
       <div class="page">
         <div id="menu-bar-hover-placeholder"></div>
-
         <div id="menu-bar" class="menu-bar sticky bordered">
           <div class="left-buttons">
             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -280,27 +269,29 @@ persistent!</p>
 <h3>Topics We’ll Cover</h3>
 <ul class="simple">
 <li><p>Introduction to syntax</p></li>
-<li><p>Data types</p></li>
-<li><p>Printing</p></li>
-<li><p>Calling built-in functions</p></li>
+<li><p>Objects and classes</p></li>
+<li><p>How to use the <cite>print</cite> and <cite>type</cite> functions</p></li>
 </ul>
 </section>
 </section>
 <section class="section" id="python-syntax">
 <h2>Python Syntax</h2>
 <p>Software engineers use <cite>programming languages</cite> to communicate with computers in order to tell them
-how to do something. Programming languages are much like other types of languages (including natural
-languages like English!) — they’re made of specific words (in programming, we call these`tokens`)
-arranged in a specific way.</p>
-<p>Python is a popular language because, compared to other programming languages, its syntax is
-especially succinct and readable. For example, here’s how you’d output a message in Java:</p>
+how to do something. Programming languages are pretty similar to human languages in that sense —
+both types of languages provide notations used to represent abstract thoughts and ideas.</p>
+<p>Python is a programming language that’s similar to languages like JavaScript and Ruby. Over the past
+decade, Python has grown in popularity thanks to its especially succinct, readable, and elegant syntax.
+For example, here’s a line of code written in Java:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>…and here’s how you’d output a message in Python:</p>
+<p>…and here’s how you’d do the same thing in Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The line of Python is far easier to read and understand, even by non-Python practitioners!</p>
+<section class="section" id="try-python">
+<h3>Try Python!</h3>
 <p>Try it out for yourself! The box below is a code <cite>playground</cite>; it can execute Python code and
 display program output. You can even edit the code inside! Click the red button in the playground
 below to run the code inside. Program output will appear in a box below the code editor.</p>
@@ -308,48 +299,56 @@ below to run the code inside. Program output will appear in a box below the code
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isn&#39;t Python fun?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><div class="admonition note">
-<p class="admonition-title">Experimenting with code is the best way to learn</p>
-<div class="admonition-body docutils container">
-<p>Whenever you see a code playground in this book, <em>do</em> play around with it.
-Add code, delete code, replace code, etc… then click the red button to run your code
-and see what happens!</p>
-</div>
-</div>
-<p>You just executed your first Python program! Let’s look at <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code> in more
-detail.</p>
+</div><pre class="console"></pre></div><p>You’ll find these code playgrounds scattered across this book. Whenever you see one, please <em>do</em>
+play around with it. Experimenting with code is the <em>best</em> way to learn how it works.</p>
+<p>By the way, you just executed your first Python program! …but what does it <em>mean</em>? In this
+chapter, we’ll introduce you to Python’s syntax essentials by breaking down each part of
+<code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code>.</p>
+</section>
 </section>
 <section class="section" id="objects-and-classes">
 <h2>Objects and Classes</h2>
 <p>First let’s talk about what <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is. To do that, we’ll need to define what
 objects and classes are.</p>
-<p>A <cite>value</cite> or <cite>object</cite> is a piece of data that a program can manipulate. So far, you’ve seen the
-objects <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Isn't</span> <span class="pre">Python</span> <span class="pre">fun?&quot;</span></code>. Both are members of the class, <cite>str</cite> (a
-shortened version of the word <em>string</em>, as in, “a string of characters”).</p>
-<p><cite>Classes</cite> are like categories. In Python, an object’s class is analogous with its <em>type</em>
+<p>A <a class="reference internal" href="#term-value"><span class="xref std std-term">value</span></a> or <a class="reference internal" href="#term-object"><span class="xref std std-term">object</span></a> is a piece of data that a program can manipulate. So far,
+you’ve seen the objects <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Isn't</span> <span class="pre">Python</span> <span class="pre">fun?&quot;</span></code>. Both are members of the
+class, <a class="reference internal" href="#term-str"><span class="xref std std-term">str</span></a> (a shortened version of the word <em>string</em>, as in, “a string of characters”).</p>
+<p><a class="reference internal" href="#term-class"><span class="xref std std-term">Classes</span></a> are like categories. In Python, an object’s class is analogous with its <em>type</em>
 (ex.: <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is a <em>type</em> of string), so you can find out what class a value
-belongs to using <cite>type</cite>.</p>
+belongs to using the <a class="reference internal" href="#term-type"><span class="xref std std-term">type</span></a> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The code above doesn’t print anything to the screen screen though, which is why we’ll combine it with
-<cite>print</cite>:</p>
+<p>The technical term for using a function is <span class="xref std std-term">calling</span> a function. Think of it like calling on
+a friend by their name and asking them to do something for you.</p>
+<p>We won’t be able to view the results of calling the <a class="reference internal" href="#term-type"><span class="xref std std-term">type</span></a> function though, so if you try to
+run the line of code above, it will look as if nothing’s happened. If we want to make the result of
+calling <a class="reference internal" href="#term-type"><span class="xref std std-term">type</span></a> visible, we can combine it with a call to the <a class="reference internal" href="#term-print"><span class="xref std std-term">print</span></a> function:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><div class="admonition terms_to_know">
-<p class="admonition-title"></p>
-<div class="admonition-body docutils container">
-<dl class="simple">
-<dt>object, value</dt><dd><p>An object or value is a piece of data that a program can manipulate.</p>
+</div><pre class="console"></pre></div><p>The <a class="reference internal" href="#term-print"><span class="xref std std-term">print</span></a> is a function used to display values onto the screen. We’ll use this function a
+<em>lot</em> in this book; you should too! If you’re ever curious about what’s going on in the code you’re
+working with, use the <a class="reference internal" href="#term-print"><span class="xref std std-term">print</span></a> function!</p>
+<dl class="glossary simple">
+<dt id="term-object">object</dt><dt id="term-value">value</dt><dd><p>An object or value is a piece of data that a program can manipulate.</p>
 </dd>
-<dt>class</dt><dd><p>Objects are categorized by class, kind of like how animals are categorized by species. A value’s
+<dt id="term-class">class</dt><dd><p>Objects are categorized by class, kind of like how animals are categorized by species. A value’s
 class is analogous with its type. For example, <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is a type of string and a
 member of the class, <cite>str</cite>.</p>
 </dd>
+<dt id="term-str"><cite>str</cite></dt><dt id="term-the-string-class">the string class</dt><dd><p>A string of letters. In Python, strings can be surrounded by double-quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) or
+single-quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) and belong to the class, <cite>str</cite>.</p>
+</dd>
+<dt id="term-type"><cite>type</cite></dt><dt id="term-the-type-function">the <cite>type</cite> function</dt><dd><p>A function that outputs the name of an object’s class.</p>
+</dd>
+<dt id="term-call">call</dt><dt id="term-function-call">function call</dt><dt id="term-to-call-a-function">to call a function</dt><dd><p>Another way to describe using a function is to say that you’re performing a <em>function call</em> or
+that you’re <em>calling</em> a function. When you use a function — by writing its name followed by
+a pair of parentheses (ex.: <code class="docutils literal notranslate"><span class="pre">print()</span></code>) — you’re making a function call.</p>
+</dd>
+<dt id="term-print"><cite>print</cite></dt><dt id="term-the-print-function">the <cite>print</cite> function</dt><dd><p>A function that displays values onto the screen, in a human-readable format.</p>
+</dd>
 </dl>
-</div>
-</div>
 <p>Values that belong to different classes look different (they also behave in different ways but we’ll
 talk more on that later) — in other words, they use different syntax. As we talk about the basic
 Python classes, pay attention to how their syntax differs. After all, it’s how you (and Python!)
@@ -362,49 +361,66 @@ single-quotes — in either case, Python will produce the same output.</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delicious knishes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><p>Another class is <cite>int</cite>, short for <em>integer</em>. For example, the object <code class="docutils literal notranslate"><span class="pre">100</span></code> is an integer. <cite>print</cite>
-also works with integers:</p>
+</div><pre class="console"></pre></div><p>Another class is <a class="reference internal" href="#term-int"><span class="xref std std-term">int</span></a>, short for <em>integer</em>. For example, the object <code class="docutils literal notranslate"><span class="pre">100</span></code> is an integer.
+<a class="reference internal" href="#term-print"><span class="xref std std-term">print</span></a> also works with integers:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><p>Printing the type of <code class="docutils literal notranslate"><span class="pre">100</span></code> gives us the class, <cite>int</cite>:</p>
+</div><pre class="console"></pre></div><p>Printing the type of <code class="docutils literal notranslate"><span class="pre">100</span></code> gives us the class, <a class="reference internal" href="#term-int"><span class="xref std std-term">int</span></a>:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><p>There are also numbers with a decimal point that are stored in a format called
-<em>floating-point</em>; they belong to the <cite>float</cite> class:</p>
+</div><pre class="console"></pre></div><p>There are also numbers with a decimal point that are stored in a format called <em>floating-point</em>;
+they belong to the <a class="reference internal" href="#term-float"><span class="xref std std-term">float</span></a> class:</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">4.1</span><span class="p">))</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><div class="admonition terms_to_know">
-<p class="admonition-title"></p>
-<div class="admonition-body docutils container">
-<dl class="simple">
-<dt>string (<cite>str</cite>)</dt><dd><p>A string of letters. In Python, strings can be surrounded by double-quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) or
-single-quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) and belong to the class <cite>str</cite></p>
-</dd>
-<dt>integer (<cite>int</cite>)</dt><dd><p>A whole number that can be <em>signed</em> (<code class="docutils literal notranslate"><span class="pre">-1</span></code>) or <em>unsigned</em> (<code class="docutils literal notranslate"><span class="pre">1</span></code>). They belong to the
+</div><pre class="console"></pre></div><dl class="glossary simple">
+<dt id="term-int"><cite>int</cite></dt><dt id="term-the-integer-class">the integer class</dt><dd><p>A whole number that can be <em>signed</em> (<code class="docutils literal notranslate"><span class="pre">-1</span></code>) or <em>unsigned</em> (<code class="docutils literal notranslate"><span class="pre">1</span></code>). They belong to the
 class <cite>int</cite>.</p>
 </dd>
-<dt>float (<cite>float</cite>)</dt><dd><p>A number with a decimal point that belongs to class <cite>float</cite>. These can also be signed
+<dt id="term-float"><cite>float</cite></dt><dt id="term-the-floating-point-number-class">the floating-point number class</dt><dd><p>A number with a decimal point that belongs to class <cite>float</cite>. These can also be signed
 (<code class="docutils literal notranslate"><span class="pre">-3.02</span></code>) or unsigned (<code class="docutils literal notranslate"><span class="pre">3.02</span></code>).</p>
 </dd>
 </dl>
-</div>
-</div>
 <p>Pop quiz! What’s the class of objects <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code>? They look like
 numbers but are surrounded by quotation marks like strings. Run the code below to find out!</p>
 <div class="playground"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-play"></i></span><span class="btn-label">Click to run</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;17&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;4.1&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><p><strong>They’re both strings.</strong></p>
-<p>This is a good place to point out that Python is very particular about syntax. Something enclosed in
-quotation marks will <em>always</em> be a string.</p>
-<p>Here’s another example of why precision matters when it comes to Python syntax: we
-typically use commas to break uplarge numbers, like <code class="docutils literal notranslate"><span class="pre">529,600</span></code>. Let’s see what happens
-when we try to print it out:</p>
-<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">529</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+</div><pre class="console"></pre></div><div class="admonition knowledge_check">
+<p class="admonition-title"></p>
+<div class="admonition-body docutils container">
+<div class="show-feedback mcq" id="mcq-1">
+<div class="mcq-body docutils container">
+<p>Which class(es) do the objects <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code> belong to?</p>
+</div>
+<ol class="mcq-choices upperalpha">
+<div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="A" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;Correct. You can tell they\u2019re both strings because, if you ran the code in the\nplayground above, you\u2019ll see &lt;code class=\&quot;docutils literal notranslate\&quot;&gt;&lt;span class=\&quot;pre\&quot;&gt;&amp;lt;class&lt;/span&gt; &lt;span class=\&quot;pre\&quot;&gt;'str'&amp;gt;&lt;/span&gt;&lt;/code&gt; twice \u2014 once for each call to the &lt;cite&gt;print&lt;/cite&gt;\nfunction.&lt;/p&gt;\n&quot;}" data-is-correct="True">
+<p>Both <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code> belong to the <cite>str</cite> class</p>
+</li></div><div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="B" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;&lt;em&gt;number&lt;/em&gt; is not a Python data type.&lt;/p&gt;\n&quot;}" data-is-correct="False">
+<p>Both <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code> belong to the <cite>number</cite> class</p>
+</li></div><div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="C" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;&lt;code class=\&quot;docutils literal notranslate\&quot;&gt;&lt;span class=\&quot;pre\&quot;&gt;&amp;quot;17&amp;quot;&lt;/span&gt;&lt;/code&gt; and &lt;code class=\&quot;docutils literal notranslate\&quot;&gt;&lt;span class=\&quot;pre\&quot;&gt;&amp;quot;4.1&amp;quot;&lt;/span&gt;&lt;/code&gt; certainly &lt;em&gt;look&lt;/em&gt; like an integer and a float but if you run\nthe code in the palyground above, you\u2019ll see that they\u2019re both strings.&lt;/p&gt;\n&quot;}" data-is-correct="False">
+<p>Both <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code> belong to the <cite>int</cite> class</p>
+</li></div><div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="D" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;&lt;code class=\&quot;docutils literal notranslate\&quot;&gt;&lt;span class=\&quot;pre\&quot;&gt;&amp;quot;17&amp;quot;&lt;/span&gt;&lt;/code&gt; and &lt;code class=\&quot;docutils literal notranslate\&quot;&gt;&lt;span class=\&quot;pre\&quot;&gt;&amp;quot;4.1&amp;quot;&lt;/span&gt;&lt;/code&gt; certainly &lt;em&gt;look&lt;/em&gt; like an integer and a float but if you run\nthe code in the palyground above, you\u2019ll see that they\u2019re both strings.&lt;/p&gt;\n&quot;}" data-is-correct="False">
+<p><code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> belongs to <cite>int</cite> and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code> belongs to <cite>float</cite></p>
+</li></div></ol>
+<button class="mcq-answer-checker">Check Answer</button><p class="mcq-alert"></p></div></div>
+</div>
+</section>
+<section class="section" id="be-precise-with-your-syntax">
+<h3>Be Precise with Your Syntax!</h3>
+<p>This is a good place to point out that you must be precise with your syntax when writing in a
+programming language. In Python, <em>anything</em> enclosed in quotation marks will <strong>always</strong> be a string,
+even if it looks like a number. For example, <code class="docutils literal notranslate"><span class="pre">&quot;500&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;My</span> <span class="pre">favorite</span> <span class="pre">number</span> <span class="pre">is</span> <span class="pre">3&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;4.1&quot;</span></code>
+are all strings.</p>
+<p>Here’s another example of why precision matters when it comes to Python syntax. As humans, we often
+use commas or periods to break up large numbers because it makes them more legible. For example, we
+can write the number <em>one hundred and fifty thousand, three hundred and sixty-eight</em> like so:
+<em>150,368</em>.</p>
+<p>Is <code class="docutils literal notranslate"><span class="pre">150,368</span></code> a valid Python integer? Let’s try printing it out!</p>
+<div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">368</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><pre class="console"></pre></div><p>Gah! Frustratingly, the code above is <em>syntactically correct</em> — in other words, Python
@@ -489,15 +505,20 @@ to be mentioned, but they represent <em>true</em> and <em>false</em>.</p>
 <div class="admonition knowledge_check">
 <p class="admonition-title"></p>
 <div class="admonition-body docutils container">
-<div class="mcq" data-id="mcq-1" data-ans="c" data-feedback="{&quot;a&quot;: &quot;You can tell that something isn&#x27;t a string because it&#x27;s not surrounded by quotes.&quot;, &quot;b&quot;: &quot;You can tell that something isn&#x27;t a string because it&#x27;s not surrounded by quotes.&quot;, &quot;c&quot;: &quot;Yup! Strings are surrounded by quotes.&quot;, &quot;d&quot;: &quot;This isn&#x27;t a trick question. There&#x27;s a string there, we promise.&quot;}"><p>Which part of the code block above is a <strong>string</strong>?</p>
-<div class="docutils container">
-<ol class="upperalpha">
-<div class="mcq-answer-group"><input id="mcq-1-a" type="radio" name="mcq-1" value="a" /><label for="mcq-1-a"><li><p>All of the code is a string</p>
-</li></label></div><div class="mcq-answer-group"><input id="mcq-1-b" type="radio" name="mcq-1" value="b" /><label for="mcq-1-b"><li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> is a string</p>
-</li></label></div><div class="mcq-answer-group"><input id="mcq-1-c" type="radio" name="mcq-1" value="c" /><label for="mcq-1-c"><li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is a string</p>
-</li></label></div><div class="mcq-answer-group"><input id="mcq-1-d" type="radio" name="mcq-1" value="d" /><label for="mcq-1-d"><li><p>This is a trick question — there are <em>no</em> strings in the code above!</p>
-</li></label></div></ol>
+<div class="show-feedback mcq" id="mcq-2">
+<div class="mcq-body docutils container">
+<p>Which part of the code block above is a <strong>string</strong>?</p>
 </div>
+<ol class="mcq-choices upperalpha">
+<div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="A" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;You can tell that something isn\u2019t a string because it\u2019s not\nsurrounded by quotes.&lt;/p&gt;\n&quot;}" data-is-correct="False">
+<p>All of the code is a string</p>
+</li></div><div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="B" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;You can tell that something isn\u2019t a string because it\u2019s not\nsurrounded by quotes.&lt;/p&gt;\n&quot;}" data-is-correct="False">
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> is a string</p>
+</li></div><div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="C" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;Yup! Strings are surrounded by quotes.&lt;/p&gt;\n&quot;}" data-is-correct="True">
+<p><code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code> is a string</p>
+</li></div><div class="mcq-answer-group"><input id="none-input" type="radio" name="None" value="D" /><label for="none-input"><li data-feedback="{&quot;html&quot;: &quot;&lt;p&gt;This isn\u2019t a trick question. There\u2019s a string there, we\npromise.&lt;/p&gt;\n&quot;}" data-is-correct="False">
+<p>This is a trick question — there are <em>no</em> strings in the code above!</p>
+</li></div></ol>
 <button class="mcq-answer-checker">Check Answer</button><p class="mcq-alert"></p></div></div>
 </div>
 <p>You’ve learned what’s up with <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code>. Now we’ll deconstruct the
@@ -507,10 +528,10 @@ been doing whenever you use <cite>print</cite> and <cite>type</cite>.</p>
 </section>
 <section class="section" id="functions">
 <h2>Functions</h2>
-<p>A <cite>function</cite> is something that can take <em>in</em> objects, <em>do something</em> with those objects, and then
+<p>A <a class="reference internal" href="#term-function"><span class="xref std std-term">function</span></a> is something that can take <em>in</em> objects, <em>do something</em> with those objects, and then
 <em>output</em> an object. So far, you’ve encountered two functions — <cite>print</cite> and <cite>type</cite>. You’ve been using
 <cite>print</cite> to get Python to output and display information on the screen and <cite>type</cite> to get an object’s
-class. Both functions are <cite>built-in functions</cite> — functions that Python has already created for
+class. Both functions are <a class="reference internal" href="#term-built-in-functions"><span class="xref std std-term">built-in functions</span></a> — functions that Python has already created for
 you, as a convenience. This is another reason why software engineers like Python so much!</p>
 <div class="admonition note">
 <p class="admonition-title">You can also create your own functions</p>
@@ -520,27 +541,22 @@ to create your <em>own</em> functions! We won’t cover how to do that in this b
 look forward to as you continue learning Python.</p>
 </div>
 </div>
-<div class="admonition terms_to_know">
-<p class="admonition-title"></p>
-<div class="admonition-body docutils container">
-<dl class="simple">
-<dt>function</dt><dd><p>A function can consume objects as input, do <em>something</em>, and output an object.</p>
+<dl class="glossary simple">
+<dt id="term-function">function</dt><dd><p>A function can consume objects as input, do <em>something</em>, and output an object.</p>
 </dd>
-<dt>built-in functions</dt><dd><p>Built-in functions are functions that come with Python. Some examples of built-in functions are
+<dt id="term-built-in-functions">built-in functions</dt><dd><p>Built-in functions are functions that come with Python. Some examples of built-in functions are
 <cite>print</cite> and <cite>type</cite>.</p>
 </dd>
 </dl>
-</div>
-</div>
 <section class="section" id="calling-functions">
 <h3>Calling Functions</h3>
-<p>The act of using a function is known as making a function <cite>call</cite>; in other words, when you use a
-function, you’re <cite>calling</cite> the function.</p>
+<p>Earlier, you learned that the act of using a function is known as making a function <cite>call</cite>; in other
+words, when you use a function, you’re <cite>calling</cite> the function.</p>
 <p>The syntax for calling functions in Python is very similar to other languages. To make a function
 call, you write the function’s name and add a pair of parentheses. The parentheses tells Python that
 it should go ahead and make the function <em>go</em>. If a function requires inputs, you add them <em>inside</em>
-the parentheses. A function’s inputs are known as its <cite>arguments</cite>. With this new vocabulary in mind,
-let’s examine the program we’ve been dissecting again.</p>
+the parentheses. A function’s inputs are known as its <a class="reference internal" href="#term-arguments"><span class="xref std std-term">arguments</span></a>. With this new vocabulary in
+mind, let’s examine the program we’ve been dissecting again.</p>
 <div class="playground show_output"><div class="buttons"><button class="run"><span class="btn-icon"><i class="fa fa-repeat"></i></span><span class="btn-label">Run this again</span></button></div><div class="editable"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -576,19 +592,11 @@ happens, but it actually prints out an empty line. Check it out!</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cool!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><pre class="console"></pre></div><div class="admonition terms_to_know">
-<p class="admonition-title"></p>
-<div class="admonition-body docutils container">
-<dl class="simple">
-<dt>function call</dt><dd><p>When you use a function — by writing its name followed by a pair of parentheses (ex.: <code class="docutils literal notranslate"><span class="pre">print()</span></code>)
-— you’re making a function call.</p>
-</dd>
-<dt>arguments</dt><dd><p>A function’s arguments are its inputs. Arguments go inside the parentheses of a function call
+</div><pre class="console"></pre></div><dl class="glossary simple">
+<dt id="term-arguments">arguments</dt><dd><p>A function’s arguments are its inputs. Arguments go inside the parentheses of a function call
 (ex.: <code class="docutils literal notranslate"><span class="pre">print(&quot;Hi!&quot;)</span></code>)</p>
 </dd>
 </dl>
-</div>
-</div>
 </section>
 <section class="section" id="errors-you-might-encounter-with-functions">
 <h3>Errors You Might Encounter with Functions</h3>
@@ -634,129 +642,6 @@ which isn’t compatible with <cite>len</cite>.</p>
 </div>
 </div><pre class="console"></pre></div></section>
 </section>
-<section class="section" id="practice-section">
-<h2>Practice Section</h2>
-<section class="section" id="directions">
-<h3>Directions</h3>
-<ol class="arabic">
-<li><p>Print each of the following strings:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'hi</span> <span class="pre">there</span> <span class="pre">world'</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Greetings,</span> <span class="pre">world!&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;World??</span> <span class="pre">Is</span> <span class="pre">it</span> <span class="pre">really</span> <span class="pre">you?</span> <span class="pre">Hi!!!!!!&quot;</span></code></p></li>
-</ul>
-</li>
-<li><p>Print each of the following integers:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
-</ul>
-</li>
-<li><p>Print a sentence that says what you had for breakfast this morning.</p></li>
-<li><p>Print a sentence that about something that you plan to do tomorrow.</p></li>
-<li><p>Call the <cite>type</cite> function, passing the string <code class="docutils literal notranslate"><span class="pre">&quot;Howdy,</span> <span class="pre">partner&quot;</span></code> as an
-argument.</p></li>
-<li><p>Call the <cite>type</cite> function, passing the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code> as an argument.</p></li>
-<li><p>Call the <cite>type</cite> function, passing the boolean <code class="docutils literal notranslate"><span class="pre">False</span></code> as an argument.</p></li>
-<li><p>Call the <cite>type</cite> function, passing the integer <code class="docutils literal notranslate"><span class="pre">88</span></code> as an argument.</p></li>
-<li><p>Call the <cite>type</cite> function, passing the string <code class="docutils literal notranslate"><span class="pre">&quot;775&quot;</span></code> as an argument.</p>
-<ul class="simple">
-<li><p>Notice anything interesting about the result?</p></li>
-</ul>
-<div class="togglereveal "><details class="admonition-body"><summary></summary><p>Even if a string <em>contains</em> or is solely composed of a numeric value,
-it’s still a string!</p>
-</details></div></li>
-<li><p>Print the each of the following strings on the same line, separated by
-spaces: <code class="docutils literal notranslate"><span class="pre">&quot;apple&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;berry&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">'cherry'</span></code>.</p></li>
-<li><p>Print the string <code class="docutils literal notranslate"><span class="pre">&quot;Hi,</span> <span class="pre">I</span> <span class="pre">have&quot;</span></code>, the integer <code class="docutils literal notranslate"><span class="pre">8</span></code>, and the string
-<code class="docutils literal notranslate"><span class="pre">&quot;cats&quot;</span></code>, separated by spaces.</p></li>
-<li><p>Use the <cite>len</cite> function in Python to print the length of the following
-string: <code class="docutils literal notranslate"><span class="pre">&quot;supercalifragilisticexpealidocious&quot;</span></code>.</p></li>
-</ol>
-</section>
-</section>
-<section class="section" id="debugging-section">
-<h2>Debugging Section</h2>
-<section class="section" id="id1">
-<h3>Directions</h3>
-<p>As a programmer, debugging is a fact of life. There are times you write code
-that Python doesn’t understand. In these cases, Python will display an error
-message. The more familiar you are with Python’s many error messages, the faster
-you’ll be at debugging code. But there’s good news: Python’s error messages are
-incredibly descriptive and helpful in figuring out what the problem is.</p>
-<p>In the following problems, you’ll find code that is invalid or not allowed in
-some way. Read the code, and see if you can predict what is wrong. When you’re
-ready, hover over the solution area to reveal the error message that Python
-shows, along with an explanation of what is going wrong.</p>
-<ol class="arabic">
-<li><p>What’s wrong with this code?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="togglereveal "><details class="admonition-body"><summary></summary><p>While it’s completely valid to use a string as an argument for the <cite>len</cite>
-function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-<span class="go">5</span>
-</pre></div>
-</div>
-<p>it’s not valid to pass a Boolean type into the <cite>len</cite> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">TypeError</span>: <span class="n">object of type &#39;bool&#39; has no len()</span>
-</pre></div>
-</div>
-<p>Since there’s no obvious answer for Python to give you for the length of
-a boolean, it gives you a helpful message essentially stating that the
-boolean thing you passed to <cite>len</cite> as no length associated with it.</p>
-<p>It’s important to note that even though there are 4 characters that make
-up the value <code class="docutils literal notranslate"><span class="pre">True</span></code>, <cite>len</cite> doesn’t return the integer <code class="docutils literal notranslate"><span class="pre">4</span></code> here. The
-boolean type represents <code class="docutils literal notranslate"><span class="pre">True</span></code> in Python– it’s not simply the string
-containing the letters <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code>. It’s a magical, built-in value that has
-meaning <em>without</em> quotation marks around it.</p>
-<p>So, without further ado, here’s the error message:</p>
-<p>This is one example of a <cite>TypeError</cite> — an error that’s raised as a result
-of data type you’re trying to manipulate in an incorrect way (in this case,
-you’re trying to treat a boolean like a string).</p>
-<p>Next time you see a <cite>TypeError</cite>, make sure you know what kind of thing
-you’re manipulating in your code. Are you trying to treat an integer like
-a string? A string like a integer? A boolean like a string? The <strong>type</strong>
-function is always there to help if you’re not sure what type of thing
-you’re working with.</p>
-</details></div></li>
-<li><p>What’s wrong with this code?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hello</span> <span class="n">world</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="togglereveal "><details class="admonition-body"><summary></summary><p>In order to print a string, there must be quotes around the string.
-When you don’t wrap words in quotation marks, Python tries to evaluate the
-word like it’s a variable, keyword, or a built-in function. In this case,
-Python is trying to figure out what <code class="docutils literal notranslate"><span class="pre">hello</span></code> and <code class="docutils literal notranslate"><span class="pre">world</span></code> mean.</p>
-<p>Here is the error message:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hello</span> <span class="n">world</span><span class="p">)</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">NameError</span>: <span class="n">name &#39;hello&#39; is not defined</span>
-</pre></div>
-</div>
-</details></div></li>
-<li><p>What’s wrong with this code?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span> <span class="nb">print</span> <span class="s2">&quot;whats up&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="togglereveal "><details class="admonition-body"><summary></summary><p>You can’t put two print statements on the same line. In Python, whitespace (or
-the space around the actual words that make up your code) is <em>meaningful</em>.
-Python needs only the right amount of code to be on each line. Similarly,
-indentation is also meaningful in Python. You’ll see this in action in the
-next module. For now, note that too much code on the same line results
-in a <strong>SyntaxError</strong>, since the syntax that Python is trying to parse is
-not able to be understood.</p>
-</details></div></li>
-</ol>
-</section>
-</section>
 </section>
 
           </main>
@@ -787,5 +672,55 @@ not able to be understood.</p>
     <script src="../_static/mdbook/book.js" type="text/javascript" charset="utf-8"></script>
     <script src="../_static/main.js" type="text/javascript" charset="utf-8"></script>
     <script src="../_static/playground.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      document.querySelectorAll('.mcq-answer-group input').forEach((el, idx) => {
+        const questionID = el.parentElement.parentElement.parentElement.getAttribute('id');
+
+        const inputID = `${questionID}-input-${idx}`;
+        el.setAttribute('id', inputID);
+        el.nextElementSibling.setAttribute('for', inputID);
+      });
+
+      const highlightBackground = (targetEl) => {
+        Array.from(targetEl.parentElement.children)
+          .forEach((el) => {
+            el.style.backgroundColor = 'inherit';
+          });
+
+        // Traverse back until we get to the beginning
+        // of term or before we hit a <dd>
+        let curr = targetEl;
+        while (curr.previousElementSibling && curr.previousElementSibling.tagName !== 'DD') {
+          curr = curr.previousElementSibling;
+        }
+
+        const elementsToHighlight = [];
+        while (curr.tagName !== 'DD') {
+          elementsToHighlight.push(curr);
+          curr = curr.nextElementSibling;
+        }
+        elementsToHighlight.push(curr);
+
+        elementsToHighlight.forEach((el, idx) => {
+          el.style.backgroundColor = '#fff5a3';
+        });
+      };
+
+      const anchorLinks = document.querySelectorAll('a[href^="#term"]');
+
+      anchorLinks.forEach((anchorLink) => {
+        anchorLink.addEventListener('click', (evt) => {
+          const targetEl = document.querySelector(anchorLink.getAttribute('href'));
+
+          highlightBackground(targetEl);
+        });
+      });
+
+      (() => {
+        if (window.location.hash) {
+          highlightBackground(document.querySelector(window.location.hash));
+        }
+      });
+    </script>
   </body>
 </html>

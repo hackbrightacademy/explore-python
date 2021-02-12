@@ -36,9 +36,26 @@
   document.querySelectorAll('.playground .run').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const icon = btn.querySelector('i');
-      icon.classList.toggle('fa-play');
-      icon.classList.toggle('fa-repeat');
-      btn.querySelector('.btn-label').innerText = 'Run this again';
+
+      if (icon.classList.contains('fa-play')) {
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-repeat');
+        btn.querySelector('.btn-label').innerText = 'Run this again';
+      } else {
+        icon.classList.add('fa-play');
+        icon.classList.remove('fa-repeat');
+
+        const console = btn.parentElement.parentElement.querySelector('.console');
+
+        console.classList.add('hide-children');
+
+        setTimeout(() => {
+          icon.classList.remove('fa-play');
+          icon.classList.add('fa-repeat');
+
+          console.classList.remove('hide-children');
+        }, 250);
+      }
     });
   });
 })();

@@ -1,5 +1,5 @@
 ====================================
-booleans and Conditional Expressions
+Booleans and Conditional Expressions
 ====================================
 
 Welcome
@@ -38,7 +38,7 @@ Topics
 
 - If-statements
 
-A Review of boolean Expressions
+A Review of Boolean Expressions
 -------------------------------
 
 In order to fully understand conditional logic, it's important to have a solid
