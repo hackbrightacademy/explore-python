@@ -1,5 +1,5 @@
 ====================================
-Booleans and Conditional Expressions
+booleans and Conditional Expressions
 ====================================
 
 Welcome
@@ -38,12 +38,12 @@ Topics
 
 - If-statements
 
-A Review of Boolean Expressions
+A Review of boolean Expressions
 -------------------------------
 
 In order to fully understand conditional logic, it's important to have a solid
 grasp of boolean expressions in Python. Remember, a :term:`boolean expression` is a
-statement or a part of a statement that results in a Boolean value, such as
+statement or a part of a statement that results in a boolean value, such as
 ``True`` or ``False``. Comparisons are the most obvious and helpful example
 of boolean expressions. Below, we are asking the question: "Is the string 
 'rainbow rockstar' `the same as` the string 'mermaid unicorn'?"
@@ -54,7 +54,7 @@ of boolean expressions. Below, we are asking the question: "Is the string
     False
 
 This :term:`expression`, which is the comparison of two strings, results in the
-Boolean value ``False``. We can also compare two numbers. Read the following
+boolean value ``False``. We can also compare two numbers. Read the following
 boolean expressions:
 
 .. code-block:: python
@@ -77,12 +77,10 @@ to a variable directly:
     True
 
 Also, reaching way back to the first module, recall that the string ``"True"`` 
-is **not** the same as the Boolean value ``True``. They are two values that look 
+is *not* the same as the boolean value ``True``. They are two values that look 
 the same, but are different `types`.
 
-.. QUESTION: style ~ Boolean or boolean?
-
-As a fun aside, we could prove this using a Boolean expression:
+As a fun aside, we could prove this using a boolean expression:
 
 .. code-block:: python
 
@@ -132,14 +130,22 @@ Here is some valid Python code that does a similar thing:
 
     module = "incomplete"
     if module == "complete":
-        print("Time to go to the movies")
+        print("Time to go to the movies!")
     else:
         print("Stay home and keep working.")
 
-.. FIXME: repl.it
-Try typing this out in your Python `repl console
-<https://repl.it/languages/python>`_ on your own. What is the output
-of this code?
+Practice typing the `comparison operator` ``==`` in the code playground below:
+
+.. playground::
+
+  module = "incomplete"
+  if module ?? "complete":
+      print("Time to go to the movies!")
+  else:
+      print("Stay home and keep working.")
+
+What is the output of the code?
+
 
 .. topic:: **Here is the output**
     :class: hover-reveal
@@ -169,8 +175,8 @@ If-Statement Syntax
 There are a couple important things to note about the correct way to craft an if-statement.
 
 1) ``if`` is another Python keyword. It must be lower-cased.
-2) After the ``if`` is a **Boolean expression** followed by a colon-- ``:``.
-3) Next comes the "body" of the if-statement-- the thing to do if the Boolean
+2) After the ``if`` is a **boolean expression** followed by a colon-- ``:``.
+3) Next comes the "body" of the if-statement-- the thing to do if the boolean
    expression evaluates to ``True``.
 
 .. warning:: **The if-statement body must be indented**
@@ -192,7 +198,7 @@ There are a couple important things to note about the correct way to craft an if
             print("Here is family member 2: ", family_member2)
 
 4) Optionally, an if-statement can have an **else** block-- what to do if the
-   Boolean expression does not evaluate to **True**. Here's another example of
+   boolean expression does not evaluate to **True**. Here's another example of
    an else-block. The "body" of the else-block should also be indented.
 
 .. code-block:: python
@@ -271,7 +277,7 @@ Using **raw_input** with if-statements
 
 So far, our if-statements have been a little bit contrived. What's the point of
 checking to see if a variable is equal to another thing if you made the variable
-yourself, right? If statements are typically used when the result of that Boolean
+yourself, right? If statements are typically used when the result of that boolean
 expression is unknown, or varying over time or depending on some input that
 was provided to a program.
 
