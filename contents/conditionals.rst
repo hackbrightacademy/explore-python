@@ -46,7 +46,7 @@ grasp of boolean expressions in Python. Remember, a :term:`boolean expression` i
 statement or a part of a statement that results in a boolean value, such as
 ``True`` or ``False``. Comparisons are the most obvious and helpful example
 of boolean expressions. Below, we are asking the question: "Is the string 
-'rainbow rockstar' `the same as` the string 'mermaid unicorn'?"
+'rainbow rockstar' *the same as* the string 'mermaid unicorn'?"
 
 .. code-block:: python
 
@@ -54,8 +54,8 @@ of boolean expressions. Below, we are asking the question: "Is the string
     False
 
 This :term:`expression`, which is the comparison of two strings, results in the
-boolean value ``False``. We can also compare two numbers. Read the following
-boolean expressions:
+boolean value ``False``. We can also compare numbers, checking if they're the same,
+smaller, or larger than each other. Read the following boolean expressions:
 
 .. code-block:: python
 
@@ -67,8 +67,8 @@ boolean expressions:
     False
 
 Also, remember that ``True`` and ``False`` are values in their own right. If
-we wanted to simply make a variable whose value is ``True``, we could assign it
-to a variable directly:
+we wanted to simply make a variable whose value is ``True``, we could assign the
+boolean to a variable directly:
 
 .. code-block:: python
 
@@ -76,11 +76,11 @@ to a variable directly:
     >>> print my_var
     True
 
-Also, reaching way back to the first module, recall that the string ``"True"`` 
+And reaching way back to the first module, recall that the string ``"True"`` 
 is *not* the same as the boolean value ``True``. They are two values that look 
-the same, but are different `types`.
+almost the same, but are different `types`.
 
-As a fun aside, we could prove this using a boolean expression:
+As a fun aside, we could prove this using boolean expressions:
 
 .. code-block:: python
 
@@ -90,6 +90,9 @@ As a fun aside, we could prove this using a boolean expression:
     False
     >>> "True" != True
     True
+
+The last example, ``"True" != True``, checks whether the two things being compared
+are *different*.
 
 .. glossary::
 
@@ -101,22 +104,23 @@ As a fun aside, we could prove this using a boolean expression:
     An expression that results in a boolean value - either ``True`` or ``False``.
 
   evaluate
-    lorem ipsum
+    When a program `evaluates` an expression, it processes the expression into 
+    its result. For example, ``5 + 3`` evaluates to ``8``.
 
 Conditional Logic
 -----------------
 
-.. FIXME: confusing example -> going to the movies if you finish...
-
 We're about to add a very useful tool to our toolkit. Conditional logic lets us
 set conditions, or prerequisites, in our code, such that only certain lines of
-code are run if certain conditions are met. This is similar to allowing yourself
-to go to the movies if you finish this module of work. Some "psedocode", or
-"fake" computer code, for you day might look like this:
+code are run if certain conditions are met. 
+
+For example, we could decide to go to the movies only if the module is complete.
+Some :term:`pseudocode`, our plan for how we would design this code, might look 
+like this:
 
 .. code-block:: python
 
-    work on module
+    module starts out incomplete
     if module is finished:
         go to the movies, have lots of fun!
     otherwise:
@@ -124,7 +128,7 @@ to go to the movies if you finish this module of work. Some "psedocode", or
 
 In our pseudocode, the line that says ``if module is finished`` is called an
 `if-statement`. Python if-statements look pretty similar to our pseudocode.
-Here is some valid Python code that does a similar thing:
+Here is the pseudocode translated to valid Python code:
 
 .. code-block:: python
 
@@ -134,7 +138,8 @@ Here is some valid Python code that does a similar thing:
     else:
         print("Stay home and keep working.")
 
-Practice typing the `comparison operator` ``==`` in the code playground below:
+Practice typing the `comparison operator` ``==`` in the code playground below, 
+then run it and see what the result is:
 
 .. playground::
 
@@ -144,25 +149,19 @@ Practice typing the `comparison operator` ``==`` in the code playground below:
   else:
       print("Stay home and keep working.")
 
-What is the output of the code?
+Once you've fixed the code, you should see the output below:
 
-
-.. topic:: **Here is the output**
-    :class: hover-reveal
-
-    The output is that the string ``"Stay home and keep working."`` has been
-    printed.
-
-    .. parsed-literal::
+.. parsed-literal::
         :class: console
 
-        >>> module = "incomplete"
-        >>> if module == "complete":
-        ...     print("Time to go to the movies")
-        ... else:
-        ...     print("Stay home and keep working.")
-        ...
         `Stay home and keep working.`:cmd:
+
+.. glossary::
+
+  pseudocode
+    A plan for how code will be written, using English (or another spoken 
+    language) instead of a programming language. Helpful for designing programs
+    before focusing on syntax.
 
 If-Statement Syntax
 -------------------
@@ -174,10 +173,10 @@ If-Statement Syntax
 
 There are a couple important things to note about the correct way to craft an if-statement.
 
-1) ``if`` is another Python keyword. It must be lower-cased.
-2) After the ``if`` is a **boolean expression** followed by a colon-- ``:``.
-3) Next comes the "body" of the if-statement-- the thing to do if the boolean
-   expression evaluates to ``True``.
+#. ``if`` is a Python keyword. It must be lower-cased.
+#. After the ``if`` comes the `boolean expression` followed by a colon-- ``:``.
+#. Next comes the "body" of the if-statement-- the thing to do if the boolean
+     expression evaluates to ``True``.
 
 .. warning:: **The if-statement body must be indented**
 
@@ -197,8 +196,8 @@ There are a couple important things to note about the correct way to craft an if
             print("Here is family member 1: ", family_member1)
             print("Here is family member 2: ", family_member2)
 
-4) Optionally, an if-statement can have an **else** block-- what to do if the
-   boolean expression does not evaluate to **True**. Here's another example of
+4) Optionally, an if-statement can have an ``else`` block-- what to do if the
+   boolean expression does not evaluate to ``True``. Here's another example of
    an else-block. The "body" of the else-block should also be indented.
 
 .. code-block:: python
