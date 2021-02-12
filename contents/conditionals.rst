@@ -173,16 +173,18 @@ If-Statement Syntax
 
 There are a couple important things to note about the correct way to craft an if-statement.
 
+.. HELP: this ordered list isn't numbering itself T_T
+
 #. ``if`` is a Python keyword. It must be lower-cased.
 #. After the ``if`` comes the `boolean expression` followed by a colon-- ``:``.
-#. Next comes the "body" of the if-statement-- the thing to do if the boolean
-     expression evaluates to ``True``.
+#. Next comes the :term:`body` of the if-statement-- the thing to do if the 
+  boolean expression evaluates to ``True``. 
 
 .. warning:: **The if-statement body must be indented**
 
     In order for the if-statement to be considered to be valid Python syntax,
-    it must be indented! That means, include 4 blank spaces, and *then* the
-    actual code that should get run
+    it must be indented! Include 4 blank spaces, and *then* the
+    actual code that should be executed.
 
 .. note:: **The if-statement body can be multiple lines**
 
@@ -196,9 +198,9 @@ There are a couple important things to note about the correct way to craft an if
             print("Here is family member 1: ", family_member1)
             print("Here is family member 2: ", family_member2)
 
-4) Optionally, an if-statement can have an ``else`` block-- what to do if the
-   boolean expression does not evaluate to ``True``. Here's another example of
-   an else-block. The "body" of the else-block should also be indented.
+Optionally, an if-statement can have an ``else`` block-- what to do if the
+boolean expression does not evaluate to ``True``. Here's another example of
+an else-block. The body of the else-block should also be indented.
 
 .. code-block:: python
 
